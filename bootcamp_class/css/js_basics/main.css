@@ -1,0 +1,103 @@
+body {
+/*   background-image: url("jsloups.png");
+  background-repeat: no-repeat; */
+}
+#container{
+  width: 970px;
+  background-color: darkblue;
+  height: auto;
+  margin: 0 auto;
+  padding: 17px 10px 17px 10px;
+  /* opacity: .5; */
+}
+header {
+  background-color: red;
+  border-radius: 8px;
+  padding: 20px 0px 20px 17px;
+  margin-top: 2px;
+  text-align: center;
+}
+header h1 {
+  color: lightgray;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+}
+section {
+  height: auto;
+  width: 100%;
+}
+div.nav, div.body {
+  display: inline-block;
+  border-radius: 20px;
+  margin: 22px 0px;
+  padding: 18px 0px;
+  height: auto;
+  vertical-align: top;
+  /* width: auto; */
+}
+div.nav {
+  background-color: teal;
+  /* opacity: 0.7; */
+  padding: 20px;
+  width: 175px;
+}
+div.nav p, div.nav li {
+  color: lightblue;
+  text-decoration: underline;
+}
+div.nav ul {
+  padding-left: 20px;
+}
+div.nav ul li {
+  list-style-type: disc;
+  line-height: 1.2;
+}
+.nav ul li.sublist {
+  list-style-type: circle;
+  margin-left: 10px;
+}
+div.nav p {}
+div.body {
+  background-color: black;
+  /* opacity: 0.6; */
+  margin-left: 20px;
+  padding: 20px;
+  width: 690px;
+}
+.body h2 {
+  font-size: 1.5em;
+  margin: 12px 0px;
+  font-weight: bold;
+}
+.body h2, .body p, .body li {
+  color: lightgray;
+  padding: 5px 0px;
+}
+.body li {
+  list-style-type: disc;
+  margin-left: 15px;
+}
+.title {
+  text-decoration: underline;
+  color: lightblue;
+}
+.highlights {
+  color: deepskyblue;
+}
+p {
+  color: lightgray;
+}
+footer {
+  background-color: dimgray;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px 0px;
+  text-align: center;
+  /* width: 100%; */
+
+}
+footer p {
+  padding: 0px 20px;
+  text-align: left;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index Page 1</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      img {
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+      }
+      #wrapper {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        width: 500px;
+        overflow: hidden;
+        height: auto;
+      }
+      #wrapper h1, h2, h3, h4, h5, p {
+        margin: 10px 0px;
+      }
+      .div1, .div2 {
+        padding: 0px 10px;
+        background-color: #DDFF22;
+      }
+      .listitem {
+        margin-left: 25px;
+        padding: 10px 0px;
+      }
+      .listitem, .blogcontainer {
+        margin-bottom: 10px;
+      }
+      .bothcolumns, .blogcontainer {
+        width: 100%;
+      }
+      .leftcol, .rightcol {
+        display: inline-block;
+        width: 49%;
+      }
+      .div1 ul li, .div2 ul li {
+        margin-left: 10px;
+      }
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h3>My Registration Form:</h3>
+      <form action="process.php" method="post">
+        <div class="bothcolumns">
+          <div class="leftcol">
+            <label for="first_name">First Name:</label>
+          </div>
+          <div class="rightcol">
+            <input type="text" id="first_name" name="first_name">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+              <label for="last_name">Last Name:</label>
+          </div>
+          <div class="rightcol">
+            <input type="text" id="last_name" name="last_name">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+            <label for="email">Email:</label>
+          </div>
+          <div class="rightcol">
+            <input type="text" id="email" name="email">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+              <label for="password">Password:</label>
+          </div>
+          <div class="rightcol">
+            <input type="password" id="password" name="password">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+            <label for="password_confirmation">PW Confirm:</label>
+          </div>
+          <div class="rightcol">
+            <input type="password" id="pw_confirm" name="password_confirmation">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+            <label for="birthday">Birthday:</label>
+          </div>
+          <div class="rightcol">
+            <input id="birthday" type="date" value="">
+          </div>
+        </div>
+
+        <div class="bothcolumns">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="other">Other</label>
+          <input type="radio" id="other" name="gender" value="other">
+        </div>
+
+        <div class="bothcolumns">
+          <p>A short description about yourself:</p>
+          <textarea name="description" cols="50" rows="5"></textarea>
+        </div>
+
+        <div class="bothcolumns">
+          <div class="leftcol">
+            <p>Favorite language:</p>
+          </div>
+          <div class="rightcol">
+            <select>
+              <option value="JavaScript">JavaScript</option>
+              <option value="JSON">JSON</option>
+              <option value="jQuery">jQuery</option>
+            </select>
+          </div>
+        </div>
+        <div class="bothcolumns">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      // var dateControl = document.querySelector('#birthday');
+      // dateControl.value = Date.now();
+
+      (function () {
+        var date = new Date().toISOString().substring(0, 10),
+          dateControl = document.querySelector('#birthday');
+        dateControl.value = date;
+        // console.log(dateControl.value);
+      })()
+    </script>
+  </body>
+</html>

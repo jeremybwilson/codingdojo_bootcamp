@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index Page 1</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      img {
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+      }
+      #wrapper {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        width: 500px;
+        overflow: hidden;
+        height: auto;
+      }
+      #wrapper h1, h2, h3, h4, h5, p {
+        margin: 10px 0px;
+      }
+      .div1, .div2 {
+        padding: 0px 10px;
+        background-color: #DDFF22;
+      }
+      .listitem {
+        margin-left: 25px;
+        padding: 10px 0px;
+      }
+      .listitem, .blogcontainer {
+        margin-bottom: 10px;
+      }
+      .fullwidthcol {
+        width: 100%;
+      }
+      .fullwidthcol label, .fullwidthcol input {
+        display: inline-block;
+        width: 49%;
+      }
+      .gendercolumn label {
+        width: auto;
+      }
+      .gendercolumn input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+      }
+      .fullwidthcol .submit{
+        width: auto;
+      }
+      .div1 ul li, .div2 ul li {
+        margin-left: 10px;
+      }
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h3>My Registration Form:</h3>
+      <form action="process.php" method="post">
+        <div class="fullwidthcol">
+          <label for="first_name">First Name:</label>
+          <input type="text" id="first_name" name="first_name">
+        </div>
+
+        <div class="fullwidthcol">
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="last_name">
+        </div>
+        <div class="fullwidthcol">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email">
+        </div>
+        <div class="fullwidthcol">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="fullwidthcol">
+          <label for="password_confirmation">PW Confirm:</label>
+          <input type="password" id="pw_confirm" name="password_confirmation">
+        </div>
+        <div class="fullwidthcol">
+          <label for="birthday">Birthday:</label>
+          <input id="birthday" type="date" value="">
+        </div>
+        <div class="gendercolumn">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="other">Other</label>
+          <input type="radio" id="other" name="gender" value="other">
+        </div>
+        <div class="fullwidthcol">
+          <p>A short description about yourself:</p>
+          <textarea name="description" cols="50" rows="5"></textarea>
+        </div>
+        <div class="fullwidthcol">
+          <label for="favorite_language">Favorite language:</label>
+          <select>
+            <option value="JavaScript">JavaScript</option>
+            <option value="JSON">JSON</option>
+            <option value="jQuery">jQuery</option>
+          </select>
+        </div>
+        <div class="fullwidthcol">
+          <input class="submit" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      // var dateControl = document.querySelector('#birthday');
+      // dateControl.value = Date.now();
+
+      (function () {
+        var date = new Date().toISOString().substring(0, 10),
+          dateControl = document.querySelector('#birthday');
+        dateControl.value = date;
+        // console.log(dateControl.value);
+      })()
+    </script>
+  </body>
+</html>

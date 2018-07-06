@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Position Property</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <style type="text/css">
+  #container1{
+    background-color: yellow;
+    display: inline-block;
+  }
+  #box-1, #box-2, #box-3{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    color: #FFF;
+    line-height: 100px;
+  }
+  #box-1{
+    background-color: green;
+    /* position: absolute;
+    top: 40px; */
+  }
+  #box-2{
+    background-color: pink;
+    position: relative;
+    top: 20px;
+    left: 20px;
+  }
+  #box-3{
+    background-color: blue;
+  }
+  #center-me{
+    background: red;
+    height: 100px;
+    width: 100px; 
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+  }
+  #container2{
+    width: 200px;
+    height: 200px;
+    background: blue;
+    position: relative;
+  }
+  #center-me2{
+    background: red;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+  }
+  /* .clear {
+    clear: both;
+  } */
+  </style>
+</head>
+<body>
+<div id="container1">
+  <div id="box-1">
+    Box 100
+  </div>
+  <div id="box-2">
+    Box 2
+  </div>
+  <div id="box-3">
+    Box 3
+  </div>
+  <!-- <div id="center-me">&nbsp;</div> -->
+</div>
+<div class="clear">&nbsp;</div>
+<div id="container2">
+  <div id="center-me2"></div>
+</div>
+</body>
+</html>

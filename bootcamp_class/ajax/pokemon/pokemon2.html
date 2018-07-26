@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax and APIs - Pokemon Assignment</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+  }
+  #container-fluid {
+    margin: 0 auto;
+    width: 80%;
+  }
+  #container-fluid>h1, #container-fluid>img {
+    display: block;
+  }
+  #pokemon, #pokemon-display {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #pokemon {
+    width: 700px;
+  }
+  #pokemon-display {
+    border: 10px solid red;
+    width: 250px;
+    display: none;
+  }
+  #pokemon>img {
+    width: 100px;
+    height: 100px;
+  }
+  #pokemon>img.title {
+    height: 75px;
+    width: 250px;
+  }
+  .show {
+    display: block;
+  }
+  </style>
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+
+  <div id="container-fluid">
+<!--     <div id="pokemon"></div>
+    <div id="pokemon-display"></div> -->
+  </div>
+  <script>
+    $(document).ready(function(){
+
+      const app = document.getElementById('container-fluid');
+
+      const logo = document.createElement('img');
+      logo.src = 'images/pokemon-title.jpg';
+      logo.setAttribute('class', 'title')
+
+      const h1 = document.createElement('h1');
+      h1.textContent = "Pokemon Assignment";
+
+      const containerLeft = document.createElement('div');
+      containerLeft.setAttribute('id', 'pokemon');
+
+      const containerRight = document.createElement('div');
+      containerRight.setAttribute('id', 'pokemon-display');
+
+      app.appendChild(h1);
+      app.appendChild(logo);
+      app.appendChild(containerLeft);
+      app.appendChild(containerRight);
+
+      let count = 0;
+      // set root portion of media/img URL here
+      const imgBaseUrl = 'http://pokeapi.co/media/img/'
+
+      // embed opening <div> tag for .row container
+      // $('#pokemon').append('<div class="row">');
+
+      $.get("https://pokeapi.co/api/v2/pokemon/?limit=7", function(res) {
+        for(let i = 0; i < res.results.length; i++){
+          count++;
+
+          let imgAlt = res.results[i].name;
+          // set variable to pull in specific Pokemon character ID (from URL) here,
+          // get subtring value from the API endpoint for results.url
+          let url = res.results[i].url.split('/');
+          let pokemonCharID = url[url.length - 2];
+          // create imagePath URL here
+          const pokemonCharFullPath = imgBaseUrl + pokemonCharID + '.png';
+          // console.log(pokemonCharFullPath);
+          // $('#pokemon').append('<img alt="' + imgAlt + '" id="' + pokemonCharID + '" src="' + pokemonCharFullPath + '"/>');
+          $('#pokemon').append(`<img alt="${imgAlt}" id="${pokemonCharID}" src="${pokemonCharFullPath}" />`);
+        }
+      }, "json");
+
+      $.get("https://pokeapi.co/api/v2/pokedex/?limit=1", function(res){
+        for(let i = 0; i < res.results.length; i++){
+          let characterName = res.results[i].name;
+          console.log(characterName);
+          // return characterName;
+        }
+      }, "json");
+
+      // when an individual pokemon image is hovered over, 
+      // toggle the hidden div on/off
+      $('#pokemon > img').hover(function(){
+        $('#pokemon-display').show();
+      }, function(){
+        $('#pokemon-display').hide();
+        // $('#pokemon-display').show();
+      });
+
+      // write out to the hidden div the character information => get the data needed (type/height/weight)
+
+      // embed closing </div> tag for .row container
+      // $('#pokemon').append('</div>');
+    });
+  </script>
+  <!-- <script src="js/script.js" type="text/javascript"></script> -->
+</body>
+</html>

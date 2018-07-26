@@ -1,0 +1,390 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"product"
+			],
+			[
+				"new",
+				"newArray〔variable〕"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 119.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sublimerge: compare",
+				"Sublimerge: Compare to View..."
+			],
+			[
+				"compare",
+				"Sublimerge: Compare to Clipboard"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"compE",
+				"Sublimerge: Compare to View..."
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"compar",
+				"Sublimerge: Compare to View..."
+			],
+			[
+				"package control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"package controll",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"function findMinMaxAvg(arr){",
+			"function sum_even(){"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja"
+	],
+	"file_history":
+	[
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/js/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/pokemon.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/color-clicker/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery05.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/js/script.js.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery06.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_min_max_avg_v2.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery04.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery02.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery01.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery03.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/hover_in_out.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/README.md",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/ninja-cat/index2.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/debugging-jquery/debugging_jquery.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/js/intermediate_foundation.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/.gitignore",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/1942/index_00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/algorithms_class/swap_pairs.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_pairs.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/foundation_algorithms/always_hungry.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v2/index_mchoi.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v1/css/style.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v1/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_mchoi.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/academy-pacman/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/academy-pacman/css/style.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/playing_with_objects.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/1942/readME.md",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_03.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/index_00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_01.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test02.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test01.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/script_test.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/css/style.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/intermediate_foundation.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/package.json",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/basic_foundation_2.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/jeremy_object.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/objects.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/style.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/function01Spec.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/functionSpec00.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/support/jasmine.json",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/recursive_fill.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/.gitignore",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/fibonnaci_sequence.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/reverse_order.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/reverse_an_array.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_array_values.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/foundation_algorithms/swap_towards_the_center.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_neg_values_for_string.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print1to255.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_min_max_avg.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/greater_than_y.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_sum_even_numbers.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_sum_odd_numbers.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_average.js",
+		"/Users/jeremybwilson/Documents/Github/code/basic_repo/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_03.txt",
+		"/Users/jeremybwilson/Documents/Github/code/basic_repo/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_02.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_01.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_portfolio/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_portfolio/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/portfolio/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/about_python/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/exam_webfun/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/exam_webfun/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/js_basics/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/portfolio/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/simply_responsive/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_squared_value.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/queries.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/media_queries.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_5_assignment.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/shift_array_values.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/extract_digit.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/css/main.less",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_blocks/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/bootstrap/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/bootstrap/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/simply_responsive/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/css/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_blocks/responsive_blocks.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/images/html.png",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_3_assignment.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/iterate_and_print_total.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/iterate_array.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/num_to_string.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/return_no_negatives.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/about_python/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_2_assignment_practice.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_2_assignment.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/printSumArray.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/js_basics/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/registration_01.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/registration_00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/js_basics/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/js/greetings.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/reset.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/position_property.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/optional2.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/displaying_blocks2.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/displaying_blocks.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/optional.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/style.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/plotting_blocks.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/common_tags.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/fizz_buzz_practice.js",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/hello_world.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/fake_blog_00.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/algo_assignment.txt",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/main.css",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/enemy.png",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_02.html",
+		"/Users/jeremybwilson/Documents/Github/code/messagelist/app/app.js",
+		"/Users/jeremybwilson/Documents/Github/code/test_stuff/sandbox/todo/src/index.js"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 103.0,
+		"where_history":
+		[
+			"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp",
+			"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy",
+			"/Users/jeremybwilson/Documents/Github/code",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sigma",
+			"#yellow",
+			"10px",
+			".right",
+			".blue",
+			"inline-block",
+			"display:none",
+			"body, input",
+			"main-navigation",
+			".main-header",
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"yellow"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 206.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.summary-panel":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "Packages/User/node.sublime-build",
+	"project": "/Users/jeremybwilson/Documents/Github/code/coding-dojo.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

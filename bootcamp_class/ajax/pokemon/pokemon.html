@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax and APIs - Pokemon Assignment</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+  }
+  .container-fluid {
+    margin: 0 auto;
+    width: 80%;
+  }
+  div.row, div.row>img {
+    display: block;
+  }
+  #pokemon>img {
+    width: 100px;
+    height: 100px;
+  }
+    #pokemon>img.title {
+    height: 75px;
+    width: 250px;
+  }
+  </style>
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <h1>Pokemon Assignment</h1>
+    <div id="pokemon"></div>
+  </div>
+  <script>
+    $(document).ready(function(){
+
+      const app = document.getElementById('pokemon');
+
+      const logo = document.createElement('img');
+      logo.src = 'images/pokemon-title.jpg';
+      logo.setAttribute('class', 'title')
+
+      const container = document.createElement('div');
+      container.setAttribute('class', 'container-fluid');
+
+      app.appendChild(logo);
+
+      let count = 0;
+
+      // embed opening <div> tag for .row container
+      $('#pokemon').append('<div class="row">');
+
+      for(let i = 1; i < 51; i++){
+        count++;
+        // set root portion of media/img URL here
+        var imgBaseUrl = 'http://pokeapi.co/media/img/'
+        // set variable to pull in specific Pokemon character ID (from URL) here
+        var pokemonCharNo = i;
+        // create imagePath URL here
+        var pokemonCharFullPath = imgBaseUrl + pokemonCharNo + '.png';
+
+        $('#pokemon').append('<img id="' + pokemonCharNo + '" src="' + pokemonCharFullPath + '"/>');
+
+        if(count % 5 === 0){
+          $('#pokemon').append('</div><div class="row">');
+        }
+      }
+      // embed closing </div> tag for .row container
+      $('#pokemon').append('</div>');
+      
+    });
+  </script>
+</body>
+</html>

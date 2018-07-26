@@ -1,0 +1,68 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  vertical-align:baseline;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,form{
+  display:block
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+.row-1, .row-2, .row-3 {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+.row-1 {
+  background-color: #b3b3b3;
+}
+.row-2 {
+  background-color: #CCC;
+}
+.row-3 {
+  background-color: #FF9;
+}
+@media only screen and (max-width: 480px){
+  /* we will set these stylings only if the device is a screen with a width of 480px or less */
+  .phone {
+    display: block;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 481px){
+  /* we will set these stylings only if the device is a screen between 480 and 1024 px */
+  .phone {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px){
+  /* we will set these stylings only if the device is a screen width greater than 1024px */
+
+  .phone {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+.strong {
+  font-weight: bold;
+}

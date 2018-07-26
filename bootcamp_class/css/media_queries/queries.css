@@ -1,0 +1,97 @@
+/* .navbtn {
+  padding: 10px;
+}
+@media only screen and (max-width: 480px){
+  /* we will set these stylings only if the device is a screen with a width of 480px or less */
+/*  .navbtn {
+    background: yellow;
+    background: -moz-linear-gradient(top, yellow 0%, #6f5863 49%, yellow 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, yellow), color-stop(49%, #6f5863), color-stop(100%, yellow));
+    background: -webkit-linear-gradient(top, yellow 0%, #6f5863 49%, yellow 100%);
+    background: -o-linear-gradient(top, yellow 0%, #6f5863 49%, yellow 100%);
+    background: -ms-linear-gradient(top, yellow 0%, #6f5863 49%, yellow 100%);
+    background: linear-gradient(to bottom, yellow 0%, #6f5863 49%, yellow 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='yellow', endColorstr='yellow', GradientType=0 );
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+  }
+}
+@media only screen and (min-width:481px){
+  .navbtn{
+    background: #1d0d11;
+    background: -moz-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #1d0d11), color-stop(49%, #6f5863), color-stop(100%, #1d0d11));
+    background: -webkit-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+    background: -o-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+    background: -ms-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+    background: linear-gradient(to bottom, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d0d11', endColorstr='#1d0d11', GradientType=0 );
+    height: 60px;
+    width: auto;
+    border-radius: 6px;
+  }
+}
+@media only screen and (min-width: 1024px){
+  .navbtn{
+    background: red;
+    background: -moz-linear-gradient(top, red 0%, #6f5863 49%, red 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, red), color-stop(49%, #6f5863), color-stop(100%, red));
+    background: -webkit-linear-gradient(top, red 0%, #6f5863 49%, red 100%);
+    background: -o-linear-gradient(top, red 0%, #6f5863 49%, red 100%);
+    background: -ms-linear-gradient(top, red 0%, #6f5863 49%, red 100%);
+    background: linear-gradient(to bottom, red 0%, #6f5863 49%, red 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='red', GradientType=0 );
+    height: 80px;
+    width: auto;
+    border-radius: 8px;
+  }
+} */
+
+*{
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+button {
+  background-color: purple;
+}
+.book {
+  font-style: italic;
+}
+.col {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+}
+.row {
+  padding: 10px;
+  border: 3px solid blue;
+}
+@media only screen and (max-width: 480px){
+  .sm-4{
+    width: 100%;
+  }
+  .sm-0{
+    /* we will not display anything with the class .sm-0 if the screen's width is less than 480px */
+    display: none;
+  }
+}
+@media only screen and (min-width:481px){
+/*   .med-1 {
+    anything with the class .med-1 will get 25% of the available width if the screen's width is greater than 480px
+    width: 25%;
+  } */
+  .med-2{
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px){
+  .lg-1 {
+    width: 25%;
+  }
+  .lg-3 {
+    max-width: 75%;
+  }
+}

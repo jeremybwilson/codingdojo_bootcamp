@@ -1,0 +1,101 @@
+  /*CSS reset settings here*/
+  *{
+   margin: 0px;
+   padding: 0px;
+   background-color: silver;
+  }
+  #wrapper{
+   margin: 0px auto;
+   width: auto;
+   padding: 5px;
+  }
+  .header{
+    width: 100%;
+    background-color: green;
+    display: block;
+    margin: 10px 0;
+    min-height: 100px;
+  }
+  .navigation{
+    background-color: blue;
+    vertical-align: top;
+    /* height: 300px; */
+    min-height: 250px;
+  }
+  .main_content{
+   background-color: red;
+   padding: 10px;
+  }
+  .subcontents{
+    background-color: yellow;
+    min-height: 120px;
+  }
+  #advertisement{
+   width: 100%;
+   min-height: 100px;
+   background-color: purple;
+   margin-top: 5px;
+  }
+  @media only screen and (max-width: 480px){
+  /* we will set these stylings only if the device is a screen with a width of 480px or less */
+    .navigation {
+      display: none;
+    }
+    .main_content {
+      display: block;
+      width: auto;
+      margin: 0;
+    }
+    .subcontents {
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 1em;
+      /* display: block; */
+    }
+    #advertisement{
+     width: auto;
+    }
+  }
+  @media only screen and (min-width: 481px){
+    /* we will set these stylings only if the device is a screen between 480 and 1024 px */
+    .navigation {
+      display: none;
+    }
+    .main_content {
+      display: block;
+      width: auto;
+      margin: 0;
+    }
+    .subcontents {
+      display: inline-block;
+      width: 48%;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    #advertisement{
+     width: auto;
+    }
+  }
+  @media only screen and (min-width: 1024px){
+    /* we will set these stylings only if the device is a screen width greater than 1024px */
+    .navigation {
+      display: inline-block;
+      width: 20%;
+      margin-right: 10px;
+    }
+    .main_content {
+      display: inline-block;
+      width: 76%;
+    }
+    .subcontents {
+      width: 31%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    /*  .subcontents:nth-last-of-type(2) {
+      margin: 0 0 1em 0;
+    } */
+    #advertisement {
+      width: auto;
+    }
+  }

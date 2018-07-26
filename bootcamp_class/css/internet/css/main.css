@@ -1,0 +1,217 @@
+html{
+  font-size:100%;
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+  overflow-y:scroll;
+  -webkit-font-smoothing:antialiased;
+}
+body{
+  background-color: #FFF;
+}
+body,input,textarea,select,button{
+  color:#444;
+  font:normal 100%/1.625 SourceSansProRegular,Arial,sans-serif
+}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  /* font:inherit; */
+  vertical-align:baseline
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,form{
+  display:block
+}
+#container {
+  margin: 0 auto;
+  width: 970px;
+}
+.main-header{
+  font-size: 2em;
+}
+.main-header img.logo {
+  height: 70px;
+  width: 70px;
+}
+.main-header img, .main-header h1 {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+h1>span.blue {
+  color: darkblue;
+}
+.main-header h2 {
+  display: block;
+  color: #FFF;
+  font-size: .85em;
+  height: 50px;
+  vertical-align: middle;
+  padding: 7px 0px 0px 10px;
+  background-color: #6aa5d6;
+  background: -moz-linear-gradient(top, #3776ab 0%, #6aa5d6 49%, #3776ab 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #3776ab), color-stop(49%, #6aa5d6), color-stop(100%, #3776ab));
+  background: -webkit-linear-gradient(top, #3776ab 0%, #6aa5d6 49%, #3776ab 100%);
+  background: -o-linear-gradient(top, #3776ab 0%, #6aa5d6 49%, #3776ab 100%);
+  background: -ms-linear-gradient(top, #3776ab 0%, #6aa5d6 49%, #3776ab 100%);
+  background: linear-gradient(to bottom, #3776ab 0%, #6aa5d6 49%, #3776ab 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aeadb2', endColorstr='#aeadb2', GradientType=0 );
+}
+.body {
+  width: 100%;
+}
+.navigation, section {
+  display: inline-block;
+  padding-top: .5em;
+  vertical-align: top;
+}
+.navigation {
+  width: 23%;
+  padding: 0px 5px;
+}
+.navigation span.blue, div.left, section h2, span.blue {
+  color: #22649e;
+}
+.navigation h2, .navigation p, .navigation ul {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+.navigation p {
+  font-size: .8em;
+}
+section {
+  width: 75%;
+}
+div.left{
+  width: 60%;
+  vertical-align: top;
+}
+div.right{
+  width: 35%;
+  text-align: right;
+  vertical-align: middle;
+}
+div.left, div.right {
+  display: inline-block;
+}
+div.left img.house {
+  height: 22px;
+  width: 22px;
+  vertical-align: top;
+}
+div.right img, div.right p {
+  display: inline-block;
+}
+div.right img {
+  height: 50px;
+  width: 50px;
+}
+/* div.right img. */
+div.right p {
+  font-size: .5em;
+}
+section span.bigblue {
+  display: block;
+  color: #00c0df;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+section hr {
+  background-color: #000;
+  /* height: 1px; */
+  width: 100%;
+}
+.navigation ul, .navigation hr, a.button, div.dojobutton {
+  width: 98%;
+}
+.navigation a.button, .dojobutton h3, .dojobutton a {
+  color: #FFF;
+  text-decoration: none;
+}
+.navigation ul li {
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+}
+.navigation a.button {
+  display: block;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 2px 0;
+  margin: 2px 0px;
+}
+.navigation a.button.blue {
+  background-color: blue;
+}
+.navigation a.button.orange {
+  background-color: orange;
+}
+.navigation hr {
+  margin: 20px 0px;
+}
+img.clientserver{
+  height: 100px;
+  width: auto;
+  margin: 3% 30%;
+  text-align: center;
+}
+ul.paddedlist, ol.paddedlist {
+  padding: 0px 5px 0px 30px;
+  margin: 5px 0px;
+}
+ul.paddedlist, ol.paddedlist, .mainbody p, .bodyfooter p {
+  font-size: .8em;
+}
+.bodyfooter {
+  border: 4px solid #00c0df; 
+  width: auto; 
+  padding: 10px;
+}
+.bodyfooter img {
+  height: 80px;
+  width: 90px;
+  float: left;
+  margin-right: 10px;
+}
+.bodyfooter a {
+  text-decoration: none;
+  color: #00c0df;
+}
+div.dojobutton {
+  background: no-repeat url("../images/ad_background.png");
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px 10px;
+  height: auto;
+  width: 190px;
+}
+div.dojobutton h3, div.dojobutton a {
+  margin: 25px 5px;
+}
+div.dojobutton h3 {
+  font-size: 1.25em;
+}
+div.dojobutton img {
+  width: 65px;
+  height: 85px;
+}
+div.dojobutton a {
+  border-radius: 5px;
+  background-color: #57c8de;
+  display: block;
+  width: auto;
+}
+.red {
+  color: red;
+}
+.italic {
+  font-style: italic;
+}
+.strong {
+  font-weight: bold;
+}
+.clear {
+  clear: both;
+}
+

@@ -1,0 +1,209 @@
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  /* border: 1px dashed red; */
+  background-color: #FFF;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+#container{
+  margin: 0px auto;
+  background: #1d0d11;
+  background: -moz-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #1d0d11), color-stop(49%, #6f5863), color-stop(100%, #1d0d11));
+  background: -webkit-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+  background: -o-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+  background: -ms-linear-gradient(top, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+  background: linear-gradient(to bottom, #1d0d11 0%, #6f5863 49%, #1d0d11 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d0d11', endColorstr='#1d0d11', GradientType=0 );
+}
+header, section, footer {
+  width: 100%;
+}
+header {
+  background-color: silver;
+}
+section, footer {
+  padding: .5em 0;
+}
+header>h1, header>h2 {
+  display: inline-block;
+}
+header>h1 {
+  font-family: Comic Sans MS;
+  font-size: 1.75em;
+  margin-left: 10px;
+}
+.leftcol, .rightcol {
+  display: inline-block;
+  vertical-align: top;
+}
+div.leftcol>img {
+  height: auto;
+  border: .35em solid lightgray;
+/*   margin: 0;
+  padding: 0; */
+}
+.rightcol {
+  background-color: #FFF;
+}
+.rightcol h2, .rightcol p {
+  color: #FFF;
+  padding: .75em .75em;
+}
+.rightcol h2 {
+  font-size: 1.15em;
+}
+.rightcol p, .rightcol p a{
+  color: #000;
+}
+.rightcol p a:hover {
+  text-decoration: underline;
+}
+.threeup h2, .rightcol h2 {
+  padding: .75em 0 .75em 1em;
+}
+.threeup h2, .rightcol h2 {
+  background: #aeadb2;
+  background: -moz-linear-gradient(top, #aeadb2 0%, #878493 49%, #aeadb2 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #aeadb2), color-stop(49%, #878493), color-stop(100%, #aeadb2));
+  background: -webkit-linear-gradient(top, #aeadb2 0%, #878493 49%, #aeadb2 100%);
+  background: -o-linear-gradient(top, #aeadb2 0%, #878493 49%, #aeadb2 100%);
+  background: -ms-linear-gradient(top, #aeadb2 0%, #878493 49%, #aeadb2 100%);
+  background: linear-gradient(to bottom, #aeadb2 0%, #878493 49%, #aeadb2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aeadb2', endColorstr='#aeadb2', GradientType=0 );
+  color: #FFF;
+  font-size: 1.15em;
+  margin: 0px;
+  width: auto;
+}
+.threeup>div {
+  background-color: #EAE2E2;
+  margin: .5em;
+  vertical-align: top;
+}
+.threeup img {
+  width: 100%;
+  height: auto;
+}
+.threeup p {
+  padding: .75em;
+  margin: .75em 0;
+}
+div.icons>img {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: .5em;
+}
+.threeup div>a {
+  display: block;
+  border-radius: 5px;
+  background-color: green;
+  border: 1px solid black;
+  color: #FFF;
+  font-size: .85em;
+  margin: 0 auto 1em auto;
+  padding: .25em;
+  text-align: center;
+  width: 50%;
+}
+.rightcol p a, .threeup div>a, .footericons li>a{
+  text-decoration: none;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+}
+footer ul.footericons img, footer ul li {
+  display: inline-block;
+}
+footer ul.footericons img {
+  height: 20px;
+  width: 20px;
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 480px){
+/* we will set these stylings only if the device is a screen with a width of 480px or less */
+  #container {
+    width: 100%;
+  }
+  .leftcol, .rightcol {
+    width: 100%;
+    /* margin: .5em; */
+  }
+  div.leftcol>img {
+    width: 98%;
+  }
+  .threeup {
+    width: auto;
+  }
+  .threeup>div {
+    margin: 0;
+  }
+  .threeup .icons, .threeup div>h2, .footericons li>a {
+    display: none;
+  }
+  .threeup>div {
+    display: block;
+    width: 100%;
+  }
+  .threeup div>a {
+    margin: 0 auto;
+    font-size: 2em;
+    padding: .25em;
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 481px){
+/* we will set these stylings only if the device is a screen between 480 and 1024 px */
+  #container {
+    width: 100%;
+  }
+  .leftcol, .rightcol {
+    margin: .5em;
+    width: 98%; 
+  }
+  div.leftcol>img {
+    width: 98%;
+  }
+  .rightcol h2, .rightcol p {
+  }
+  .threeup{
+
+  }
+  .threeup>div {
+    display: inline-block;
+    width: 46%;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+/* we will set these stylings only if the device is a screen width greater than 1024px */
+  #container {
+    width: 970px;
+  }
+  .leftcol, .rightcol {
+    width: 48%;
+    margin: 0 .5em;
+  }
+  div.leftcol>img {
+    width: 98%;
+  }
+  .rightcol h2, .rightcol p {
+  }
+  .threeup>div {
+    display: inline-block;
+    margin: 0 0 0 .75em;
+    width: 31%;
+  }
+  header>h1 {
+    width: 45%;
+  }
+  header>h2 {
+    width: 53%;
+  }
+}

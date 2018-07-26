@@ -15,6 +15,42 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON/index.html",
+			"settings":
+			{
+				"buffer_size": 2445,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON/script.js",
+			"settings":
+			{
+				"buffer_size": 706,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search/script.js",
+			"settings":
+			{
+				"buffer_size": 630,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search/index.html",
+			"settings":
+			{
+				"buffer_size": 2352,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -102,138 +138,146 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja"
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/01_client_side_templating",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/lib"
 	],
 	"file_history":
 	[
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/js/script.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/pokemon.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/color-clicker/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery05.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/ajax/js/script.js.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery06.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_min_max_avg_v2.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery04.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery02.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery01.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery03.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/hover_in_out.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/README.md",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/ninja-cat/index2.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/jquery00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/debugging-jquery/debugging_jquery.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/jquery/disappearing-ninja/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/js/intermediate_foundation.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/.gitignore",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/1942/index_00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/algorithms_class/swap_pairs.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_pairs.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/foundation_algorithms/always_hungry.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v2/index_mchoi.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v1/css/style.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman-v1/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_mchoi.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/academy-pacman/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/academy-pacman/css/style.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/playing_with_objects.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/1942/readME.md",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_03.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/index_00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_01.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test02.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test01.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index_test00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/script_test.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-pacman/css/style.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/intermediate_foundation.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/package.json",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/assignments/basic_foundation_2.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/jeremy_object.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/objects.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/style.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/function01Spec.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/functionSpec00.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/spec/support/jasmine.json",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/js/recursive_fill.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/.gitignore",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/fibonnaci_sequence.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/reverse_order.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/reverse_an_array.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_array_values.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/foundation_algorithms/swap_towards_the_center.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/swap_neg_values_for_string.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print1to255.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_min_max_avg.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/greater_than_y.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_sum_even_numbers.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/print_sum_odd_numbers.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_average.js",
-		"/Users/jeremybwilson/Documents/Github/code/basic_repo/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_03.txt",
-		"/Users/jeremybwilson/Documents/Github/code/basic_repo/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_02.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/git/assignment_01.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_portfolio/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_portfolio/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/portfolio/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/about_python/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/exam_webfun/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/exam_webfun/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/js_basics/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/portfolio/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/simply_responsive/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/find_squared_value.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/queries.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/media_queries.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_5_assignment.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/shift_array_values.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/extract_digit.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/css/main.less",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/less/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_blocks/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/bootstrap/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/bootstrap/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/simply_responsive/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/css/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/responsive_blocks/responsive_blocks.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/internet/images/html.png",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_3_assignment.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/iterate_and_print_total.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/iterate_array.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/num_to_string.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/return_no_negatives.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/about_python/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_2_assignment_practice.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/css/algo_2_assignment.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/printSumArray.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/js_basics/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/registration_01.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/registration_00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/js_basics/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/js/greetings.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/reset.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/position_property.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/optional2.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/displaying_blocks2.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/displaying_blocks.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/displaying_blocks/optional.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/style.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/css/plotting_blocks.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/common_tags.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/basic_13/fizz_buzz_practice.js",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/hello_world.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/fake_blog_00.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/bootcamp_class/html/algo_assignment.txt",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/main.css",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/enemy.png",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-airplane/index.html",
-		"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy/game-ninja-master/ninja_game_02.html",
-		"/Users/jeremybwilson/Documents/Github/code/messagelist/app/app.js",
-		"/Users/jeremybwilson/Documents/Github/code/test_stuff/sandbox/todo/src/index.js"
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/01_client_side_templating/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/01_client_side_templating/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/lib/jquery.hijax.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/01_animating_css/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/18_advanced_tooltips/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/17_simple_tooltips/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/16_sliding_overlay/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/15_login_panel/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/14_jquery_ui_tab_control/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/13_jquery_ui_tab_options/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/12_jquery_ui_tabs/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/11_simple_tabs/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/10_jquery_ui_accordion/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/09_multi_level_accordion/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/08_simple_accordion_variant/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/07_simple_accordion/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/06_dropdown_with_hover_intent/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/05_dropdown_menu/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/04_menu_expand_on_hover/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/20_1_up_notifications/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/03_open_closed_indicators/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/02_event_propagation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_05/01_expandable_menus/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/15_iphoto_style_slideshow/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/10_cycle_plugin_2/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/09_cycle_plugin/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/08_innerfade/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/07_slideshow_cross_fade/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/02_colorbox_plugin/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/06_slideshow_fade/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/05_timers/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/04_rollover_fade/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/03_jcrop/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/10_select_column_checkboxes/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/09_editable_table_cells/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/08_pagination/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/07_repeating_table_headers/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/06_fixed_table_headers/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/05_event_delegation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/04_expandable_tree/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/03_select_lists/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_08/01_jquery_ui_selectable/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/11_star_ratings/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/12_date_picker/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/10_autocomplete/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/09_inline_editing/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/08_check_all/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/07_form_hints/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/06_max_length_indicator/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/05_validation_plugin/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/darthFader.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/baronVonJovi.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/computadors.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/04_submit_event/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/03_simple_inline_validation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/02_radio_buttons/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/01_simple_validation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/14_sending_form_data/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/13_consuming_xml/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/12_ajax_error_handling/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/10_global_event_handlers/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/11_endless_scrolling/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/09_ajax_gallery_with_spinner/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/08_ajax_image_gallery_improved/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/07_ajax_image_gallery/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/moFat.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/darthFader.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/computadors.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/04_live_event_handler/baronVonJovi.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/03_load_with_selector/moFat.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/13_sliders/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/14_drag_drop/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/15_sortables/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/16_progress_bar/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/17_simple_modal_dialog/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/18_jquery_ui_dialog/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_07/19_growl_style_notifications/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/moFat.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/computadors.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/darthFader.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/22_vertical_pane_splitter/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/02_hijax_links/baronVonJovi.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/01_lightbox/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_04/01_lightbox/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/22_vertical_pane_splitter/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/21_horizontal_pane_splitter/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/22_vertical_pane_splitter/splitter.css",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/21_horizontal_pane_splitter/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/20_resizable_textarea/script.js",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/17_themable_components/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/16_queue_dequeue_animations/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/15_special_event/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/14_event_namespacing/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/13_event_unbinding/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/12_custom_events_with_params/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/11_custom_events/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/10_event_properties/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/09_custom_selectors/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/08_overwriting_existing_function/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/07_$_prefixed_functions/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/06_extending_jquery/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/04_plugin_callbacks/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/03_plugin_options_with_defaults/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/12_scroll_event/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_09/02_plugin_options/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/11_jquery_ui_effects/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/10_animated_navigation_2/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/09_animated_navigation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/08_animation_queue/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/07_bouncy_content_panes/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/06_other_easing_options/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/05_easing/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/04_color_animation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/03_animate_show_hide/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/19_resizable_elements/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/20_resizable_textarea/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03/02_relative_css_animation/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_02/24_get_content/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_02/23_text_vs_html/index.html",
+		"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_02/22_modifying_content/index.html"
 	],
 	"find":
 	{
@@ -241,9 +285,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 103.0,
+		"height": 351.0,
 		"where_history":
 		[
+			"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja",
+			"/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_03",
 			"/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp",
 			"/Users/jeremybwilson/Documents/Github/code/codingdojo_academy",
 			"/Users/jeremybwilson/Documents/Github/code",
@@ -255,6 +301,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>",
+			"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \n  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>",
+			"      <h2>\n        Welcome!\n      </h2>",
+			"      <p>\n        &copy; Copyright 2010 CelebriTracker Productions\n      </p>",
+			"      <h2>\n        Welcome!\n      </h2>",
+			"      <p id=\"disclaimer\">\n        Disclaimer! This service is not intended for the those with criminal intent. Celebrities are kind of like people so their privacy should be respected.\n      </p>",
+			"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \n  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n  <title>StarTrackr!</title>",
+			"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n  <title>StarTrackr!</title>",
 			"sigma",
 			"#yellow",
 			"10px",
@@ -273,6 +327,12 @@
 		"regex": true,
 		"replace_history":
 		[
+			"<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"      <h2>Welcome!</h2>",
+			"      <p>&copy; Copyright 2018 CelebriTracker Productions</p>",
+			"      <h2>Welcome!</h2>",
+			"      <p id=\"disclaimer\">Disclaimer! This service is not intended for the those with criminal intent. Celebrities are kind of like people so their privacy should be respected.</p>",
+			"<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>StarTrackr!</title>",
 			"yellow"
 		],
 		"reverse": false,
@@ -284,14 +344,136 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								654,
+								654
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 17.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/05_getJSON/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								181
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								383
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/jeremybwilson/Documents/Github/code/jquery_nov_to_ninja/chapter_06/06_twitter_search/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								742,
+								742
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -344,7 +526,7 @@
 	"project": "/Users/jeremybwilson/Documents/Github/code/coding-dojo.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 214.0
 	},
 	"save_all_on_build": true,
 	"select_file":

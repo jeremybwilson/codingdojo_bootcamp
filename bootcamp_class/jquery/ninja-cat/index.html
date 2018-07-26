@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Ninja to Cat</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  body{
+    text-align: center;
+  }
+  #wrapper {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .strong {
+    color: red;
+  }
+  img {
+    height: 42px;
+    width: 181px;
+    border: 1px solid black;
+    margin: 2px;
+    display: block;
+  }
+  .ninjacat2, .ninjacat4, .ninjacat6, .ninjacat8, .ninjacat10 {
+    display: none;
+  }
+  .nodisplay{
+    display: none;
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+    console.log('The document is ready.');
+
+    $('.ninjacat1').click(function(){
+      $('.ninjacat1').hide();
+      $('.ninjacat2').show();;
+    });
+
+    $('.ninjacat2').click(function(){
+      $('.ninjacat2').hide();
+      $('.ninjacat1').show();;
+    });
+
+    // $('.ninjacat2').click(function(){
+    //   $('.ninjacat2').addClass('.nodisplay');
+    // });
+
+    $('.ninjacat3').click(function(){
+      $('.ninjacat3').hide();
+      $('.ninjacat4').show();;
+    });
+
+    $('.ninjacat4').click(function(){
+      $('.ninjacat4').hide();
+      $('.ninjacat3').show();;
+    });
+
+
+    $('.ninjacat5').click(function(){
+      $('.ninjacat5').hide();
+      $('.ninjacat6').show();;
+    });
+
+    $('.ninjacat6').click(function(){
+      $('.ninjacat6').hide();
+      $('.ninjacat5').show();;
+    });
+
+    $('.ninjacat7').click(function(){
+      $('.ninjacat7').hide();
+      $('.ninjacat8').show();;
+    });
+
+    $('.ninjacat8').click(function(){
+      $('.ninjacat8').hide();
+      $('.ninjacat7').show();;
+    });
+
+    $('.ninjacat9').click(function(){
+      $('.ninjacat9').hide();
+      $('.ninjacat10').show();;
+    });
+
+    $('.ninjacat10').click(function(){
+      $('.ninjacat10').hide();
+      $('.ninjacat9').show();;
+    });
+
+    $('#restore-btn').click(function(){
+      $('.ninjacat1, .ninjacat3,.ninjacat5, .ninjacat7, .ninjacat9').show();
+      $('.ninjacat2, .ninjacat4, .ninjacat6, .ninjacat8, .ninjacat10').hide();
+    });
+
+  });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <h1>Ninja to Cat v1</h1>
+    </div>
+    <div class="row">
+      <img class="ninjacat1" src="images/ninja0.png" />
+      <img class="ninjacat2" src="images/cat0.png" />
+    </div>
+    <div class="row">
+      <img class="ninjacat3" src="images/ninja1.png" />
+      <img class="ninjacat4" src="images/cat1.png" />
+    </div>
+    <div class="row">
+      <img class="ninjacat5" src="images/ninja2.png" />
+      <img class="ninjacat6" src="images/cat2.png" />
+    </div>
+    <div class="row">
+      <img class="ninjacat7" src="images/ninja3.png" />
+      <img class="ninjacat8" src="images/cat3.png" />
+    </div>
+    <div class="row">
+      <img class="ninjacat9" src="images/ninja4.png" />
+      <img class="ninjacat10" src="images/cat4.png" />
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button id="restore-btn" class="btn btn-primary">Restore</button>
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+</body>
+</html>

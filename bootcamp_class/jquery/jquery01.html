@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Static Content v2</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  body{
+    text-align: center;
+  }
+  #wrapper {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .strong {
+    color: red;
+  }
+  button {
+    display: block;
+  }
+  </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    console.log('The document is ready.');
+
+    $('.alert').click(function(){
+      alert('you clicked me');
+    });
+
+    $('.new_btn').click(function(){
+      $('#buttons').append("<button class='alert btn btn-primary'>I am a dynamically generated button!</button>");
+    });
+
+  });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <h1>Static Content</h1>
+    </div>
+    <div class="row">
+      <button class="alert btn btn-primary">Click me for a message!</button>
+    </div>
+    <div class="row">
+      <button class="alert btn btn-primary">Click me for a message!</button>
+    </div>
+    <div class="row">
+      <button class="alert btn btn-primary">Click me for a message!</button>
+    </div>
+    <div class="row">
+      <button class="new_btn btn btn-primary">Click me to add a new button!</button>
+    </div>
+    <div class="row">
+      <h3>Dynamically rendered content!</h3>
+    </div>
+    <div class="row">
+      <div id="buttons"></div>
+    </div>
+  </div>
+</body>
+</html>

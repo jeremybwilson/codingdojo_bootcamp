@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Assignment 1</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  * {
+    margin:0px;
+    padding: 0px;
+  }
+  #wrapper {
+    margin: 10px 20px;
+  }
+  button, p {
+    margin: 10px;
+  }
+
+  .blue{
+    color: blue;
+  }
+  .red {
+    color: red;
+  }
+  .toggleImage1, .toggleText3, .toggleText4 {
+    display: none;
+  }
+  </style>
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <script>
+  $(document).ready(function(){
+    console.log('The document is ready.');
+
+    $('#toggleButton1').click(function(){
+      // $('p.toggleText1').addClass('red');  // this works but toggleClass is better
+      // $('.toggleImage1').removeClass();    // this works but toggleClass is better
+      $('p.toggleText1').toggleClass('red'); 
+      console.log('You clicked this :' + this);
+    });
+
+    $('#toggleButton2').click(function(){
+      $('.toggleImage1').show();
+    });
+
+    $('#toggleButton3').click(function(){
+      $('.toggleImage2').hide();
+    });
+
+    $('#toggleButton4').click(function(){
+      $('.toggleImage3').slideToggle();
+    });
+
+    $('#toggleButton5').click(function(){
+      $('.toggleText2').slideUp("slow", function(){
+        console.log('Animation complete')
+      });
+    });
+
+    $('#toggleButton6').click(function(){
+      $('.toggleText3').slideDown("slow", function(){
+        console.log('Animation complete')
+      });
+    });
+
+    $('#toggleButton7').click(function(){
+      $('.toggleText4').fadeIn("slow");
+      console.log('Animation complete')
+    });
+
+    $('#toggleButton8').click(function(){
+      $('.toggleText5').fadeOut("slow");
+      console.log('Animation complete')
+    });
+
+    $('#appendButton1').click(function(){
+      $('p.appendText1').append('<p>This new text was added..</p>');
+    });
+
+    $('#beforeButton1').click(function(){
+      $('.beforeButton1').toggle(function(){
+        $(this).before("<p>Before test.</p>");
+      });
+    });
+
+    $('#afterButton1').click(function(){
+      $('.afterButton1').toggle().after("<p>After test.</p>");
+    });
+
+    $('#htmlButton').click(function(){
+      $('p.htmlButton').html("<span>All new content. <em>You bet!</em></span>");
+    })
+
+    $('#textButton').click(function(){
+      $('.textButton').text("All new text. You bet!");
+    })
+
+    var title = $("em").attr( "title" );
+    $("span.titleText").text( title ).addClass('red');
+
+    $("input").keyup(function() {
+      var value = $( this ).val();
+      $("p.textValue1").text( value );
+    })
+    .keyup();
+
+  });
+
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton1">Toggle Class (and click)</button>
+      <p class="toggleText1">Click the button to add class 'red' to this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton2">Show Image</button>
+      <img class="toggleImage1" src="book.jpg" />
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton3">Hide Image</button>
+      <img class="toggleImage2" src="book.jpg" />
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton4">Slide Toggle</button>
+      <img class="toggleImage3" src="book.jpg" />
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" id="appendButton1">Append</button>
+      <p class="appendText1">Lorem ipsum dolor sit amet.  </p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton5">Slide Up</button>
+      <p class="toggleText2">Click the button to slide toggle (down) this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton6">Slide Down</button>
+      <p class="toggleText3">Click the button to slide toggle (down) to this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton7">Fade In</button>
+      <p class="toggleText4">Click the button to slide toggle (down) to this paragraph!</p>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" id="toggleButton8">Fade Out</button>
+      <p class="toggleText5">Click the button to slide toggle (down) to this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="beforeButton1">Before</button>
+      <p class="beforeButton1">Click the button to slide toggle (down) to this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="afterButton1">After</button>
+      <p class="afterButton1">Click the button to slide toggle (down) to this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="htmlButton">.html() method</button>
+      <p class="htmlButton">Click the button to change the content of this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button class="btn btn-primary" id="textButton">.text() method</button>
+      <p class="textButton">Click the button to change the content of this paragraph!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <p>Once there was a <em title="huge, gigantic">large</em> dinosaur...</p>
+      <p>The title text is: <span class="titleText"></span></p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" type="text" placeholder="" value="Change this text">  
+      </div>
+      <div class="col">
+        <p class="textValue1"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

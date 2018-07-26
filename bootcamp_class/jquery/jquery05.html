@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Traversing Elements</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  #wrapper {
+    margin: 0 auto;
+    width: 95%;
+  }
+  div.row.flex>h1, button, ul {
+    display: block;
+  }
+  ul li {
+    list-style-type: none;
+  }
+  </style>
+  <script type="text/javascript">
+  // return false doesn't allow the page to refresh
+  // .submit works in two ways: 1) listener, 2) used to hard submit
+  // .serialize preps forms being handled by a computer
+
+  $(document).ready(function(){
+
+    console.log('The document is ready.');
+   $('button').click(function(){
+       $(this).siblings().children().children().text('Jeremy Wilson was here!')
+   });
+
+  });
+
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="container-fluid">
+      <div class="row flex">
+        <h1>jQuery - Traversing Elements</h1>
+        <button>Click me for crazy things!</button>
+        <ul>
+          <li><h3>Tiger Woods</h3></li>
+          <li><h3>Phil Mickelson</h3></li>
+          <li><h3>Ben Hogan</h3></li>
+          <li><h3>Jack Nicklaus</h3></li>
+          <li><h3>Gary Player</h3></li>
+          <li><h3>Rory Mcilroy</h3></li>
+        </ul>
+      </div><!-- ./row flex -->
+    </div><!-- ./container-fluid -->
+  </div>
+</body>
+</html>

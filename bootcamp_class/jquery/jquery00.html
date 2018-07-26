@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 101</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  * {
+    margin:0px;
+    padding: 0px;
+  }
+  #wrapper {
+    margin: 10px 20px;
+  }
+  button {
+    display: block;
+  }
+  p {
+    color: blue;
+    margin: 8px;
+  }
+  .strong {
+    color: red;
+  }
+  </style>
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <script>
+  $(document).ready(function(){
+    console.log('The document is ready.');
+    $("div#wrapper").html();
+    console.log($)
+    $("#toggleText1").css("color", "#F00");
+    $("#toggleText1").html();
+
+    $("#toggleText1").on( "myCustomEvent", function( event, myName ) {
+      $(this).text(myName + ", hi there!");
+      $("span")
+        .stop()
+        .css( "opacity", 1 )
+        .text( "myName = " + myName )
+        .fadeIn( 30 )
+        .fadeOut( 1000 );
+    });
+
+    $("#toggleButton1").click(function(){
+      $('#toggleText1').trigger( "myCustomEvent", [ "Jeremy" ] );
+      $('#toggleButton1').addClass('btn-primary');
+      console.log('The button should now be blue.')
+    });
+
+    $('#toggleButton2').click(function(){
+      $('.toggleText2').slideToggle();
+    })
+
+    // var str = $("p:first").text();
+    // $("p:last").html( str );
+
+    var count = 0;
+    $( "body" ).on( "click", "p", function() {
+      $( this ).after( "<p>Another paragraph! " + (++count) + "</p>" );
+    });
+
+    // $('#image1').click(function(){
+    //   $('#image1').hide();
+    // });
+    // $('#image2').click(function(){
+    //     $('#image2').hide();
+    // });
+    // $('#image3').click(function(){
+    //     $('#image3').hide();
+    // });
+    // $('#image4').click(function(){
+    //     $('#image4').hide();
+    // });
+    // $('#image5').click(function(){
+    //     $('#image5').hide();
+    // });
+    // all of the above code is redundant
+    // choose an element (within the selector) that triggered the even
+    $('img').click(function(){
+      $(this).hide();
+    })
+  });
+
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <button id="toggleButton1">This is a button</button>
+      <p id="toggleText1">Hello <span class="strong">world</span>!</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button id="toggleButton2">Slide toggle</button>
+      <p class="toggleText2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta ipsum tempore pariatur deserunt placeat alias a, eligendi eveniet at atque dolor mollitia corporis nobis hic obcaecati sequi, ea temporibus.</p>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <img src="image1.jpg" />
+      <img src="image2.jpg" />
+      <img src="image3.jpg" />
+      <img src="image4.jpg" />
+      <img src="image5.jpg" />
+    </div>
+  </div>
+</body>
+</html>

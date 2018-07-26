@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Hover In/Out</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  #wrapper {
+    margin: 10px 20px;
+    width: 420px;
+  }
+  .row {
+    display: inline-block;
+  }
+  div.row:nth-of-type(1), div.row:nth-of-type(6){
+    display: block;
+  }
+  .strong {
+    color: red;
+  }
+  .hide {
+    display: none;
+  }
+  .active {
+    display: inline-block;
+  }
+  img {
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 5px;
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+    console.log('The document is ready.');
+    let beforeImgPath = "images/snake-eyes.jpg";
+    let hoverImgPath = "images/snake-eyes2.jpg";
+    $('img').hover(
+      function(){
+        $(this).attr("src", hoverImgPath);
+        console.log(hoverImgPath);
+      },
+      function(){
+        $(this).attr("src", beforeImgPath);
+        console.log(beforeImgPath);
+      }
+    );
+
+  });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <h1>Hover In/Out</h1>
+      <p>Hover the mouse over the images to switch them.  Check the console for image path info</p>
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">
+      <img src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+</body>
+</html>

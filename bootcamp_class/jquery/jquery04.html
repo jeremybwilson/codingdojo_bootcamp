@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - for Forms</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  body{
+    margin: 0 auto;
+  }
+  #wrapper {
+    margin: 0 auto;
+    width: 95%;
+  }
+  #form1 {
+    width: 50%;
+    display: block;
+  }
+  </style>
+  <script type="text/javascript">
+  // return false doesn't allow the page to refresh
+  // .submit works in two ways: 1) listener, 2) used to hard submit
+  // .serialize preps forms being handled by a computer
+
+  $(document).ready(function(){
+    console.log('The document is ready.');
+
+    $('#form1').submit(function(){
+      // console log serialized form data
+      console.log($(this).serialize());
+      // return false to prent submission of form with id="#form1"
+      return false
+    });
+    // will bind to button outside of form with id="#form1"
+    $('.btn').click(function(){
+      $('#form1').submit();
+    });
+  });
+
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="container-fluid">
+      <div class="row flex">
+        <h1>jQuery for Forms</h1>
+      </div>
+      <div class="row flex">
+        <form id="form1" action="process.php" method="post" accept-charset="utf-8">
+          <div class="form-group">
+            <label for="first_name">First name</label>
+            <input class="form-control" type="text" name="first_name">
+            <label for="last_name">Last name</label>
+            <input class="form-control" type="text" name="last_name">
+            <label for="email">Email</label>
+            <input class="form-control" type="text" name="email">
+            <input class="btn-primary" type="submit" value="submit">
+          </div><!-- ./form-group -->
+        </form>
+      </div>
+      <div class="row flex">
+        <button class="btn btn-primary">Click me to use .submit() differenctly!</button>
+      </div><!-- ./row flex -->
+    </div><!-- ./container-fluid -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 101</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+  #wrapper {
+    margin: 10px 20px;
+    width: 420px;
+  }
+  p {
+    color: blue;
+  }
+  .strong {
+    color: red;
+  }
+  img {
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 5px;
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+    console.log('The document is ready.');
+    let pTag = document.getElementById('first-p');
+    // console.dir(pTag);
+    let btn = document.getElementById('btn');
+    btn.addEventListener("click", function(){
+      pTag.style.backgroundColor = "green";
+    });
+
+    $('#btn').click(function(){
+      let pTag = $('#first-p')
+      pTag.css('background-color', 'green');
+    })
+
+    $('#snakeeyes1, #snakeeyes2, #snakeeyes3, #snakeeyes4, #snakeeyes5, #snakeeyes6, #snakeeyes7, #snakeeyes8').click(function(){
+      $(this).hide(function(){
+        // $(this).hide(function(){
+          $(this).hide();
+        // });
+      });
+    });
+
+    $('#restore-btn').click(function(){
+      $('#snakeeyes1, #snakeeyes2, #snakeeyes3, #snakeeyes4, #snakeeyes5, #snakeeyes6, #snakeeyes7, #snakeeyes8').show();
+    });
+
+  });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="row">
+      <p id="first-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta ipsum tempore pariatur deserunt placeat alias a, eligendi eveniet at atque dolor mollitia corporis nobis hic obcaecati sequi, ea temporibus.</p>
+      <button id="btn" class="btn btn-primary">Click Me!</button>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <img id="snakeeyes1" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes2" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes3" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes4" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes5" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes6" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes7" src="images/snake-eyes.jpg" />
+      <img id="snakeeyes8" src="images/snake-eyes.jpg" />
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+      <button id="restore-btn" class="btn btn-primary">Restore</button>
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+</body>
+</html>

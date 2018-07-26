@@ -1,0 +1,35 @@
+Jeremys-MacBook-Pro:code jeremybwilson$ mkdir GitHubRepoAssignment
+Jeremys-MacBook-Pro:code jeremybwilson$ cd GitHubRepoAssignment/
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git init
+Initialized empty Git repository in /Users/jeremybwilson/Documents/Github/code/GitHubRepoAssignment/.git/
+
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ touch README.md
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ pico README.md
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git add README.md
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+  new file:   README.md
+
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git commit -m "Adding Assignment repo with README.md"
+[master (root-commit) c2af31d] Adding Assignment repo with README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git status
+On branch master
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git remote add origin https://github.com/jeremybwilson/GitHubRepoAssignment.git
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 289 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jeremybwilson/GitHubRepoAssignment.git
+ * [new branch]      master -> master
+Jeremys-MacBook-Pro:GitHubRepoAssignment jeremybwilson$

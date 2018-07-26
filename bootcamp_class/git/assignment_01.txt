@@ -1,0 +1,92 @@
+Jeremys-MacBook-Pro:code jeremybwilson$ mkdir gittest
+Jeremys-MacBook-Pro:code jeremybwilson$ cd gittest/
+
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git init
+Initialized empty Git repository in /Users/jeremybwilson/Documents/Github/code/gittest/.git/
+Jeremys-MacBook-Pro:gittest jeremybwilson$ touch index.html
+Jeremys-MacBook-Pro:gittest jeremybwilson$ touch styles.css
+Jeremys-MacBook-Pro:gittest jeremybwilson$ touch aboutMe.text
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git add .
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git commit -m "First commit"
+[master (root-commit) 9b13cd5] First commit
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 aboutMe.text
+ create mode 100644 index.html
+ create mode 100644 styles.css
+Jeremys-MacBook-Pro:gittest jeremybwilson$ less aboutMe.text
+Jeremys-MacBook-Pro:gittest jeremybwilson$ pico aboutMe.text
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git commit -m "added favorite movie to aboutMe"
+On branch master
+Changes not staged for commit:
+  modified:   aboutMe.text
+no changes added to commit
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git add .
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git commit -m "added favorite movie to aboutMe"
+[master 675e2d1] added favorite movie to aboutMe
+ 1 file changed, 1 insertion(+)
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git log
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git add .
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git status
+On branch master
+You are currently reverting commit 9b13cd5.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  deleted:    index.html
+  deleted:    styles.css
+
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git status
+On branch master
+You are currently reverting commit 9b13cd5.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  deleted:    index.html
+  deleted:    styles.css
+
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git commit -m "added favorite movie to aboutMe"
+[master 18be7bb] added favorite movie to aboutMe
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 index.html
+ delete mode 100644 styles.css
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git status
+On branch master
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git log
+commit 18be7bb195e889d5b35a192b30894ac9a67c4322
+Author: Jeremy Wilson <jeremybwilson@gmail.com>
+Date:   Sun Jul 15 16:17:14 2018 -0700
+
+    added favorite movie to aboutMe
+
+commit 675e2d1e7caf583ee22d1a83e992b29d01cc8a6b
+Author: Jeremy Wilson <jeremybwilson@gmail.com>
+Date:   Sun Jul 15 16:05:13 2018 -0700
+
+    added favorite movie to aboutMe
+
+commit 9b13cd5f3d60790ee204ff897a5a43bc40ec7859
+Author: Jeremy Wilson <jeremybwilson@gmail.com>
+Date:   Sun Jul 15 15:52:50 2018 -0700
+
+    First commit
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git revert -n 18be7bb195e889d
+Jeremys-MacBook-Pro:gittest jeremybwilson$ pico aboutMe.text
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git add .m
+fatal: pathspec '.m' did not match any files
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git add .
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git commit -m "added favorite book to aboutMe"
+[master b838d3d] added favorite book to aboutMe
+ 3 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 index.html
+ create mode 100644 styles.css
+Jeremys-MacBook-Pro:gittest jeremybwilson$ git status
+On branch master
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:gittest jeremybwilson$

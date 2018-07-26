@@ -1,0 +1,84 @@
+Jeremys-MacBook-Pro:code jeremybwilson$ mkdir basic_repo
+Jeremys-MacBook-Pro:code jeremybwilson$ touch index.html
+Jeremys-MacBook-Pro:code jeremybwilson$ touch main.css
+Jeremys-MacBook-Pro:code jeremybwilson$ git init
+Initialized empty Git repository in /Users/jeremybwilson/Documents/Github/code/.git/
+Jeremys-MacBook-Pro:code jeremybwilson$ cd basic_repo/
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git init
+Initialized empty Git repository in /Users/jeremybwilson/Documents/Github/code/basic_repo/.git/
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ touch README.md
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ ls
+README.md index.html  main.css
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ pico README.md
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git add .
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git commit -m "Initial commit"
+[master (root-commit) 498da61] Initial commit
+ 3 files changed, 25 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+ create mode 100644 main.css
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git remote add origin https://github.com/jeremybwilson/basic_repo.git
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 750 bytes | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+remote: Unexpected system error after push was received.
+remote: These changes may not be reflected on github.com!
+remote: Your unique error code: 0d5ef2adcb625bf6cfce847c0b07c437
+To https://github.com/jeremybwilson/basic_repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git checkout -b new_feature
+Switched to a new branch 'new_feature'
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ ls
+README.md index.html  main.css
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git add .
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git commit -m "added normalize css"
+[new_feature 22b233d] added normalize css
+ 1 file changed, 1 insertion(+)
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git merge new_feature
+Updating 498da61..22b233d
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git commit -am "merged feature branch with normalize added"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git add .
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git commit -am "merged feature branch with normalize added"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git diff
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 433 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: Unexpected system error after push was received.
+remote: These changes may not be reflected on github.com!
+remote: Your unique error code: c0a3f5be47fea3cb8517683ea26a833a
+To https://github.com/jeremybwilson/basic_repo.git
+   498da61..22b233d  master -> master
+Branch master set up to track remote branch master from origin.
+Jeremys-MacBook-Pro:basic_repo jeremybwilson$

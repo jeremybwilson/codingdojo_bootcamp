@@ -35,15 +35,13 @@ $(document).ready(function(){
       // this is another method to parse out unique character ID values from JSON
       let charID = response.url.split('/')[5];
 
-      // this logs each value uniquely => great
-      console.log(charID);
-
-      let htmlStr = `<div><h1>${charName}</h1></div>`;
+      let htmlStr = `<div data-id="${charID}"><h1>${charName}</h1></div>`;
       $('.starwars').append(htmlStr);
-      // this is not pullind down unique charID variables into the data-id attribute => bad juju...
-      $('.starwars>div').attr('data-id', charID);
 
-      // $('#starwars-people>div').append(`<img alt="${imgAlt}" id="${pokemonCharID}" src="${pokemonCharFullPath}" />`);
+      // this logs each value uniquely => great
+      // console.log(charID);
+
+      // $('.starwars-people div').append(`<img alt="${imgAlt}" id="${charID}" src="${starwarsPeopleFullPath}" />`);
     }, "json");
   }
 

@@ -4,11 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajax and APIs - Pokemon Assignment</title>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <title>Ajax and APIs - Opean Weather Assignment</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/script.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
@@ -21,33 +18,14 @@
     margin: 0 auto;
     width: 80%;
   }
-  #container-fluid h1, #container-fluid img {
+  #container-fluid h1{
     display: block;
   }
-  img.title {
-    height: 75px;
-    width: 250px;
+  .weather {
+    margin: 10px 0px;
   }
-  #pokemon, #pokemon div, #pokemon-display {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #pokemon {
-    width: 700px;
-  }
-  #pokemon-display {
-    border: 10px solid red;
-    width: 250px;
+  .weather-display{
     display: none;
-    padding: 5px;
-  }
-  #pokemon-display ul li {
-    list-style-type: none;
-  }
-  #pokemon img {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
   }
   .strong {
     font-weight: bold;
@@ -62,8 +40,13 @@
 </head>
 <body>
   <div id="container-fluid">
-    <div id="pokemon"></div>
-    <div id="pokemon-display"></div>
+    <div class="weather">
+      <form action="" method="get">
+        <input type="text" id="city" placeholder="Enter city name here"></input>
+        <input type="submit" value="Search Weather"></input>
+      </form>
+    </div>
+    <div class="weather-display"></div>
   </div>
 </body>
 </html>

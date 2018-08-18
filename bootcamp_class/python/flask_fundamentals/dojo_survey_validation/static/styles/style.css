@@ -1,0 +1,31 @@
+nav a {
+  display: inline-block;
+  width: 50px;
+}
+h1, h2, h3, h4, h5, p {
+  display: block;
+  width: 100%;
+}
+nav, form { 
+  width: 100%;
+}
+label, input, select, textarea, select.form-control {
+  width: 49%;
+}
+select.form-control{
+  display: inline-block;
+}
+.btn.btn-primary {
+  display: block;
+  text-align: right;
+  margin: 10px 88%;
+}
+.col.red, .col.green, .flashes.red, .flashes.green {
+  font-weight: bold;
+}
+.col.red, .flashes.red {
+  color: red;
+}
+.green, .flashes.green, .col.green {
+  color: green;
+}

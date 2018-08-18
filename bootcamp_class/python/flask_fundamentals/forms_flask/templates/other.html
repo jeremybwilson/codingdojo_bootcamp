@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <nav>
+          <a href="/">Home</a>
+          <a href="/other">Other</a>
+        </nav>
+      </div>
+      <div class="row">
+        <h1>{{ title }}</h1>
+        <form action="/process_form" method="post">
+          <label>First name:</label> <input type="text" name="first_name" placeholder="Jeremy">
+          <label>Favorite Fruit:</label> <input type="text" name="favorite_fruit" placeholder="Mango">
+          <label>Favorite instrument:</label> <input type="text" name="favorite_instrument" placeholder="saxophone">
+          <label>Favorite language:</label> <input type="text" name="favorite_language" placeholder="Python">
+          <input type="submit" value="Process!">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

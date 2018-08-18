@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Flask Assignment #1 - {{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        {% include 'nav.html' %}
+      </div>
+      <div class="row">
+        <h1>Welcome to the {{ title }} page</h1>
+        <p>This page is about Ninjas.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm">Name</div>
+        <div class="col-sm">Weapons</div>
+        <div class="col-sm">Uniform color</div>
+      </div>
+        {% if ninja_list %}
+          {% for item in ninja_list %}
+            <div class="row">
+              <div class="col-sm">{{ item['ninja'] }}</div>
+              <div class="col-sm">{{ item['weapon'] }}</div>
+              <div class="col-sm">{{ item['uniform_color'] }}</div>
+            </div>
+          {% endfor %}
+        {% endif %}
+    </div>
+  </body>
+</html>

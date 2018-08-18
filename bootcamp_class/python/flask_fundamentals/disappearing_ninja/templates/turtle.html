@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Flask Assignment #4 - {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        {% include 'nav.html' %}
+      </div>
+      {% if ninja_color == 'notapril.jpg' %}
+      <div class="row">
+        <img src="{{ url_for('static', filename='images/notapril.jpg') }}" />
+      </div>
+      {% else %}
+      <div class="row">
+        <h1>Welcome to the {{ ninja_color }}'s page</h1>
+        <img class="tmnt_img" src="{{ url_for('static', filename='images/tmnt.png') }}" />
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>{{ ninja_color }}  {{ session[color] }}</h2>
+
+          {% if session['color'] == 'purple' %}
+          <h2>Donatello</h2>
+          <img class="turtle" src="{{ url_for('static', filename='images/donatello.jpg') }}" />
+          {% elif session['color'] == 'orange' %}
+          <h2>Michelangelo</h2>
+          <img class="turtle" src="{{ url_for('static', filename='images/michelangelo.jpg') }}" />
+          {% elif session['color'] == 'blue' %}
+          <h2>Leonardo</h2>
+          <img class="turtle" src="{{ url_for('static', filename='images/leonardo.jpg') }}" />
+          {% elif session['color'] == 'red' %}
+          <h2>Raphael</h2>
+          <img class="turtle" src="{{ url_for('static', filename='images/raphael.jpg') }}" />
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

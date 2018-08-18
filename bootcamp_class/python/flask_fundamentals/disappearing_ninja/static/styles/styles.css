@@ -1,0 +1,42 @@
+.row {
+  text-align: center;
+}
+h1, h2, h3, h4, h5, p {
+  display: block;
+  width: 100%;
+}
+.result_log {
+  color: red;
+  text-align: center;
+}
+img.tmnt_img {
+  display: block;
+  height: 200px;
+  margin: 10px auto;
+}
+div.col a{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+div.col.blue {
+  border: 2px solid blue;
+}
+div.col.orange {
+  border: 2px solid orange;
+}
+div.col.purple {
+  border: 2px solid purple;
+}
+div.col.red {
+  border: 2px solid red;
+}
+img.turtle{
+  height: 100px;
+}
+form {
+  margin: 0 auto;
+}
+label {
+  display: none;
+}

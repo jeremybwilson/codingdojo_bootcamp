@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Assignment #5 - {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Welcome to the {{ title }}</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess! {% if result != 'no guess' %} You guessed {{ session['guessed'] }} {% endif %}</p>
+      </div>
+      <div class="row">
+        {% if result == 'high' %}
+          <label>{{ session['result'] }}</label>
+          <h2 class="high"> Too High Guy!</h2>
+        {% elif result == 'low' %}
+          <label>{{ session['result'] }}</label>
+          <h2 class="low"> Too Low Jabroni!</h2>
+        {% elif result == 'correct' %}
+          <label>{{ session['result'] }}</label>
+          <h2 class="win">{{ session['correct'] }} was the correct number.  Winner Winner Chicken Dinner!</h2>
+          <form action="/reset" method="post">
+            <div class="form-group">
+              <button type="submit" class="btn btn-link">Reset</button>
+            </div>
+          </form>
+        {% endif %}
+      </div>
+      <div class="row">
+        <form action="/guess" method="post">
+          <div class="form-group">
+            <label>Label here: </label>
+            <input type="number" name="guess" placeholder="Enter your guess here">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="result_log">
+        <h5>Session data: {{ session["correct"] }} Result: {{ session["result"] }}, You guessed: {{ session['guessed'] }}</h5>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+body{
+  margin: 0 auto;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+nav, form {
+  width: 100%;
+}

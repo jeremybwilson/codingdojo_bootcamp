@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Flask Assignment #4 - {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        {% include 'nav.html' %}
+      </div>
+      <div class="row">
+        <h1>Welcome to the {{ title }} page</h1>
+        <img class="tmnt_img" src="{{ url_for('static', filename='images/tmnt.png') }}" />
+      </div>
+      <div class="row">
+        <!-- dynamically set the link class here -->
+        <div class="col purple">
+          <!-- dynamically set the turtle name here -->
+          <h2>Donatello</h2>
+          <!-- linking an image -->
+          <a href="/ninja/purple" title="Donatello"><img class="turtle" src="{{ url_for('static', filename='images/donatello.jpg') }}" /></a>
+        </div>
+        <div class="col orange">
+          <!-- linking an image -->
+          <h2>Michaelangelo</h2>
+          <a href="/ninja/orange" title="Michelangelo"><img class="turtle" src="{{ url_for('static', filename='images/michelangelo.jpg') }}" /></a>
+        </div>
+        <div class="col blue">
+          <!-- linking an image -->
+          <h2>Leonardo</h2>
+          <a href="/ninja/blue" title="Leonardo"><img class="turtle" src="{{ url_for('static', filename='images/leonardo.jpg') }}" /></a>
+        </div>
+        <div class="col red">
+          <!-- linking an image -->
+          <h2>Raphael</h2>
+          <a href="/ninja/red" title="Raphael"><img class="turtle" src="{{ url_for('static', filename='images/raphael.jpg') }}" /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

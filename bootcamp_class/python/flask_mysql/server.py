@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template, session, flash
+from flask import Flask
 # import the Connector function
 from mysqlconnection import MySQLConnector
 app = Flask(__name__)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flask with MySQL - First Assignment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
     <link rel="stylesheet" 
@@ -17,23 +17,46 @@
       <div class="row">
         <h1>Welcome to the {{ title }} page</h1>
       </div>
-      <div class="row">
+      {% if friends %}
+      <div class="row friends-data">
         <h1>These are all my friends!</h1>
-        <p>First Name: Jay</p>
-        <p>Last Name: Patel</p>
-        <p>Occupation: Instructor</p>
+        <p class="id">Id: </p>
+        <p>First Name: </p>
+        <p>Last Name: </p>
+        <p>Occupation: </p>
         <hr>
-        <p>First Name: Jimmy</p>
-        <p>Last Name: Jun</p>
-        <p>Occupation: Instructor</p>
+      </div>
+      <div class="row friends-data">
+      {% for friend in friends %}
+        <p class="id"><a href="/friends/{{ friend['id'] }}/edit" title="{{ title }}">{{ friend['id'] }}</a></p>
+        <p>{{ friend['first_name'] }}</p>
+        <p>{{ friend['last_name'] }}</p>
+        <p>{{ friend['occupation'] }}</p>
         <hr>
-        <h2>Add a Friend</h2>
-        <form action='/friends' method='POST'>
-          <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
-          <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
-          <label for="occupation">Occupation:<input type="text" name="occupation" id="occupation"></label>
+      {% endfor %}
+      </div>
+      {% endif %}
+      {{ one_friend }}
+
+      <div class="row friends-data">
+        <h2>Add a friend</h2>
+        <form action="/friends" method="POST">
+          <label for="first_name">First name: </label> <input type="text" name="first_name" placeholder="First name" id="first_name" />
+          <label for="last_name">Last name: </label> <input type="text" name="last_name" placeholder="Last name" id="last_name" />
+          <label for="occupation">Occupation: </label> <input type="text" name="occupation" placeholder="Occupation" id="occupation" />
           <input type="submit" value="Add">
         </form>
+      </div>
+      <div class="row friends-data">
+        <h2>Update Friend</h2>
+        {% for friend in friends: %}
+        <form action="/friends/{{ friend['id'] }}/update" method="POST">
+          <label for="first_name">First Name: </label> <input type="text" name="first_name" value="{{ friend['first_name'] }}" id="first_name" />
+          <label for="last_name">Last Name: </label> <input type="text" name="last_name" value="{{ friend['last_name'] }}" id="last_name" />
+          <label for="occupation">Occupation: </label> <input type="text" name="occupation" value="{{ friend['occupation'] }}" id="occupation" />
+          <input type="submit" value="Update">
+        </form>
+        {% endfor %}
       </div>
     </div>
   </body>

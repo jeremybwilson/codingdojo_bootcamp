@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask with MySQL - {{ title }} Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Welcome to the {{ title }} page</h1>
+      </div>
+      <div class="row friends-data">
+        <h2>{{ title }} Friend</h2>
+        <form action='/friends/{{ u_id }}/update' method='POST'>
+          <label for="first_name">First Name: </label> <input type="text" name="first_name" value="{{ one_friend['first_name'] }}" id="first_name" />
+          <label for="last_name">Last Name: </label> <input type="text" name="last_name" value="{{ one_friend['last_name'] }}" id="last_name" />
+          <label for="occupation">Occupation: </label> <input type="text" name="occupation" value="{{ one_friend['occupation'] }}" id="occupation" />
+          <input type="submit" value="Update">
+        </form>
+      </div>
+      <div class="row">
+        <a href="/friends/{{ u_id }}/delete" title="Delete friend">Delete</a>
+      </div>
+      </div>
+
+    </div>
+  </body>
+</html>

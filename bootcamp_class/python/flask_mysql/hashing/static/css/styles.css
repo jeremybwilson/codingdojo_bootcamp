@@ -1,0 +1,20 @@
+h1, h2, h3, h4, h4, p, form {
+  display: block;
+}
+
+.row.friends-data {
+  margin: 10px 0px;
+}
+
+.row h1, .row h2 {
+  width: 100%;
+} 
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}

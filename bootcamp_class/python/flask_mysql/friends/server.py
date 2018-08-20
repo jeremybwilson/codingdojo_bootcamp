@@ -93,7 +93,7 @@ def update(friend_id):
 
   return redirect('/')
 
-@app.route('/friends/<friend_id>/delete', methods=['POST'])
+@app.route('/friends/<friend_id>/delete', methods=['GET'])
 def delete(friend_id):
 
   # Write query to delete specific user by id. 

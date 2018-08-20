@@ -14,7 +14,7 @@ def index():
   # print mysql.query_db('SELECT * FROM friends')
   friends_from_db = mysql.query_db('SELECT * FROM friends')
   print "*" * 80
-  print friends_from_db
+  print 'Here is the query:', friends_from_db
 
   return render_template('index.html', friends=friends_from_db, title="Home")
 
@@ -33,12 +33,11 @@ def create():
     'occupation': request.form['occupation']
   }
   # Run query, with dictionary values injected into the query.
-  friends_update = mysql.query_db(query, data)
-
-  print "*" * 80
-  print friends_update
+  # friends_update = mysql.query_db(query, data)
   mysql.query_db(query, data)
 
+  print "*" * 80
+  print 'Here is the SQL query:', query
   return redirect('/')
 
 @app.route('/friends/<friend_id>')
@@ -52,8 +51,7 @@ def show(friend_id):
   }
   # Run query with inserted data.
   friends_from_db = mysql.query_db(query, data)
-  print "*" * 80
-  print friends_from_db
+
   # Friends should be a list with a single object,
   # so we pass the value at [0] to our template under alias one_friend.
   return render_template('show.html', one_friend=friends_from_db[0], title="Show user")
@@ -93,7 +91,7 @@ def update(friend_id):
 
   return redirect('/')
 
-@app.route('/friends/<friend_id>/delete', methods=['GET'])
+@app.route('/friends/<friend_id>/delete')
 def delete(friend_id):
 
   # Write query to delete specific user by id. 

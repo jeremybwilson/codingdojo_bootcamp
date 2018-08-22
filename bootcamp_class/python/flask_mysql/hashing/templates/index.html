@@ -16,25 +16,25 @@
     <div class="container">
       <div class="row">
         <h1>Welcome to the {{ title }} page</h1>
-        <h2>Register user</h2>
-      </div>
-      <form action="/users/create" method="POST">
-      <div class="row friends-data">
-        <label for="user_name">Create user name: </label> <input type="text" name="user_name" placeholder="Create username" id="user_name" />
-      </div>
-      <div class="row friends-data">
-        <label for="email">Enter email address: </label> <input type="text" name="email" placeholder="Create email address" id="email" />
-      </div>
-      <div class="row friends-data">
-        <label for="password">Create password: </label> <input type="password" name="password placeholder="Enter password" id="password" />
-      </div>
-<!--       <div class="row friends-data">
-        <label for="password2">Re-enter password: </label> <input type="password" name="password2" placeholder="Re-enter password" id="password2" />
-      </div> -->
-      <div class="row friends-data">
-        <input class="btn btn-primary" type="submit" value="Register">
-      </div>
-      </form>
-    </div>
+        <h2>Create user</h2>
+        <form action="/users/create" method="POST">
+          <div class="row friends-data">
+            <label for="name">Enter username: </label> <input type="text" name="name" placeholder="Create username" />
+          </div>
+          <div class="row friends-data">
+            <label for="email">Enter email address: </label> <input type="text" name="email" placeholder="Create email address" />
+          </div>
+          <div class="row friends-data">
+            <label for="password">Create password: </label> <input type="password" name="password" placeholder="Enter password" />
+          </div>
+          <!-- <div class="row friends-data">
+            <label for="password2">Re-enter password: </label> <input type="password" name="password2" placeholder="Re-enter password" id="password2" />
+          </div> -->
+          <div class="row friends-data">
+            <input class="btn btn-primary" type="submit" value="Register">
+          </div>
+        </form>
+      </div><!-- /end .row -->
+    </div><!-- /end .container -->
   </body>
 </html>

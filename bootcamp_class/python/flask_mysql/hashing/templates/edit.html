@@ -19,16 +19,17 @@
       </div>
       <div class="row friends-data">
         <h2>{{ title }} Friend</h2>
-        <form action='/friends/{{ u_id }}/update' method='POST'>
-          <label for="first_name">First Name: </label> <input type="text" name="first_name" value="{{ one_friend['first_name'] }}" id="first_name" />
-          <label for="last_name">Last Name: </label> <input type="text" name="last_name" value="{{ one_friend['last_name'] }}" id="last_name" />
-          <label for="occupation">Occupation: </label> <input type="text" name="occupation" value="{{ one_friend['occupation'] }}" id="occupation" />
-          <input class="btn btn-primary" type="submit" value="Update">
+        <form action='/users/{{ u_id }}/edit' method='POST'>
+          <label for="name">Name: </label> <input type="text" name="name" value="{{ one_user['name'] }}" id="name" />
+          <label for="email">Email: </label> <input type="text" name="email" value="{{ one_user['email'] }}" id="email" />
+          <input type="submit" value="Update">
         </form>
       </div>
       <div class="row">
-        <a href="/friends/{{ u_id }}/delete" title="Delete friend">Delete</a>
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+        <a href="/users/{{ u_id }}/delete" title="Delete friend">Delete</a>
+      </div>
+      </div>
+
+    </div>
   </body>
 </html>

@@ -10,6 +10,10 @@ h1, h2, h3, h4, h4, p, form {
   width: 100%;
 } 
 
+.friends-data label, .friends-data input {
+  width: 50%;
+}
+
 .block {
   display: block;
   width: 100%;

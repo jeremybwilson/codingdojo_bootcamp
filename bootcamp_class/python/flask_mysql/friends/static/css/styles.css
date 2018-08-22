@@ -4,17 +4,41 @@ h1, h2, h3, h4, h4, p, form {
 
 .friends-data h1, .friends-data h2 {
   width: 100%;
-} 
+}
+
+.friends-data label, .friends-data input {
+  width: 50%;
+}
+
 .friends-data p {
   width: 31%;
 }
+
 .friends-data p.id {
   width: 5%;
 }
+
+hr {
+  width: 100%;
+}
+
+.col.red, .col.green, .flashes.red, .flashes.green {
+  font-weight: bold;
+}
+
+.col.red, .flashes.red {
+  color: red;
+}
+
+.green, .flashes.green, .col.green {
+  color: green;
+}
+
 .block {
   display: block;
   width: 100%;
 }
+
 .clear {
   clear: both;
 }

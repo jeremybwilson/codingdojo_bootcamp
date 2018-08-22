@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flask with MySQL - First Assignment</title>
+    <title>Flask with MySQL - First Assignment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
     <link rel="stylesheet" 
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
@@ -24,7 +24,7 @@
         <p>First Name: </p>
         <p>Last Name: </p>
         <p>Occupation: </p>
-        <hr>
+        <hr />
       </div>
       <div class="row friends-data">
       {% for friend in friends %}
@@ -32,31 +32,28 @@
         <p>{{ friend['first_name'] }}</p>
         <p>{{ friend['last_name'] }}</p>
         <p>{{ friend['occupation'] }}</p>
-        <hr>
       {% endfor %}
+      <hr />
       </div>
       {% endif %}
-      {{ one_friend }}
-
       <div class="row friends-data">
+      {% with messages = get_flashed_messages() %}
+        {% if messages != 'Success' %} 
+          <ul class="flashes red">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>  
+        {% endif %}
+      {% endwith %}
+
         <h2>Add a friend</h2>
         <form action="/friends" method="POST">
           <label for="first_name">First name: </label> <input type="text" name="first_name" placeholder="First name" id="first_name" />
           <label for="last_name">Last name: </label> <input type="text" name="last_name" placeholder="Last name" id="last_name" />
           <label for="occupation">Occupation: </label> <input type="text" name="occupation" placeholder="Occupation" id="occupation" />
-          <input type="submit" value="Add">
+          <input class="btn btn-primary" type="submit" value="Add">
         </form>
-      </div>
-      <div class="row friends-data">
-        <h2>Update Friend</h2>
-        {% for friend in friends: %}
-        <form action="/friends/{{ friend['id'] }}/update" method="POST">
-          <label for="first_name">First Name: </label> <input type="text" name="first_name" value="{{ friend['first_name'] }}" id="first_name" />
-          <label for="last_name">Last Name: </label> <input type="text" name="last_name" value="{{ friend['last_name'] }}" id="last_name" />
-          <label for="occupation">Occupation: </label> <input type="text" name="occupation" value="{{ friend['occupation'] }}" id="occupation" />
-          <input type="submit" value="Update">
-        </form>
-        {% endfor %}
       </div>
     </div>
   </body>

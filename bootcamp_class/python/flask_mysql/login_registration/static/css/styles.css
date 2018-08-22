@@ -1,0 +1,86 @@
+h1, h2, h3, h4, h4, p, form {
+  display: block;
+}
+
+.friends-data h1, .friends-data h2 {
+  width: 100%;
+}
+
+.friends-data form {
+  width: 50%;
+  text-align: right;
+}
+
+.friends-data label {
+  width: 49%;
+  text-align: left;
+}
+
+.friends-data input {
+  width: 49%;
+}
+
+.friends-data .btn.btn-primary {
+  text-align: center;
+}
+
+hr {
+  width: 100%;
+}
+
+.col.red, .col.green, .flashes.red, .flashes.green {
+  font-weight: bold;
+}
+
+.col.red, .flashes.red {
+  color: red;
+}
+
+.success {
+  width: 100%;
+}
+
+.green, .flashes.green, .col.green, .success {
+  color: green;
+}
+
+div.green {
+  background-color: green;
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+div.green p {
+  color: white;
+  margin: 0;
+}
+
+.results {
+  margin: 20px 0px;
+}
+
+.underline {
+  text-decoration: underline;
+  width: 100%;
+}
+
+.row.results ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.row.results ul li {
+  margin: 5px 0;
+}
+.row.results form {
+  display: inline-block;
+}
+.block {
+  display: block;
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}

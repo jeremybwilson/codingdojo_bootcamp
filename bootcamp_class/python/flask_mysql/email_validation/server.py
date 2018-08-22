@@ -42,7 +42,6 @@ def validate():
   # create an empty list to store errors/successes
   errors = []
   successes = []
-  valid_email = False
 
   # recall the name attributes we added to our form inputs
   # to access the data that the user input into the fields we use request.form['email']
@@ -84,8 +83,7 @@ def validate():
   else:
     # if length of success messages are > zero
     if len(successes) > 0:
-      print "Here are the db results: ", results, '\n'
-      valid_email = True
+      # print "Here are the db results: ", results, '\n'
       validated_email = email_from_db
       session['validated_email'] = validated_email
       session['success'] = True

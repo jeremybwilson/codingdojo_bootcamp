@@ -50,8 +50,13 @@ def validate():
   data = {
     'email': form['email'],
   }
+  
+  # Run query, with dictionary values injected into the query.
+  results = mysql.query_db(validate_query, data)
 
-
+  # somewhere here a comparison needs to be made between the email values in the database
+  # and the form['email'] submitted from the previous page
+  # 
 
   # validate email address
   # if the email address is less than 1, the field is blank => error
@@ -72,8 +77,6 @@ def validate():
   else:
     # if length of success messages are > zero
     if len(successes) > 0:
-      # Run query, with dictionary values injected into the query.
-      results = mysql.query_db(validate_query, data)
       print "Here are the db results: ", results, '\n'
       valid_email = True
       # validated_email = data['email']

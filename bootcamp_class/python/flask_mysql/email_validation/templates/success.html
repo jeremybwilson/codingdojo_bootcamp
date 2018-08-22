@@ -21,7 +21,7 @@
         {% if session['success'] == True %}
         <h1 class="success">Success</h1>
         <div class="green">
-          <p>The email address you entered ({{ valid_email }} )<br /> is a VALID email address! Thank you.</p>
+          <p>The email address you entered ({{ session['validated_email'] }} )<br /> is a VALID email address! Thank you.</p>
         </div>
         {% endif %}
       </div>

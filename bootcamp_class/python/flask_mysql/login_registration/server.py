@@ -120,7 +120,7 @@ def create():
   else:
     for success in successes:
       flash(success)
-
+  # create salt and combine with input value (password)
     salt = binascii.b2a_hex(os.urandom(15))
     hashed_password = md5.new(password + salt).hexdigest()
 
@@ -172,13 +172,13 @@ def login():
     user = users_list[0]
 
   # create salt and combine with input value (password)
-  # salt = binascii.b2a_hex(os.urandom(15))
-  hashed_input = md5.new(password).hexdigest()
+  salt = binascii.b2a_hex(os.urandom(15))
+  hashed_input = md5.new(password + salt).hexdigest()
 
   print "*" * 80
   print "User password entered: ", hashed_input, '\n'
   print "User password from db: ", user['password']
-  
+
   # pw_from_database = hashed_db_password # => password column + salt column
   if hashed_input != user['password']:
     errors.append('Invalid username or password')

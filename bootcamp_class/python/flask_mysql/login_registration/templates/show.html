@@ -21,24 +21,19 @@
         {% include 'nav.html' %}
       </div>
       <div class="row user-data">
-      {% with messages = get_flashed_messages() %}
-        {% if messages != 'Success' %} 
-          <ul class="flashes red">
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-          </ul>  
-        {% endif %}
-      {% endwith %}
-
-        <h2>Edit user</h2>
-        <form action="/{{ user['id']}}/update" method="POST">
-          <label for="email">First name: </label> <input type="text" name="first_name" value="{{ user['first_name'] }}" placeholder="{{ user['last_name'] }} id="first_name" />
-          <label for="email">Last name: </label> <input type="text" name="last_name" value="{{ user['last_name'] }}" placeholder="{{ user['first_name'] }} id="last_name" />
-          <label for="email">Email: </label> <input type="text" name="email" value="{{ user['email'] }}" placeholder="{{ user['email'] }} id="email" />
-          <button class="btn btn-primary" type="submit">Update user</button>
-        </form>
+        <div class="col strong">ID</div>
+        <div class="col strong">First name</div>
+        <div class="col strong">Last name</div>
+        <div class="col strong">Email</div>
       </div>
+      {% for user in users %}
+      <div class="row user-data">
+        <div class="col"><a href="/{{ user['id'] }}/edit" title="Edit">{{ user['id'] }}</a></div>
+        <div class="col">{{ user['first_name'] }}</div>
+        <div class="col">{{ user['last_name'] }}</div>
+        <div class="col">{{ user['email'] }}</div>
+      </div>
+      {% endfor %}
     </div>
   </body>
 </html>

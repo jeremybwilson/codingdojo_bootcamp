@@ -1,5 +1,13 @@
 <nav>
-  <a href="/" title="Home">Home</a>
-  <a href="/new" title="Register">Register</a>
-  <!-- <a href="/login" title="Login">Login</a> -->
+  <a href="/" title="Home">Home</a> | 
+  {% if session['user_id'] != '' %}
+  <!-- <a href="/## u_id['id'] ##/edit" title="Edit">Edit</a> |  -->
+  <a href="/{{ session['user_id'] }}/edit" title="Edit">Edit</a> | 
+  {% endif %}
+  <a href="/new" title="Create new">Create new</a> | 
+  {% if session['login_status'] != False %}
+  <a href="/logout" title="Sign out">Sign out</a>
+  {% else %}
+  <a href="/new" title="Log in">Log in</a>
+  {% endif %}
 </nav>

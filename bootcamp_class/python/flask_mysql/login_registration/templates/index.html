@@ -20,17 +20,27 @@
       <div class="row nav">
         {% include 'nav.html' %}
       </div>
-      <div class="row friends-data">
-      {% with messages = get_flashed_messages() %}
-        {% if messages != 'Success' %} 
-          <ul class="flashes red">
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-          </ul>  
-        {% endif %}
-      {% endwith %}
+      <div class="row user-data">
+        <div class="col id strong">ID</div>
+        <div class="col strong">Name</div>
+        <div class="col strong">Email</div>
+        <div class="col strong">Created</div>
+        <div class="col strong">Last Modified</div>
       </div>
+      {% for user in users %}
+      <div class="row user-data">
+        <div class="col id">
+          {% if session['user_id'] == user['id'] %}
+          <a href="/{{ user['id'] }}/edit" title="User ID">{{ user['id'] }}</a>
+          {% else %} 
+          {{ user['id'] }} 
+          {% endif %}</a></div>
+        <div class="col">{{ user['first_name'] }} {{ user['last_name'] }}</div>
+        <div class="col">{{ user['email'] }}</div>
+        <div class="col">{{ user['created_at'] }}</div>
+        <div class="col">{{ user['updated_at'] }}</div>
+      </div>
+      {% endfor %}
     </div>
   </body>
 </html>

@@ -2,25 +2,33 @@ h1, h2, h3, h4, h4, p, form {
   display: block;
 }
 
-.friends-data h1, .friends-data h2 {
+.user-data h1, .user-data h2 {
   width: 100%;
 }
 
-.friends-data form {
+.user-data form {
   width: 50%;
   text-align: right;
 }
 
-.friends-data label {
+.user-data label {
   width: 49%;
   text-align: left;
 }
 
-.friends-data input {
+.user-data input {
   width: 49%;
 }
 
-.friends-data .btn.btn-primary {
+.user-data div.col {
+  width: 22%;
+}
+
+.user-data div.col.id {
+  /* width: 5%; */
+}
+
+.user-data .btn.btn-primary {
   text-align: center;
 }
 
@@ -79,6 +87,10 @@ div.green p {
 .block {
   display: block;
   width: 100%;
+}
+
+.strong {
+  font-weight: bold;
 }
 
 .clear {

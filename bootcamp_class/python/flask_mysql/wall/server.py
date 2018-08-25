@@ -25,7 +25,6 @@ def index():
   if not 'logged_id' in session:
     session['logged_id'] = False
 
-
   print "Here is the session['logged_id']: ", session['logged_id']
 
   query = 'SELECT * FROM users'
@@ -34,8 +33,8 @@ def index():
 
   # purpose of this entire block of code is that I'm trying to return user information 
   # for just the user whose user['id'] matches the session['logged_id'] 
-  # set during the /handle user route 
-  
+  # set during the /handle_user route 
+
   if session['logged_id'] != False:
     query = 'SELECT * FROM users WHERE id = :specific_user_id'
 

@@ -19,7 +19,7 @@
           <div class="col md-1">
             <h2 class="strong">Coding Dojo Wall</h2>
           </div>
-          {% if 'logged_id' in session %}
+          {% if 'logged_id' != False %}
           <div class="col md-2">
             Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
           </div>

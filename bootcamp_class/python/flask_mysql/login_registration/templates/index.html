@@ -30,10 +30,14 @@
       {% for user in users %}
       <div class="row user-data">
         <div class="col id">
-          {% if session['user_id'] == user['id'] %}
-          <a href="/{{ user['id'] }}/edit" title="User ID">{{ user['id'] }}</a>
-          {% else %} 
-          {{ user['id'] }} 
+          {% if 'user_id' in session %}
+            {% if session['user_id'] == user['id'] %}
+            <a href="/{{ user['id'] }}/edit" title="User ID">{{ user['id'] }}</a>
+            {% else %} 
+              {{ user['id'] }}
+            {% endif %}
+          {% else %}
+            {{ user['id'] }} 
           {% endif %}</a></div>
         <div class="col">{{ user['first_name'] }} {{ user['last_name'] }}</div>
         <div class="col">{{ user['email'] }}</div>

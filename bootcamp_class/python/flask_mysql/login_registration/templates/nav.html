@@ -1,11 +1,11 @@
 <nav>
   <a href="/" title="Home">Home</a> | 
-  {% if session['user_id'] != '' %}
+  {% if 'user_id' in session %}
   <!-- <a href="/## u_id['id'] ##/edit" title="Edit">Edit</a> |  -->
   <a href="/{{ session['user_id'] }}/edit" title="Edit">Edit</a> | 
   {% endif %}
   <a href="/new" title="Create new">Create new</a> | 
-  {% if session['login_status'] != False %}
+  {% if 'user_id' in session %}
   <a href="/logout" title="Sign out">Sign out</a>
   {% else %}
   <a href="/new" title="Log in">Log in</a>

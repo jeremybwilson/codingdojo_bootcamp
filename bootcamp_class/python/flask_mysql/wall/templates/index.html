@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - {{ title }} assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row user-data">
+        <div class="header">
+          <div class="col md-1">
+            <h2 class="strong">Coding Dojo Wall</h2>
+          </div>
+          {% if 'logged_id' in session %}
+          <div class="col md-2">
+            Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
+          </div>
+          {% else %}
+          <div class="col md-2"> 
+            <a href="/login" title="Login">Log in</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row user-data">
+        {% with messages = get_flashed_messages() %}
+          {% if messages != 'Success' %} 
+            <ul class="flashes red">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>  
+          {% endif %}
+        {% endwith %}
+
+        <h2>Register</h2>
+        <form class="handle_user" action="/handle_user" method="POST">
+          <input type="hidden" name="action" value="register">
+          <label for="first_name">First name: </label> <input type="text" name="first_name" placeholder="First name" id="first_name" />
+          <label for="last_name">Last name: </label> <input type="text" name="last_name" placeholder="Last name" id="last_name" />
+          <label for="username">Username: </label> <input type="text" name="username" placeholder="Enter username" />
+          <label for="email">Email: </label> <input type="text" name="email" placeholder="Enter email" />
+          <label for="email">Password: </label> <input type="password" name="password" placeholder="Enter password" />
+          <label for="email">Confirm password: </label> <input type="password" name="confirm_password" placeholder="Confirm password" />
+          <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+      </div>
+      
+      <div class="row user-data">
+        <h2>Login</h2>
+        <form class="handle_user" action="/login" method="POST">
+          <input type="hidden" name="action" value="login">
+          <label for="email">Email: </label> <input type="text" name="email" placeholder="Email" />
+          <label for="password">Password: </label> <input type="password" name="password" placeholder="Password" />
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+      </div>
+      
+      <div class="row user-data">
+        <h2>Comments</h2>
+        <form action="/post_message" method="POST">
+          <input class="hidden" type="hidden" name="action" value="register">
+          <label for="message">Post a message: </label> <textarea rows="3" cols="60" name="message" placeholder="Post a message:" id="message"></textarea>
+          <button class="btn btn-primary right" type="submit">Post a message</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

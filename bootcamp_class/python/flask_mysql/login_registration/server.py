@@ -30,15 +30,7 @@ def index():
 
   users_from_db = mysql.query_db(query)
 
-  if not 'login_status' in session:
-    session['login_status'] = False
-
-  if not 'user_id' in session:
-    u_id = 'No id available!'
-  else:
-    u_id = users_from_db[0]['id']
-
-  return render_template('index.html', u_id=users_from_db[0], users=users_from_db, title="User Dashboard")
+  return render_template('index.html', users=users_from_db, title="User Dashboard")
 
 @app.route('/create', methods=['POST'])
 def create():
@@ -162,18 +154,8 @@ def login():
   else:
     errors.append('Invalid username or password')
 
-  # create salt and combine with input value (password)
-  # salt = user['salt']  # salt no longer need => using bcrypt
-  # hashed_input = md5.new(password + salt).hexdigest()
-
-  # use bcrypt to hash password instead
-  form_input = flask_bcrypt.generate_password_hash(password)
-  print "*" * 80
-  print "User password entered: ", form_input, '\n'
-  print "User password from db: ", user['password']
-  print "*" * 80
-
-  if flask_bcrypt.check_password_hash(user['password'], form_input):  # returns True => success
+  # use bcrypt to check already hashed password
+  if flask_bcrypt.check_password_hash(user['password'], password):  # returns True => success
     session['user_id'] = user['id']
     print "Successful login"
     # return redirect('/')
@@ -181,9 +163,6 @@ def login():
     errors.append('Invalid username or password')
     # return redirect('/new')
     print "Password validation failed!"
-
-    # print "*" * 80
-    # print "Session user_id is: ", session['user_id']
 
   if len(errors) > 0:
     for error in errors:
@@ -193,10 +172,7 @@ def login():
   else:
     for success in successes:
       flash(success)
-    session['login_status'] = True
-    print "*" * 80
-    print "Successful login! session status is now: ", session['login_status']
-    print "*" * 80
+    # session['login_status'] = True
     return redirect('/')
 
   errors.append('Invalid username or password')
@@ -214,7 +190,6 @@ def logout():
 def new():
 
   return render_template('new.html', title="Create user")
-
 
 @app.route('/<user_id>')
 def show(user_id):

@@ -41,7 +41,7 @@
           <button class="btn btn-primary" type="submit">Create user</button>
         </form>
       </div>
-      {% if session['login_status'] != True %}
+      {% if 'user_id' not in session %}
       <div class="row user-data">
         <h2>Login</h2>
         <form action="/login" method="POST">

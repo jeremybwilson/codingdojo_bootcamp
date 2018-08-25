@@ -1,0 +1,134 @@
+h1, h2, h3, h4, h4, p, form {
+  display: block;
+}
+
+.header {
+  width: 100%;
+}
+
+.header div.col {
+  display: inline-block;
+}
+
+.header div.col.md-1 {
+  width: 60%;
+}
+
+.header div.col.md-2 {
+  width: 39%;
+  text-align-right;
+}
+
+.row.user-data, hr, .user-data h1, .user-data h2 {
+  width: 100%;
+}
+
+.user-data form.handle_user {
+  width: 100%;
+  text-align: left;
+}
+
+.user-data form.handle_user label, .user-data form.handle_user input {
+  text-align: left;
+  width: 40%;
+  display: inline-block;
+}
+
+.user-data form.handle_user .btn.btn-primary {
+
+}
+
+.user-data form {
+  width: auto;
+  text-align: right;
+}
+
+.user-data label, .user-data input {
+  text-align: left;
+  display: block;
+}
+
+.user-data textarea {
+  width: 40em;
+  height: auto
+}
+
+.user-data div.col.id {
+  width: 5%;
+}
+
+.user-data .btn.btn-primary {
+  text-align: center;
+  display: block;
+}
+
+.flashes.red, .flashes.green {
+  width: 100%;
+}
+
+.col.red, .col.green, .flashes.red, .flashes.green {
+  font-weight: bold;
+}
+
+.col.red, .flashes.red {
+  color: red;
+}
+
+.success {
+  width: 100%;
+}
+
+.green, .flashes.green, .col.green, .success {
+  color: green;
+}
+
+div.green {
+  background-color: green;
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+div.green p {
+  color: white;
+  margin: 0;
+}
+
+.results {
+  margin: 20px 0px;
+}
+
+.underline {
+  text-decoration: underline;
+  width: 100%;
+}
+
+.row.results ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.row.results ul li {
+  margin: 5px 0;
+}
+
+.row.results form {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.clear {
+  clear: both;
+}

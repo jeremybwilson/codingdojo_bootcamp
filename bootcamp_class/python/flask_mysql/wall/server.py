@@ -24,8 +24,10 @@ def index():
 
   if not 'logged_id' in session:
     session['logged_id'] = False
-
-  print "Here is the session['logged_id']: ", session['logged_id']
+    print "session['logged_id'] NOT found, setting it to: ", session['logged_id']
+  else:
+    logged_id = session['logged_id']
+    print "session['logged_id'] found, setting it to: ", logged_id
 
   query = 'SELECT * FROM users'
 
@@ -43,7 +45,7 @@ def index():
     }
     # check for username
     specific_user_from_db = mysql.query_db(query, data)
-    # print "Here is the :specific_user_id result: ", specific_user_from_db
+    print "Here is the :specific_user_id result: ", specific_user_from_db
     # print "Here is the user_id_from_db: ", specific_user_from_db[0]['id']
 
   return render_template('index.html', users=users_from_db, title="The Wall")
@@ -93,10 +95,10 @@ def users():
     errors.append('Passwords do not match!')
 
   # check to see if user email exists in the db
-  exists_query = 'SELECT email FROM users WHERE email = :email'
+  exists_query = 'SELECT email FROM users WHERE email = :specific_user_email'
   
   exists_data = {
-    'email': email
+    'specific_user_email': email
   }
   users_list = mysql.query_db(exists_query, exists_data)
 
@@ -144,14 +146,24 @@ def users():
 # login route
 @app.route('/login', methods=['POST'])
 def login():
+
   # elif action == 'login':
+    # shorten request.form calls
+    form = request.form
+    action = form['action']
+
     # define empty list to store error messaging
     errors = []
     successes = []
+
+    # put into variables form input info
+    username = form['username']
+    password = form['password']
+
     # validate data
     if len(username) < 1:
       errors.append('Username cannot be blank!')
-    if len(confirm_password) < 1:
+    if len(password) < 1:
       errors.append('Password cannot be blank!')
 
     if len(errors) > 0:
@@ -159,28 +171,70 @@ def login():
         flash(error)
       return redirect('/')
     else:
+      for success in successes:
+        flash(successes)
+
       query = 'SELECT * FROM users WHERE username = :given_username'
 
       data = {
         'given_username': username
       }
       # check for username
-      user = mysql.query_db(query, data)
-      # if user exists, check for password
-      if len(user) > 0:
-        user = user[0]
-        # check if username and password exist
-        if user['password'] == form['password']:
-          session['logged_id'] = user['id']
-          return redirect('/')
-        else:
-          errors.append('Incorrect password')
-      else:
-        errors.append('No user name found.')
+      users_list = mysql.query_db(query, data)
 
-            # save to session (log them in)
+      # if we find a user with this email address, try to check the password
+      if len(users_list) > 0:
+        user = users_list[0]
+      else:
+        errors.append('Invalid username or password')
+      
+      # use bcrypt to check already hashed password
+      if flask_bcrypt.check_password_hash(user['password'], password):  # returns True => success
+        print "Successful login"
+        session['logged_id'] = user['id']
+        return redirect('/')
+      else:  # failed login
+        errors.append('Invalid username or password')
+        # errors.append('Incorrect password')
+        print "Failed login!"
+        # return redirect('/')
 
       return redirect('/')
+
+@app.route('/post_message', methods=['POSTS'])
+def handle_messages():
+
+  #handle form requests
+  form = request.form
+
+  # empty lists for errors/successes
+  errors = []
+  successes = []
+
+  user_id = form['id']
+  message = form['message']
+  session['form_data'] = {}
+
+  print "Session form data is: ", session['form_data']
+
+  if len(message) < 1:
+    errors.append('Message field cannot be blank!')
+  if len(message) > 1000:
+    errors.append('Messages cannot be greater than 1000 characters!')
+
+  # query database for logged-in user
+  insert_query = 'INSERT INTO messages (`user_id`,`message`,`created_at`,`updated_at`) VALUES (:user_id, :message_content, NOW(), NOW())'
+
+  data = {
+    'message_content': message,
+    'user_id': session['logged_id']
+  }
+
+  inserted_id = mysql.query_db(insert_query, data)
+
+  # return redirect('/wall')
+  return "Successfully made posts!"
+
 
 @app.route('/wall')
 def wall():

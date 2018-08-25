@@ -14,30 +14,23 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <h1>Welcome to the {{ title }} page</h1>
-      </div>
-      {% for user in users %}
       <div class="row user-data">
-        {% if 'user_id' in session %}
-          {% if session['user_id'] == user['id'] %}
-          <div class="col">
-            Coding Dojo Wall
+        <div class="header">
+          <div class="col md-1">
+            <h3 class="strong">Coding Dojo Wall</h3>
           </div>
-          <div class="col">
-            Welcome {{ user['first_name'] }}
-          </div>
-          <div class="col">
-            <a href="/logout" title="Log off">Log off</a>
-          </div>
-          {% else %} 
-            <a href="/login" title="Login">Log in</a>
-          </div>
-          {% endif %}
-        {% endif %}
+          {% for user in users %}
+            {% if logged_id != false %}
+              {% if session['logged_id'] == user['id'] %}
+              <div class="col md-2">
+                Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
+              </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-      {% endfor %}
-      </div>
+
       <div class="row user-data">
         <h2>Comments</h2>
         {% with messages = get_flashed_messages() %}

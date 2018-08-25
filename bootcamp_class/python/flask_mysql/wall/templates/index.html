@@ -19,15 +19,15 @@
           <div class="col md-1">
             <h2 class="strong">Coding Dojo Wall</h2>
           </div>
-          {% if 'logged_id' != False %}
-          <div class="col md-2">
-            Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
-          </div>
-          {% else %}
-          <div class="col md-2"> 
-            <a href="/login" title="Login">Log in</a>
-          </div>
-          {% endif %}
+          {% for user in users %}
+            {% if logged_id != false %}
+              {% if session['logged_id'] == user['id'] %}
+              <div class="col md-2">
+                Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
+              </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
 
@@ -42,6 +42,7 @@
           {% endif %}
         {% endwith %}
 
+      {% if session['logged_id'] == false %}
         <h2>Register</h2>
         <form class="handle_user" action="/handle_user" method="POST">
           <input type="hidden" name="action" value="register">
@@ -54,19 +55,19 @@
           <button class="btn btn-primary" type="submit">Register</button>
         </form>
       </div>
-      
       <div class="row user-data">
         <h2>Login</h2>
         <form class="handle_user" action="/login" method="POST">
           <input type="hidden" name="action" value="login">
-          <label for="email">Email: </label> <input type="text" name="email" placeholder="Email" />
+          <label for="username">Username: </label> <input type="text" name="username" placeholder="Username" />
           <label for="password">Password: </label> <input type="password" name="password" placeholder="Password" />
           <button class="btn btn-primary" type="submit">Login</button>
         </form>
       </div>
-      
+      {% endif %}
+
       <div class="row user-data">
-        <h2>Comments</h2>
+        <h2>Posts &amp; Comments</h2>
         <form action="/post_message" method="POST">
           <input class="hidden" type="hidden" name="action" value="register">
           <label for="message">Post a message: </label> <textarea rows="3" cols="60" name="message" placeholder="Post a message:" id="message"></textarea>

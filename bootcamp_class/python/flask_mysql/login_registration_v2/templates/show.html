@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - Login/Registration assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+      <div class="row">
+        <h1>{{ title }} User {{ user['id'] }}</h1>
+        <div class="two columns">First Name</div>
+        <div class="two columns">Last Name</div>
+        <div class="three columns">Email</div>
+        <div class="three columns">Created At</div>
+        <div class="three columns">Updated At</div>
+      </div>
+      <div class="row">
+        <div class="two columns">{{ user['first_name'] }}</div>
+        <div class="two columns">{{ user['last_name'] }}</div>
+        <div class="three columns">{{ user['email'] }}</div>
+        <div class="three columns">{{ user['created_at'] }}</div>
+        <div class="three columns">{{ user['updated_at'] }}</div>
+      </div>
+      <div class="row">
+        <h2>Reminders</h2>
+        <ul>
+        {% for reminder in reminder_list %}
+          <li>{{ reminder['content'] }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div><!-- /.container -->
+  </body>
+</html>

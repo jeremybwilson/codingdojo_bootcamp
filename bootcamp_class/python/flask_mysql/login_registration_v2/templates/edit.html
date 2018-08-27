@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - Login/Registration assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+      <h1>{{ title }} User {{ user['id'] }}</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <form action="/{{ user['id'] }}/update" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value="{{ user['first_name'] }}">
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{ user['last_name'] }}">
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="{{ user['email'] }}">
+        <button class="btn btn-primary" type="submit">Edit User</button>
+      </form>
+    </div><!-- /.container -->
+  </body>
+</html>

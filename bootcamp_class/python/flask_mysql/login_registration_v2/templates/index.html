@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - Login Registration Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+      <div class="row">
+        <div class="six columns"><h1>{{ title }} Page</h1></div>
+        <div class="six columns inline">
+          {% for users in users_from_db %}
+          {% if session['logged_id'] == users['id'] %}
+            <p>Welcome {{ users['first_name'] }}</p> | <a href="/logout" class="button">Logout</a>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">First Name</div>
+        <div class="three columns">Last Name</div>
+        <div class="three columns">Email</div>
+        <div class="three columns">Actions</div>
+      </div>
+      {% for users in users_from_db %}
+      <div class="row">
+        <div class="three columns">{% if session['logged_id'] == users['id'] %}<a href="/{{ users['id'] }}">{{ users['first_name'] }}</a>{% else %}{{ users['first_name'] }}{% endif %}</div>
+        <div class="three columns">{{ users['last_name'] }}</div>
+        <div class="three columns">{{ users['email'] }}</div>
+        <div class="three columns">
+          {% if session['logged_id'] == users['id'] %}
+          <a href="/{{ users['id'] }}/edit" class="button">Edit User</a>
+          <form class="delete-users" action="/{{ users['id'] }}/delete" method="POST">
+            <button type="submit">Delete User</button>
+          </form>
+          {% else %}
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+
+      <br /><br /><br /><br /><br /><br />
+      <!-- columns should be the immediate child of a .row -->
+      <div class="row">
+        <div class="one column">One</div>
+        <div class="eleven columns">Eleven</div>
+      </div>
+
+      <!-- just use a number and class 'column' or 'columns' -->
+      <div class="row">
+        <div class="two columns">Two</div>
+        <div class="ten columns">Ten</div>
+      </div>
+
+      <!-- there are a few shorthand columns widths as well -->
+      <div class="row">
+        <div class="one-third column">1/3</div>
+        <div class="two-thirds column">2/3</div>
+      </div>
+      <div class="row">
+        <div class="one-half column">1/2</div>
+        <div class="one-half column">1/2</div>
+      </div>
+    </div><!-- /.container -->
+    <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
+  </body>
+</html>

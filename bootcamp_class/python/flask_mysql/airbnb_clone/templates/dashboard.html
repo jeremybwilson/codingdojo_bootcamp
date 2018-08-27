@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - Airbnb clone {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+      <div class="row">
+        <h1 class="twelve columns">{{ title }} page</h1>
+        {% for users_list in all_users %}
+        <div class="twelve columns">
+          {% if session['user_id'] == users_list['id'] %}
+          <h4>Welcome {{ users_list['name'] }} |&nbsp;</h4><a href="/logout" class="button">Logout</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+              <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+        <h2>Add a property</h2>
+        <form action="/property/create" method="POST">
+          <label for="price">Price:</label>
+          <input type="text" name="price" placeholder="Price"><br />
+          <label for="room">Rooms:</label>
+          <input type="text" name="room" placeholder="Rooms"><br />
+          <label for="address">Address:</label>
+          <input type="text" name="address" placeholder="Address"><br />
+          <button class="btn btn-primary" type="submit">Create</button>
+        </form>
+        <h4>My properties</h2>
+        <ul>
+        {% for property in properties %}
+          {% if property['user_id'] == session['user_id'] %}
+          <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }} </li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+        <h4>Other properties</h2>
+        <ul>
+        {% for property in properties %}
+          {% if not property['user_id'] == session['user_id'] %}
+          <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }} </li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

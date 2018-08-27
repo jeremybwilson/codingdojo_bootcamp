@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with MySQL - Airbnb clone {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+      <div class="row">
+        <h1>{{ title }} page</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+              <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" name="name" placeholder="Name"><br />
+          <label for="email">Email:</label>
+          <input type="text" name="email" placeholder="Email"><br />
+          <label for="password">Password:</label>
+          <input type="text" name="password" placeholder="Password"><br />
+          <label for="confirm_password">Confirm password:</label>
+          <input type="text" name="confirm_password" placeholder="Confirm password"><br />
+          <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+        <h2>Login</h2>
+        <form action="/login" method='POST'>
+          <label for="email">Email:</label>
+          <input type="text" name="email" placeholder="beeker@muppets.com"><br />
+          <label for="password">Password:</label>
+          <input type="password" name="password"><br />
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

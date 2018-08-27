@@ -1,0 +1,13 @@
+.columns label, .columns input {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.columns label {
+  width: 15%;
+}
+
+.columns h4 {
+  display: inline-block;
+  margin-bottom: 0;
+}

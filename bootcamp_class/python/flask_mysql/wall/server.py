@@ -2,7 +2,8 @@ from flask import Flask, request, redirect, render_template, session, flash
 # import the Connector function
 from mysqlconnection import MySQLConnector
 # the "re" module will let us perform some regular expression operations
-import re
+# babel for defining a filter
+import re, babel, datetime
 # use bcrypt instead of md5
 from flask_bcrypt import Bcrypt
 
@@ -11,6 +12,15 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 app = Flask(__name__)
 app.secret_key = 'bobdobalina'
+
+def format_datetime(value, format='medium'):
+  if format == 'full':
+    format="EEEE, d. MMMM y 'at' HH:mm"
+  elif format == 'medium':
+    format="EE dd.MM.y HH:mm"
+  return babel.dates.format_datetime(value, format)
+
+app.jinja_env.filters['datetimeformat'] = format_datetime
 
 # connect and store the connection in "mysql"; note that you pass the database name to the function
 mysql = MySQLConnector(app, 'the_wall')
@@ -22,15 +32,17 @@ def index():
   if 'form_data' not in session:
     session['form_data'] = {}
 
+  if 'posts' not in session:
+    posts = 'No post value available'
+
   if not 'logged_id' in session:
     session['logged_id'] = False
-    print "session['logged_id'] NOT found, setting it to: ", session['logged_id']
+    # print "session['logged_id'] NOT found, setting it to: ", session['logged_id']
   else:
     logged_id = session['logged_id']
-    print "session['logged_id'] found, setting it to: ", logged_id
+    # print "session['logged_id'] found, setting it to: ", logged_id
 
   query = 'SELECT * FROM users'
-
   users_from_db = mysql.query_db(query)
 
   # purpose of this entire block of code is that I'm trying to return user information 
@@ -45,11 +57,21 @@ def index():
     }
     # check for username
     specific_user_from_db = mysql.query_db(query, data)
-    print "Here is the :specific_user_id result: ", specific_user_from_db
-    # print "Here is the user_id_from_db: ", specific_user_from_db[0]['id']
 
-  return render_template('index.html', users=users_from_db, title="The Wall")
-  # return render_template('index.html', user=specific_user_from_db[0], users=users_from_db, title="The Wall")  => this breaks when the logout button is clicked and the session (and session['logged_id']) are cleared.  I know why, it's because if there is no 'logged_id', the 2nd SQL query will not run and therefore user=specific_user_from_db[0] is pointless.
+    # print "Here is the :specific_user_id result: ", specific_user_from_db
+    # print "Here is the value of logged_id: ", logged_id
+
+  posts_query = 'SELECT users.first_name, users.last_name, messages.content, messages.id, messages.user_id, messages.created_at FROM messages JOIN users ON messages.user_id = users.id'
+  posts = mysql.query_db(posts_query)
+
+  comments_query = 'SELECT users.first_name, users.last_name, comments.comment, comments.id, comments.message_id, comments.user_id, comments.created_at FROM comments JOIN users ON comments.user_id = users.id JOIN messages ON comments.message_id = messages.id'
+  comments = mysql.query_db(comments_query)
+
+  return render_template('index.html', users=users_from_db, all_posts=posts, all_comments=comments, title="The Wall")
+  # return render_template('index.html', user=specific_user_from_db[0], users=users_from_db, title="The Wall")  
+  # => this breaks when the logout button is clicked and the session (and session['logged_id']) are cleared.  
+  # I know why, it's because if there is no 'logged_id', the 2nd SQL query will not run 
+  # and therefore user=specific_user_from_db[0] is pointless.
 
 
 # create new user route
@@ -132,8 +154,6 @@ def users():
       'pw_hash': hashed_password
     }
 
-    # mysql.query_db(insert_query, data)
-    # mysql.query_db(insert_query, data)
     user_id = mysql.query_db(insert_query, data)
     print 'User ID returned from query', user_id
     print 'You have successfully registered!'
@@ -201,7 +221,7 @@ def login():
 
       return redirect('/')
 
-@app.route('/post_message', methods=['POSTS'])
+@app.route('/post_message', methods=['POST'])
 def handle_messages():
 
   #handle form requests
@@ -211,33 +231,94 @@ def handle_messages():
   errors = []
   successes = []
 
-  user_id = form['id']
-  message = form['message']
+  # user_id = form['id']
+  content = form['content']
   session['form_data'] = {}
 
   print "Session form data is: ", session['form_data']
 
-  if len(message) < 1:
+  if len(content) < 1:
     errors.append('Message field cannot be blank!')
-  if len(message) > 1000:
+  if len(content) > 1000:
     errors.append('Messages cannot be greater than 1000 characters!')
 
-  # query database for logged-in user
-  insert_query = 'INSERT INTO messages (`user_id`,`message`,`created_at`,`updated_at`) VALUES (:user_id, :message_content, NOW(), NOW())'
+  if len(errors) > 0:
+    for error in errors:
+      flash(error)
+    return redirect('/')
+  else:
+    for success in successes:
+      flash(successes)
 
-  data = {
-    'message_content': message,
-    'user_id': session['logged_id']
-  }
+    # query database for logged-in user
+    insert_query = 'INSERT INTO messages (`user_id`,`content`,`created_at`,`updated_at`) VALUES (:user_id, :message_content, NOW(), NOW())'
 
-  inserted_id = mysql.query_db(insert_query, data)
+    data = {
+      'message_content': content,
+      'user_id': session['logged_id']
+    }
 
-  # return redirect('/wall')
-  return "Successfully made posts!"
+    inserted_id = mysql.query_db(insert_query, data)
+    # return "Successfully made posts!"
+    print 'Here is the insert query: ', inserted_id
+    print 'Here data in the post: ', data
+    return redirect('/wall')
 
+  errors.append('Message failed to post.  Try again')
+  return redirect('/')
 
-@app.route('/wall')
+@app.route('/post_comment', methods=['POST'])
+def handle_comments():
+  #handle form requests
+  form = request.form
+
+  # empty lists for errors/successes
+  errors = []
+  successes = []
+
+  # user_id = form['id']
+  comment = form['comment']
+  message_id = form['message_id']
+  session['form_data'] = {}
+
+  print "Session form data is: ", session['form_data']
+
+  if len(comment) < 1:
+    errors.append('Message field cannot be blank!')
+  if len(comment) > 750:
+    errors.append('Messages cannot be greater than 750 characters!')
+
+  if len(errors) > 0:
+    for error in errors:
+      flash(error)
+    return redirect('/')
+  else:
+    for success in successes:
+      flash(successes)
+
+    comment_query = 'INSERT INTO comments (`user_id`, `message_id`, `comment`,`created_at`,`updated_at`) VALUES (:user_id, :message_id, :comment_content, NOW(), NOW())'
+
+    data = {
+      'comment_content': comment,
+      'user_id': session['logged_id'],
+      'message_id': message_id
+    }
+
+    inserted_id = mysql.query_db(comment_query, data)
+    # return "Successfully made posts!"
+    print 'Here is the insert query: ', inserted_id
+    print 'Here data in the post: ', data
+    return redirect('/wall')
+
+  errors.append('Comment failed to post.  Try again')
+  return redirect('/')
+
+@app.route('/wall')  # aka dashboard from previous lecture videos/examples
 def wall():
+
+  # check if logged_id is in session, redirect to index route if not
+  if 'logged_id' not in session:
+    return redirect('/')
 
   # query database for logged-in user
   logged_in_query = 'SELECT * FROM users WHERE id = :logged_id'
@@ -248,7 +329,31 @@ def wall():
 
   logged_in_user = mysql.query_db(logged_in_query, data)
 
-  return render_template('show.html', current_user=logged_in_user, title="Message page")
+  posts_query = 'SELECT users.first_name, users.last_name, messages.content, messages.id, messages.user_id, messages.created_at FROM messages JOIN users ON messages.user_id = users.id'
+  posts = mysql.query_db(posts_query)
+
+  comments_query = 'SELECT users.first_name, users.last_name, comments.comment, comments.id, comments.message_id, comments.user_id, comments.created_at FROM comments JOIN users ON comments.user_id = users.id JOIN messages ON comments.message_id = messages.id'
+  comments = mysql.query_db(comments_query)
+
+  return render_template('show.html', current_user=logged_in_user, all_posts=posts, all_comments=comments, title="Message page")
+
+
+@app.route('/delete/<post_id>')
+def delete_post(post_id):
+
+  # delete query for specific user_id passed with results
+  delete_query = 'DELETE FROM messages WHERE id = :specific_msg_id'
+
+  # define user_id with dictionary
+  data = {
+    'specific_msg_id': post_id
+  }
+
+  # execute query to delete data by user_id
+  mysql.query_db(delete_query, data)
+
+  return redirect('/wall')
+
 
 @app.route('/logout')
 def logout():

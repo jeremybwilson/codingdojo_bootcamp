@@ -17,7 +17,6 @@ h1, h2, h3, h4, h4, p, form {
 
 .header div.col.md-2 {
   width: 44%;
-  text-align:right;
 }
 
 .row.user-data {
@@ -59,8 +58,38 @@ h1, h2, h3, h4, h4, p, form {
 }
 
 .user-data .btn.btn-primary {
-  text-align: center;
   display: block;
+}
+
+ul.post-content, ul.comment-content {
+  width: 100%;
+}
+
+ul.post-content { 
+  margin-left: -40px;
+}
+
+ul.comment-content { 
+  margin-left: 0;
+}
+
+.post-content li, .comment-content li {
+  display: block;
+  list-style-type: none;
+  margin: 5px 0 0 0;
+}
+.post-content .title, .comment-content .title {
+  color: green;
+  font-weight: bold;
+}
+
+.post-content .content, .comment-content .content {
+  display: block;
+  margin-left: 10px;
+}
+
+.post-content .delete {
+  display: inline-block;
 }
 
 .flashes.red, .flashes.green {

@@ -19,11 +19,11 @@
           <div class="col md-1">
             <h3 class="strong">Coding Dojo Wall</h3>
           </div>
-          {% for user in users %}
+          {% for logged_in_user in current_user %}
             {% if logged_id != false %}
-              {% if session['logged_id'] == user['id'] %}
+              {% if session['logged_id'] == logged_in_user['id'] %}
               <div class="col md-2">
-                Welcome {{ user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
+                Welcome {{ logged_in_user['first_name'] }} | <a href="/logout" title="Log off">Log off</a>
               </div>
               {% endif %}
             {% endif %}
@@ -44,10 +44,44 @@
         {% endwith %}
 
         <form action="/post_message" method="POST">
-          <input class="hidden" type="hidden" name="action" value="register">
-          <label for="message">Post a message: </label> <textarea rows="3" cols="60" name="message" placeholder="Post a message:" id="message"></textarea>
+          <!-- <input class="hidden" type="hidden" name="action" value="message"> -->
+          <label for="content">Post a message: </label> <textarea rows="3" cols="60" name="content" placeholder="Post a message:" id="content"></textarea>
           <button class="btn btn-primary right" type="submit">Post a message</button>
         </form>
+        {% for posts in all_posts %}
+        <ul class="post-content">
+          <li>
+            <span class="title">{{ posts.first_name }} {{ posts.last_name }} - {{ posts.created_at.strftime('%B %e, %Y ') }}</span>
+            {% if posts.user_id == session['logged_id'] %}
+              <span class="delete">
+                 | <a href="/delete/{{ posts.id }}" title="Delete post">Delete</a>
+              </span>
+            {% endif %}
+            <span class="content">{{ posts.content }}</span>
+          </li>
+        </ul>
+        <ul class="comment-content">
+        {% for comments in all_comments %}
+          {% if posts.id == comments.message_id %}
+          <li>
+            <span class="title"> {{ comments.first_name }} {{ comments.last_name }} - {{ comments.created_at.strftime('%B %e, %Y ') }}</span>
+            <span class="content">{{ comments.comment }}</span>
+            <!-- if comments.user_id == logged_id -->
+              <!-- <span class="delete"> -->
+                <!-- <a href="/delete/ comments.id " title="Delete post">Delete</a> -->
+              <!-- </span> -->
+            <!-- endif -->
+          </li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+        <form action="/post_comment" method="POST">
+          <!-- <input class="hidden" type="hidden" name="action" value="comment"> -->
+          <input class="hidden" type="hidden" name="message_id" value="{{ posts.id }}">
+          <label for="content">Post a comment: </label> <textarea rows="3" cols="60" name="comment" placeholder="Post a comment:" id="comment"></textarea>
+          <button class="btn btn-primary right" type="submit">Post a comment</button>
+        </form>
+        {% endfor %}
       </div>
     </div>
   </body>

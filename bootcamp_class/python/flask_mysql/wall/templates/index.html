@@ -55,6 +55,7 @@
           <button class="btn btn-primary" type="submit">Register</button>
         </form>
       </div>
+      {% else %}
       <div class="row user-data">
         <h2>Login</h2>
         <form class="handle_user" action="/login" method="POST">
@@ -70,9 +71,34 @@
         <h2>Posts &amp; Comments</h2>
         <form action="/post_message" method="POST">
           <input class="hidden" type="hidden" name="action" value="register">
-          <label for="message">Post a message: </label> <textarea rows="3" cols="60" name="message" placeholder="Post a message:" id="message"></textarea>
+          <label for="content">Post a message: </label> <textarea rows="3" cols="60" name="content" placeholder="Post a message:" id="content"></textarea>
           <button class="btn btn-primary right" type="submit">Post a message</button>
         </form>
+        {% if posts != 'No post value available' %}
+          {% for posts in all_posts %}
+          <ul class="post-content">
+            <li>
+              <span class="title">{{ posts.first_name }} {{ posts.last_name }} - {{ posts.created_at }}</span>
+              {% if posts.user_id == session['logged_id'] %}
+                <span class="delete">
+                  | <a href="/delete/{{ posts.id }}" title="Delete post">Delete</a>
+                </span>
+              {% endif %}
+              <span class="content">{{ posts.content }} </span>
+            </li>
+          </ul>
+          {% for comments in all_comments %}
+          <ul class="comment-content">
+            {% if posts.id == comments.message_id %}
+            <li>
+              <span class="title"> {{ comments.first_name }} {{ comments.last_name }} - {{ comments.created_at.strftime('%B %e, %Y ') }}</span>
+              <span class="content">{{ comments.comment }}</span>
+            </li>
+            {% endif %}
+          </ul>
+          {% endfor %}
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </body>

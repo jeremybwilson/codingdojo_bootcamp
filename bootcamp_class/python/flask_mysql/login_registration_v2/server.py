@@ -226,7 +226,7 @@ def update(user_id):
 
   if len(errors) > 0:
     for error in errors:
-      flash(errors)
+      flash(error)
     return redirect('/<user_id>/edit')
   else:
     for success in successes:
@@ -338,7 +338,7 @@ def remind_create():
 
   if len(errors) > 0:
     for error in errors:
-      flash(errors)
+      flash(error)
     return redirect('/remind_new')
   else:
     for success in successes:

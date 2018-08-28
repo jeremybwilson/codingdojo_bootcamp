@@ -181,15 +181,13 @@ def dashboard():
 
   users_list = mysql.query_db(query, data)
   user = users_list[0]
-  
-  print "*" * 80
-  print "Here is the user['id']: ", user['id']
 
   property_query = 'SELECT * FROM properties JOIN users ON users.id = properties.user_id'
-
   properties = mysql.query_db(property_query)
+  bookings_query = "SELECT * FROM bookings JOIN properties ON properties.id = property_id WHERE bookings.user_id = {}".format(session['user_id'])
+  bookings = mysql.query_db(bookings_query)
 
-  return render_template('dashboard.html', all_users=users_list, properties=properties, title="Dashboard")
+  return render_template('dashboard.html', all_users=users_list, properties=properties, bookings=bookings, title="Dashboard")
 
 
 @app.route("/property/create", methods=['POST'])
@@ -226,9 +224,46 @@ def property_create():
     }
 
     result = mysql.query_db(query, data)
-
     return redirect('/dashboard')
 
+  return redirect('/')
+
+@app.route('/property/show/<property_id>', methods=['POST'])
+def property_show(property_id):
+
+  property_query = 'SELECT * FROM properties WHERE id = :property_id'
+  data = {
+    'property_id': property_id
+  }
+  mysql.query_db(property_query, data)
+
+  property_bookings = "SELECT * FROM bookings JOIN users ON users.id = user_id WHERE bookings.property_id = {}".format(property_id)
+  bookings = mysql.query_db(property_bookings)
+
+  return redirect('/dashboard')
+
+@app.route('/bookings/<property_id>', methods=['POST'])
+def bookings(property_id):
+  # shorten the request.form call
+  form = request.form
+
+  # validation
+  query = "INSERT INTO bookings (`user_id`, `property_id`, `from`, `to`, `price`, `created_at`, `updated_at`) VALUES (:user_id, :property_id, :from, :to, :price, NOW(), NOW());"
+  data = {
+    'user_id': session['user_id'],
+    'property_id': property_id,
+    'from': form['from'],
+    'to': form['to'],
+    'price': form['price']
+  }
+
+  mysql.query_db(query, data)
+  return redirect('/dashboard')
+
+@app.route('/logout')
+def logout():
+
+  session.clear()
   return redirect('/')
 
 

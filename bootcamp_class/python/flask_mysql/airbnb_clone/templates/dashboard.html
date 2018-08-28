@@ -47,11 +47,17 @@
           <input type="text" name="address" placeholder="Address"><br />
           <button class="btn btn-primary" type="submit">Create</button>
         </form>
-        <h4>My properties</h2>
+        <h4>My Bookings</h4>
+        <ul>
+        {% for booking in bookings %}
+          <li>{{ booking['rooms'] }} rooms for ${{ booking['price'] }} -{{ booking['address'] }} (From: {{booking['from'].strftime('%m-%d-%Y %m:%m%p') }}, To: {{ booking['to'].strftime('%m-%d-%Y %m:%m%p') }})</li>
+        {% endfor %}
+        </ul>
+        <h4>My properties</h4>
         <ul>
         {% for property in properties %}
           {% if property['user_id'] == session['user_id'] %}
-          <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }} </li>
+            <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }}  - <a href="/properties/show/{{ property['property_id'] }}" title="See reservations">See reservations</a></li>
           {% endif %}
         {% endfor %}
         </ul>
@@ -59,7 +65,14 @@
         <ul>
         {% for property in properties %}
           {% if not property['user_id'] == session['user_id'] %}
-          <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }} </li>
+          <li>{{ property['rooms'] }} rooms for ${{ property['price'] }} - {{ property['address'] }}, posted by {{ property['name'] }} 
+            <form action="/bookings/{{ property['id'] }}" method="POST">
+              <input type="date" name="from" />
+              <input type="date" name="to" />
+              <input type="hidden" name="price" value={{ property['price'] }} />
+              <button type="submit" value="book">Reserve unit</button>
+            </form>
+          </li>
           {% endif %}
         {% endfor %}
         </ul>

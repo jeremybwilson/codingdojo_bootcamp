@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from . import views           # This line is new!
+from . import views
+
 urlpatterns = [
-    url(r'^$', views.index, name="index"),  # This line has changed!
-    url(r'^reset$', views.reset, name="reset"),
-    url(r'^process/$', views.process, name="process")
+    url(r'^$', views.index, name="index"),
+    url(r'^surveys$', views.index, name="index"),
+    url(r'^surveys/results$', views.results, name="results")
 ]

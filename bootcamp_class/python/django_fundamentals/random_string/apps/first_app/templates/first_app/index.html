@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django - Random Word Generator</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/first_app/css/styles.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="attempt">Random Word: (attempt # {% if request.session.session_attempt %} {{ request.session.session_attempt }}{% else %}01{% endif %})</p>
+            <!-- <p>Session count: {# if request.session.session_count #} {# request.session.session_count #} {# else #} 0 {# endif #}</p> -->
+        </div>
+        <div class="row random-word">
+            <h1>{{ request.session.random_word }}</h1>
+        </div>
+        <div class="row">
+            <form action="/random_word/attempt" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="hidden" name="random_word" class="form-control">
+                    <button class="btn btn-primary" type="submit">Generate</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form action="/random_word/reset" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="hidden" name="reset" class="form-control">
+                    <button class="btn btn-primary" type="submit">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

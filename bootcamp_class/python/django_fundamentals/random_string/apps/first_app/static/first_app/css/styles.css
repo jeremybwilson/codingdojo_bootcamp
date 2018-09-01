@@ -1,0 +1,23 @@
+.container {
+    width:100%;
+    margin: 0 auto;
+}
+
+.row h1, .row p, .row.random-word, .row form {
+    margin: 0 auto;
+}
+
+.row p.attempt {
+    margin-top: 2em;   
+}
+
+.row.random-word {
+    border: 1px solid black;
+    padding: 1em 2em;
+    margin: 15px auto 15px auto;
+    width:50%;
+}
+
+.row.random-word h1 {
+    text-align:center;
+}

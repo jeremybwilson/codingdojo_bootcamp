@@ -46,7 +46,12 @@ def process(request):
         request.session['language'] = language
         comments = request.POST['comments']
         request.session['comments'] = comments
-        print name, location, language, comments
+        
+        if 'session_attempt' not in request.session:
+            request.session['session_attempt'] = 0
+        else:
+            request.session['session_attempt'] += 1
+
 
         if len(name) < 1:
             errors.append('Name cannot be blank.')

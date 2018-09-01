@@ -20,7 +20,11 @@ select.form-control{
     display: inline-block;
 }
 
-.col.red {
+.btn.btn-primary {
+    margin: 1em 0;
+}
+
+.col.red, .error {
     color: red;
     font-weight: bold;
 }

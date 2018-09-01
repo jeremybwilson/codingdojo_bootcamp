@@ -18,26 +18,26 @@
         
     <div class="container">
         <div class="row">
-            <h1>Welcome to the {# title #} page</h1>
+            <h1>Welcome to the Results page</h1>
         </div>
         <div class="row">
             <h1>Session count is: {{ request.session.session_count }}:</h1>
         </div>
         <div class="row">
             <div class="col">Your Name: </div>
-            <div class="col ">{{ request.session.name }}</div>
+            <div class="col ">{{ name }}</div>
         </div>
         <div class="row">
             <div class="col">Dojo Location: </div>
-            <div class="col">{{ request.session.location }}</div>
+            <div class="col">{{ location }}</div>
         </div>
         <div class="row"> 
             <div class="col">Favorite Language:</div>
-            <div class="col">{{ request.session.language }}</div>
+            <div class="col">{{ language }}</div>
         </div>
         <div class="row">
             <div class="col">Comment:</div>
-            <div class="col">{{ request.session.comments }}</div>
+            <div class="col">{{ comments }}</div>
         </div>
 
         <div class="row">

@@ -30,7 +30,7 @@
             {% endif %}
         </div>
         <div class="row">
-            <form action="/surveys/process" methods="POST">
+            <form action="/surveys/process/" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="name">Your name: </label>

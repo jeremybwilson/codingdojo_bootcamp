@@ -25,7 +25,7 @@
                         {% endfor %}
                     </ul>
                     {% endif %}
-                    <form action="/process/" method="POST">
+                    <form action="/process" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <label class="large" name="session_word">Add a new word</label>
@@ -61,7 +61,7 @@
                         <button class="btn btn-primary" type="submit">Clear Session</button>
                     </form>
                     {% for word in request.session.words %}
-                        <p><span class="{{ word.color_class }} {{ word.font_class }}">{{ word.session_word }}</span> - added on {{ word.session_time }}</p>
+                        <p><span class="{{ word.session_font }} {{ word.session_color }}">{{ word.session_word }}</span> - added on {{ word.session_time }}</p>
                     {% endfor %}
                 </div>
             </div>

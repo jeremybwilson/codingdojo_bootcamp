@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Session Words</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+        <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/first_app/css/styles.css' %}" />
+    </head>
+    <body>
+        <div class="container main-container">
+            <div class="row">
+                <h1>Amadon Store</h1>
+            </div>
+            <div class="row">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{# message.tags #}"{% endif %}>{# message #}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Dojo T-shirt</td>
+                        <td>$19.99</td>
+                        <td>
+                            <form action='/amadon/process' method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <select class="form-control form-control-sm" name='quantity'>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                <input type='hidden' name='product_id' value='1' />
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                                </div>
+                            </form>
+                        </td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Dojo Sweater</td>
+                        <td>$29.99</td>
+                        <td>
+                            <form action='/amadon/process' method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <select class="form-control form-control-sm" name='quantity'>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                <input type='hidden' name='product_id' value='2' />
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                                </div>
+                            </form>
+                        </td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td>Dojo Hat</td>
+                        <td>$4.99</td>
+                        <td>
+                            <form action='/amadon/process' method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <select class="form-control form-control-sm" name='quantity'>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                <input type='hidden' name='product_id' value='3' />
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                                </div>
+                            </form>
+                        </td>
+                        </tr>
+                        <tr>
+                        <th scope="row">4</th>
+                        <td>Algorithm Book</td>
+                        <td>$49.99</td>
+                        <td>
+                            <form action='/amadon/process' method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <select class="form-control form-control-sm" name='quantity'>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                <input type='hidden' name='product_id' value='4' />
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                                </div>
+                            </form>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                  <p>Some other info goes here</p>    
+                  <form action='/amadon/reset' method="POST">
+                      {% csrf_token %}
+                      <button class="btn btn-primary" type="submit">Clear Cart</button>
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>

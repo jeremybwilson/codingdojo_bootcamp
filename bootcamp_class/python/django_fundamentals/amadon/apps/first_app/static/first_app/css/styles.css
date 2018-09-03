@@ -1,0 +1,33 @@
+.main-container {
+    border: 2px solid black;
+    padding: 1em;
+}
+
+.main-container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.main-container .form-control {
+    width:auto;
+}
+
+.main-container select.form-control {
+    display: inline-block;
+}
+
+.show-container h3, .show-container p {
+    width: 100%;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}

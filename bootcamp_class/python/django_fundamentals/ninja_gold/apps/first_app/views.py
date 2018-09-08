@@ -55,6 +55,3 @@ def process(request):
 def reset(request):
   request.session.clear()
   return redirect('/')
-
-
-# Create your views here.

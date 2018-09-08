@@ -4,8 +4,6 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    # print '*' * 80
-    # print 'hello'
 
     if 'name' not in request.session:
         request.session['name'] = 'No name entered'
@@ -22,7 +20,7 @@ def index(request):
         'locations': location,
         'languages' : language
     }
-    print context
+    print (context)
 
     return render(request, 'first_app/index.html', context)
 
@@ -33,11 +31,11 @@ def process(request):
         request.session['session_count'] = 0
     else:
         request.session['session_count'] += 1
-        print request.session['session_count']
+        print (request.session['session_count'])
 
     if request.method == 'POST':
-        print '*' * 80
-        print "Here are the form results: ", request.POST
+        print ('*') * 80
+        print ("Here are the form results: ", request.POST)
         name = request.POST['name']
         request.session['name'] = name
         location = request.POST['location']

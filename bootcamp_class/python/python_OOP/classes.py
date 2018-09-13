@@ -24,8 +24,8 @@ class Ninja(Person):
         self.health -= 10
 
 class Coder(Person):
-    def __init__(self, coder_name, coder_age, coder_height):
-        super(Coder, self).__init__(coder_name, coder_age, coder_height)
+  def __init__(self, coder_name, coder_age, coder_height):
+    super(Coder, self).__init__(coder_name, coder_age, coder_height)
     self.favorite_language = 'Python'
 
 person1 = Person("Jeremy", 43, 70)

@@ -19,6 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^users/', include('apps.users.urls', namespace="users")),
-    url(r'^courses', include('apps.courses.urls', namespace="courses")),
-    url(r'^', include('apps.dashboard.urls', namespace="dashboard"))  # root route
+    url(r'^courses/', include('apps.courses.urls', namespace="courses")),
+    url(r'^', include('apps.dashboard.urls', namespace="dashboard")),  # root route
+    # url(r'^dashboard/', include('apps.dashboard.urls', namespace="dashboard")),
 ]

@@ -1,40 +1,63 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
-import re
+from .models import User
+import re, bcrypt
 
 # create a regular expression object that we can use run operations on
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-
 # Create your views here.
-def new(req):
-    return render(req, 'users/new.html')
+def new(request):
 
-def create(req):
-    errors = []
+    if 'logged_in' not in request.session:
+        request.session['logged_in'] = False
 
-    if len(req.POST['name']) < 1:
-        errors.append('Name cannot be blank.')
-    if len(req.POST['name']) < 2:
-        errors.append('Name must be longer than 2 characters.')
-    if len(req.POST['email']) < 1:
-        errors.append('Email cannot be blank.')
-    elif not EMAIL_REGEX.match(req.POST['email']):
-        errors.append('You must enter a valid email address!')
-    if len(req.POST['password']) < 1:
-        errors.append('Password cannot be blank.')
-    if len(req.POST['password']) < 3:
-        errors.append('Password must be at least 3 characters long.')
-    if len(req.POST['confirm_password']) < 1:
-        errors.append('Confirm password cannot be blank.')
-    if req.POST['password'] != req.POST['confirm_password']:
-        errors.append('Passwords do not match!')
+    print "*" * 80
+    print request.session['logged_in']
+    return render(request, 'users/new.html')
 
-    if len(errors) > 0:
-        for error in errors:
-            messages.error(req, error)
-        return redirect('/users/new')
-    # if all error validations cleared, then success
-    # else:
-    #     return redirect('/')
-        
-    return redirect('/')
+def create(request):
+    if 'attempt_count' not in request.session:
+        request.session['attempt_count'] = 0
+    else:
+        request.session['attempt_count'] += 1
+
+    if request.method == 'POST':
+            
+        valid, result = User.objects.validate_and_create_user(request.POST)
+
+        if not valid:
+            for err in result:
+                messages.error(err)
+            return redirect('users:new')
+
+        request.session['user_id'] = result
+        print request.session['user_id']
+
+        # if not 'users' in request.session:
+        #     request.session['users'] = [user]
+        # else:
+        #     request.session['users'].append(user)
+        #     request.session.modified = True
+
+        # if 'user_id' not in request.session:
+        #     user_id = False
+        # else:
+        #     user_id = request.session['users'][user_id]
+
+        return redirect('dashboard:index')
+    else:
+        return redirect('users:new')
+
+def show(request, user_id):
+    print user_id, "This is the USER ID"
+    user_id = int(user_id)
+    user = request.session['users'][user_id]
+    print user
+
+    context = {
+        'name': user['name'],
+        'email': user['email'],
+        'permission_level': user['permission_level'],
+    }
+
+    return render(request, 'users/show.html', context)

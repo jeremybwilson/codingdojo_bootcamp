@@ -1,6 +1,32 @@
+
+h1, h2, h3, h4, h5, p, button {
+    display:block;
+    width: 100%;
+}
+
+.btn.btn-primary {
+    margin: 1em 0;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.datestamp {
+    font-size: 1em;
+    display: inline-block;
+}
+
+/* form {
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+} */
+
 .red {
     color: red;
 }
+
 .green {
     color: green;
 }

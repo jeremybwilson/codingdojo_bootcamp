@@ -1,0 +1,43 @@
+{% extends './layout.html' %}
+{% block title %}Users Index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1>Users Index</h1>
+        <div class="col-1">Name</div>
+        <div class="col-2">Username</div>
+        <div class="col-3">Email</div>
+        <div class="col-2">Permission level</div>
+        <div class="col-4">Actions</div>
+    </div>
+    {% for user in users %}
+    <div class="row">
+        <div class="col-1">{{user.name}}</div>
+        <div class="col-2">{{user.username}}</div>
+        <div class="col-3">{{user.email}}</div>
+        <div class="col-2">{{user.permission_level}}</div>
+        <div class="col-4">
+            <a href="/users/{{ user.id }}/show" class="btn btn-primary btn-sm">Show User</a>
+            <a href="/users/{{ user.id }}/edit" class="btn btn-primary btn-sm">Edit User</a>
+            <!-- Check to see if user is logged in -->
+            {% if request.session.logged_id != False %}
+                <!-- Check to see if logged_id is equal to user_id -->
+                {% if request.session.logged_id == user.id %}
+                    <br />PL Level: {{ user.permission_level }} 
+                    <br />User ID: {{ user.id }}  
+                    <br />Session ID: {{ request.session.logged_id }}
+                    <!-- Check to see if user permission level is equal to ADMIN -->
+                    {# if user.id == request.session.logged_id and user.permission_level == 'ADMIN' #}
+                    {% if user.permission_level == 'ADMIN' %}
+                    <form action="/user/{{ user.id }}/delete" method='POST'>
+                        {% csrf_token %}
+                        <button class="btn btn-primary btn-sm" type="submit">Delete User</button>
+                    </form>
+                    {% endif %}
+                {% endif %}
+
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

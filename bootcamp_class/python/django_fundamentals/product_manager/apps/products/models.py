@@ -9,15 +9,15 @@ class ProductManager(models.Manager):
     pass
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
+    product_name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.TextField()
     creator = models.ForeignKey(User, related_name="created_products")
     users = models.ManyToManyField(User, related_name="products")
     created_at = models.DateTimeField(auto_now_add=True)
-    udpated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
     objects = ProductManager()
 
 def __str__(self):
-    output = "<Product object: {}>".format(self.name)
+    output = "<Product object: {}>".format(self.product_name)
     return output

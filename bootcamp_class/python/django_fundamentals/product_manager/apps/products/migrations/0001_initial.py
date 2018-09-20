@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='Product',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
+                ('product_name', models.CharField(max_length=255)),
                 ('price', models.FloatField()),
                 ('description', models.TextField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),

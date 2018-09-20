@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User Dashboard</title>
+        <title>Product Dashboard</title>
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
         <link rel="stylesheet" 
@@ -15,8 +15,28 @@
         <link rel="stylesheet" href="{% static '/products/css/styles.css' %}" />
     </head>
     <body>
-        <a href="{% url 'products:logout' %}" class="button">Logout</a>
-        <a href="{% url 'products:index' %}" class="button">Products Index</a>
-        {% block body %}{% endblock %}
+        <div class="container">
+            <div class="row">
+                <ul class="topnav">
+                    {% if request.session.logged_id == request.session.user_id %}  <!-- This works  -->
+                    <li>
+                        <span>Welcome {{ name }}</span>
+                        <a href="{% url 'products:logout' %}" class="button">Logout</a> | 
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'products:login' %}" class="button">Login</a> | 
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="{% url 'products:index' %}" class="button">Products</a> | 
+                    </li>
+                    <li>
+                        <a href="{% url 'users:index' %}" class="button">Users</a>
+                    </li>
+                </ul>
+            </div>
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

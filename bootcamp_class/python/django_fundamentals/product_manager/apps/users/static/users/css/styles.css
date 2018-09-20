@@ -13,16 +13,25 @@ form {
 
 ul.topnav{
     list-style-type: none;
+    padding-left: 0px;
     width: 100%;
 }
 
-.topnav li {
+.topnav li, .showuser {
     display: inline-block;
     margin-left: 0;
 }
 
 .btn.btn-primary {
     margin-bottom: 2px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.strong {
+    font-weight: bold;
 }
 
 .red, .error {

@@ -91,11 +91,8 @@ class UserManager(models.Manager):
         errors = []
 
         # username = form_data['username']
-        print "*" * 80
         email = form_data['email']
-        print "Here is the submitted email: ", email
         password = form_data['password']
-        print "Here is the submitted password: ", password
 
         try:
             user = User.objects.get(email=email)
@@ -113,13 +110,13 @@ class UserManager(models.Manager):
             errors.append('Username or password is invalid')
             return (False, errors)
 
-        def delete_user_by_id(self, user_id):
-            try:
-                user = User.objects.get(id=user_id)
-                user.delete()
-                return True
-            except:
-                return False
+    def delete_user_by_id(self, user_id):
+        try:
+            user = User.objects.get(id=user_id)
+            user.delete()
+            return True
+        except:
+            return False
 
 class User(models.Model):
     name = models.CharField(max_length=255)

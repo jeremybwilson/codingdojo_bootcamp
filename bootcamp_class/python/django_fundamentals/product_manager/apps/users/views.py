@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import User
+# from ..products.models import Product
 import re, bcrypt, json
 
 # Create your views here.
@@ -12,28 +13,27 @@ def index(request):
         return redirect('users:new')
 
     if 'logged_id' not in request.session:
-        request.session['logged_id'] = False
         return redirect('users:new')
-    else:
-        request.session['logged_id'] = request.session['user_id']
-        # find the user id of the logged in user
-        user_id = int(request.session['user_id'])
-        print "Here is the USER ID from session:", user_id
+    
+    # find the user id of the logged in user
+    user_id = int(request.session['user_id'])
+    # print "*" * 80
+    # print "Here is the USER ID from session:", user_id
+    user_list = User.objects.all()
+    specific_user = User.objects.get(id=user_id)
+    # print "*" * 80
+    # print "Here is the specific user from db:", specific_user
 
-        user_list = User.objects.all()
-        specific_user = User.objects.get(id=user_id)
-        print "Here is the specific user from db:", specific_user
+    context = {
+        'users': user_list,
+        'specific_user_id': specific_user.id,
+        'name': specific_user.name
+    }
 
-        context = {
-            'users': user_list,
-            'specific_user_id': specific_user.id,
-            'name': specific_user.name
-        }
-
-        print "*" * 80
-        print context
-        # print "Session User ID for this route is: ", user_id
-        print "Session Logged ID for this route is: ", request.session['logged_id']
+    print "*" * 80
+    print context
+    # print "Session User ID for this route is: ", user_id
+    print "Session Logged ID for this route is: ", request.session['logged_id']
 
     return render(request, 'users/index.html', context)
 
@@ -76,19 +76,17 @@ def show(request, user_id):
 
         if 'logged_id' not in request.session:
             logged_id = request.session['logged_id']
-            # print "*" * 80
-            # print "LOGGED ID NOT FOUND, set to => ", logged_id
         else:
             logged_id = request.session['user_id']
-            # print "*" * 80
-            # print "LOGGED ID found => ", logged_id
 
         context = {
             "name": user.name,
             "username": user.username,
             "email": user.email,
             'permission_level': user.permission_level,
-            'specific_user_id': user.id
+            'specific_user_id': user.id,
+            'created_products': user.created_products.all(),
+            'products': user.products.all()
         }
 
         # redirect_url = str('users/') + str(user_id) + str('/show.html')
@@ -104,7 +102,7 @@ def edit(request, user_id):
     except:
         return redirect('users:index')
 
-    name = form_data['name']
+    # name = form_data['name']
     context = {
         'user': user,
         'name': user.name,
@@ -113,7 +111,14 @@ def edit(request, user_id):
     return render(request, 'users/edit.html', context)
 
 def update(request, user_id):
-    pass
+    if request.method == 'POST':
+        valid, result = User.objects.validate_and_update_user(user_id, request.POST)
+        if not valid:
+            for error in result:
+                messages.error(request, error)
+            return redirect('users:edit', user_id=user_id)
+
+    return redirect('users:index')
 
 def delete(request, user_id):
     if request.method == 'POST':
@@ -130,6 +135,9 @@ def login(request):
             return redirect('users:new')
         else:
             request.session['user_id'] = result
+            request.session['logged_id'] = result
+            # print "=" * 80
+            # print "login route user_id is: ", result
             return redirect('users:index')
     else:
         return redirect('users:new')

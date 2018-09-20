@@ -129,5 +129,6 @@ class User(models.Model):
     objects = UserManager()
 
 def __str__(self):
-    output = "<User object: {}>".format(self.username)
-    return self.email
+    output = "<User object: {}>".format(self.email)
+    # output = "<User object: {}>".format(self.username)
+    return self.output

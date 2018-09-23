@@ -30,21 +30,23 @@
                 </div>
             </form>
         </div>
-        <div class="row">
+        <div class="row header ">
             <h2>Courses</h2>
         </div>
-        <div class="row strong">
-            <div class="col-3">Course Name</div>
-            <div class="col-3">Course Description</div>
-            <div class="col-3">Date Added</div>
-            <div class="col-3">Created At</div>
+            <div class="wrapper">
+            <div class="row strong">
+                <div class="col-3">Course Name</div>
+                <div class="col-3">Course Description</div>
+                <div class="col-3">Date Added</div>
+                <div class="col-3">Actions</div>
+            </div>
+            {% for course in courses %}
+            <div class="row results show_course">
+                <div class="col-3">{{ course.name }}</div>
+                <div class="col-3">{{ course.description }}</div>
+                <div class="col-3">{{ course.created_at }}</div>
+                <div class="col-3 "><a class="btn btn-link" title="Delete course" href="/{{ course.id }}/confirm">remove</a></div>
+            </div>
+            {% endfor %}
         </div>
-        {% for course in courses %}
-        <div class="row show_course">
-            <div class="col-3">{{ course.name }}</div>
-            <div class="col-3">{{ course.description }}</div>
-            <div class="col-3">{{ course.created_at }}</div>
-            <div class="col-3 "><a class="btn btn-link" title="Delete course" href="/{{ course.id }}/confirm">remove</a></div>
-        </div>
-        {% endfor %}
 {% endblock %}

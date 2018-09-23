@@ -1,13 +1,26 @@
 .wrapper {
     border: 1px solid black;
     border-radius: 2px;
-    padding: 50px;
-    width: 1200px;
 }
 
 .row {
-    /* margin: 0 0 1em 0; */
+    margin-left: 0;
+    margin-right: 0;
 }
+
+.row.header {
+    background-color: rgb(107, 106, 106);
+}
+
+.row.results {
+    display:flex;
+    align-items:center;
+}
+
+.row.results:nth-child(odd) {
+    background-color: rgb(173, 171, 171);
+}
+
 .col-1, .col-2, .col-3, .col-7, .col-8, .col-9 {
     display: inline-block;
     width: auto;
@@ -53,6 +66,10 @@ ul.topnav{
 
 .messages, h1, h2, h3, h4, h5{
     width: 100%;
+}
+
+.row.header h2 {
+    margin: .2em;
 }
 
 .btn.btn-primary {

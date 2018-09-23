@@ -51,6 +51,8 @@ def create(request):
         
         if valid:
             request.session['user_id'] = result
+            print "*" * 80
+            print "Here is the result info:", result
             return redirect('users:index')
         else:
             for error in result:

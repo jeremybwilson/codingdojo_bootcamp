@@ -1,35 +1,21 @@
 {% extends './layout.html' %}
-{% block title %}Users Index{% endblock %}
+{% block title %}Courses Index{% endblock %}
 
 {% block body %}
     <h1>Users</h1>
     <div class="row header">
-        <div class="col-1">ID</div>
-        <div class="col-2">Name</div>
-        <div class="col-3">Email</div>
-        <div class="col-2">Created At</div>
-        <div class="col-4">Actions</div>
+        <div class="col-3">Course Name</div>
+        <div class="col-3">Course Description</div>
+        <div class="col-3">Date Added</div>
+        <div class="col-3">Created At</div>
     </div>
     {% for user in users %}
     <div class="row">
-        <div class="col-1 {% if request.session.logged_id == user.id %}strong{% else %}{% endif %}">{{ user.id }}</div>
-        <div class="col-2"><a href="/users/{{ user.id }}/show">{{ user.first_name }} {{ user.last_name }} </a></div>
-        <div class="col-3">{{ user.email }}</div>
-        <div class="col-2 ">{{ user.created_at|date:"M d, Y" }}</div>
-        <div class="col-4">
-            <!-- # if the current person or an ADMIN -->
-            <a href="/users/{{ user.id }}/show" class="btn btn-link">Show</a>
-            <!-- Check to see if user is logged in -->
-            {% if request.session.logged_id != False %}
-            <!-- Check to see if logged_id is equal to user_id -->
-                <a href="/users/{{ user.id }}/edit" class="btn btn-link">Edit</a>
-                <!-- Check to see if user permission level is equal to ADMIN -->
-                {% if user.permission_level == 'ADMIN' %}
-                <form action="/user/{{ user.id }}/delete" class="customform" method="POST">
-                    <button type="submit" class="btn btn-link">Delete</button>
-                </form>
-                {% endif %}
-            {% endif %}
+        <div class="col-3">{{ course.name }}</div>
+        <div class="col-3">{{ course.description }}</div>
+        <div class="col-3">{{ course.created_at }}</div>
+        <div class="col-3 "><a class="btn btn-link" title="Delete course" href="/{{ course.id }}/destroy">remove</a></div>
+
         </div>
     </div>
     {% endfor %}

@@ -7,3 +7,12 @@ from django.shortcuts import render, HttpResponse, redirect
 def index(request):
     response = "Hello, I am your first request!"
     return HttpResponse(response, 'Hello World!')
+
+def new(request):
+    pass
+
+def create(request):
+    pass
+
+def logout(request):
+    pass

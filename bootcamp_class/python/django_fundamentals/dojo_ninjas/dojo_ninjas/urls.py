@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('apps.first_app.urls', namespace="index")),
     url(r'^admin/', admin.site.urls),
+    url(r'^dojos/', include('apps.first_app.urls', namespace="dojos")),
+    url(r'^books/', include('apps.book_authors.urls', namespace="books")),
+    url(r'^', include('apps.first_app.urls', namespace="index")),
 ]

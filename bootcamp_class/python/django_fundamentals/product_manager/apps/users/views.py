@@ -5,7 +5,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import User
 # from ..products.models import Product
-import re, bcrypt, json
+import re, bcrypt
 
 # Create your views here.
 def index(request):
@@ -58,6 +58,7 @@ def create(request):
             return redirect('users:new')
     else:
         return redirect('users:new')
+
 
 def show(request, user_id):
 

@@ -28,12 +28,15 @@ class Airplane(Vehicle):
     return self
 
 vehicle1 = Vehicle(4,8,"dodge","minivan")
-print vehicle1.make
+print "Vehicle make is:", vehicle1.make
+
 b = Bike(2,1,"Schwinn","Paramount")
-print b.vehicle_type()
+print "Vehicle type is:", b.vehicle_type()
+
 c = Car(8,5,"Toyota", "Matrix")
 c.set_wheels()
-print c.wheels
+print "Vehicle has", c.wheels, "wheels"
+
 a = Airplane(22,853,"Airbus","A380")
 a.fly(580)
 print a.mileage

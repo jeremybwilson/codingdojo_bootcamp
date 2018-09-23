@@ -1,0 +1,50 @@
+{% extends './layout.html' %}
+{% block title %}Add a Student to all bootcamp courses{% endblock %}
+
+{% block body %}
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'courses/css/styles.css' %}">
+        <div class="row">
+            <h1>Add a new course</h1>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="row">
+            <form action="/add" method="POST">
+                {% csrf_token %}
+                <div class="col-3">
+                    <label for="course_name">Name:</label>
+                    <label for="description">Description</label>        
+                </div>
+                <div class="col-9">
+                    <input type="text" name="course_name" class="course_name">
+                    <textarea name="desc" class="description" cols="30" rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <h2>Courses</h2>
+        </div>
+        <div class="row strong">
+            <div class="col-3">Course Name</div>
+            <div class="col-3">Course Description</div>
+            <div class="col-3">Date Added</div>
+            <div class="col-3">Created At</div>
+        </div>
+        {% for course in courses %}
+        <div class="row show_course">
+            <div class="col-3">{{ course.name }}</div>
+            <div class="col-3">{{ course.description }}</div>
+            <div class="col-3">{{ course.created_at }}</div>
+            <div class="col-3 "><a class="btn btn-link" title="Delete course" href="/{{ course.id }}/confirm">remove</a></div>
+        </div>
+        {% endfor %}
+{% endblock %}

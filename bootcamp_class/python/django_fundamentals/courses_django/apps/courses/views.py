@@ -10,19 +10,13 @@ def index(request):
     context = {
         "courses" : Course.objects.all(),
     }
-    print "*" * 80
-    print "Successfully entered the add route."
-    print context
 
     return render(request, "courses/index.html", context)
 
 def add(request):
     if request.method == 'POST':
 
-        # errors = Course.objects.custom_form_validator(request.POST)
         valid, result = Course.objects.custom_form_validator(request.POST)
-        print "*" * 80
-        print "Successfully entered the add route."
 
         if valid:
             request.session['course_id'] = result
@@ -39,15 +33,10 @@ def confirm(request, course_id):
     context = {
         'course' : Course.objects.get(id=course_id)
     }
-    print "*" * 80
-    print "Successfully entered the confirm route."
-    print context
 
     return render(request, "courses/confirm.html", context)
 
 def destroy(request, course_id):
     Course.objects.get(id=course_id).delete()
-    print "*" * 80
-    print "Successfully entered the delete route."
 
     return redirect("/")

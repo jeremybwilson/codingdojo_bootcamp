@@ -60,7 +60,7 @@ class UserManager(models.Manager):
         return (True, user.id)
 
         # REMEMBER TO HASH THE PASSWORD
-        pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+        # pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 
     def validate_and_update_user(self, user_id, form_data):
         errors = []

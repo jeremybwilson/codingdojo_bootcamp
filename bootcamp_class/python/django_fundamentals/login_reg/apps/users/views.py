@@ -1,30 +1,25 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import User
-import random, re, datetime, bcrypt
+import random, datetime, bcrypt
 
 # create a regular expression object that we can use run operations on
-EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+# EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 # Create your views here.
 def index(request):
     
     if 'user_id' not in request.session:
         request.session['user_id'] = False
-        print "*" * 80
-        print "Session 'user_id' status was not stored, so we set it to: ", request.session['user_id']
         return redirect('users:index')
-    else:
-        print "Session 'user_id' status already stored as: " + str(request.session['user_id'])
+    # else:
+    #     print "Session 'user_id' status already stored as: " + str(request.session['user_id'])
 
-    
     if 'logged_in' not in request.session:
         request.session['logged_in'] = False
-        print "*" * 80
-        print "Session 'logged_in' status was not stored, so we set it to: ", str(request.session['logged_in'])
         return redirect('users:index')
-    else:
-        print "Session 'logged_in' status already stored as: " + str(request.session['logged_in'])
+    # else:
+    #     print "Session 'logged_in' status already stored as: " + str(request.session['logged_in'])
 
     todaysDateVariable = datetime.datetime.now().date()
     context = dict(todaysDateVariable = todaysDateVariable)
@@ -59,9 +54,9 @@ def create(request):
         if valid:
             request.session['user_id'] = result
 
-            # login status & user id --> saved to session
+            # login status & user id => saved to session
             request.session['logged_in'] = True
-            request.session['user_id'] = User.objects.get(email=request.POST["email"]).id
+            request.session['user_id'] = User.objects.get(email=email).id
 
             # redirect to successful route with message
             messages.success(request, "Successfully, registered and logged in!", extra_tags="registration_success")
@@ -71,14 +66,6 @@ def create(request):
             for error in result:
                 messages.error(request, error)
             return redirect('users:new')
-
-        # user = {
-        #     'first_name' : request.POST['first_name'],
-        #     'last_name' : request.POST['last_name'],
-        #     'email' : request.POST['email'],
-        #     'password' : request.POST['password'],
-        #     'permission_level' : 'STUDENT'
-        # }
 
         if not 'users' in request.session:
             request.session['users'] = [user]
@@ -93,6 +80,17 @@ def create(request):
         print form_data
         return redirect('users:create')
 
+def show(request, user_id):
+    try:
+        user = User.objects.get(id=user_id)
+    except:
+        return redirect('/users')
+
+    context = {
+        'user' : user,
+    }
+
+    return render(request, 'users/show.html', context)
 
 def success(request):
     if 'user_id' not in request.session:
@@ -106,14 +104,10 @@ def success(request):
         print "Session 'logged_in' status already stored as: " + str(request.session['logged_in'])
 
     print "*" * 80
-    print "This is the 'show' route"
+    print "This is the 'success' route"
     user_id = int(request.session["user_id"])
-    print "User ID:", user_id
-    print "Logged ID:", request.session['logged_in']
     # user = request.session['users'][user_id]
-    # print "User ID from session is:", user
     logged_in_status = request.session['logged_in']
-    # print "Session logged_in set to: ", logged_in_status
     print "*" * 80
 
     if request.session['logged_in'] == True:

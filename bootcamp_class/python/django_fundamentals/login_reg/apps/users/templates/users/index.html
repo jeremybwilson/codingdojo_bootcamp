@@ -8,11 +8,12 @@
         </div>
         {% if request.session.logged_id != False %}
         <div class="row">
-            <h1>Welcome {{ request.session.first_name }} {{ request.session.last_name }}</h1>
+            <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
             <p>Today's date is: {{ todaysDateVariable }}</p>
             <ul class="gold">
                 <li>Session user_id: {{ request.session.user_id }}</li>
                 <li>Session logged_in: {{ request.session.logged_in }}</li>
+                <li>Session logged_in_status: {{ request.session.logged_in_status }}</li>
             </ul>
         </div>
         {% endif %}
@@ -25,10 +26,6 @@
                 {% endfor %}
             </ul>
             {% endif %}
-            <ul>
-                <li>Session user_id: {{ request.session.user_id }}</li>
-                <li>Session logged_in: {{ request.session.logged_in }}</li>
-            </ul>
         </div>
         <div class="row">
             <form action="{% url 'users:create' %}" method="POST">

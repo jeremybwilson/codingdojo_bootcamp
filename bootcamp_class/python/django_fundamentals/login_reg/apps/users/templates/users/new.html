@@ -10,7 +10,7 @@
             {% if request.session.logged_id != '' %}
             <h1>Welcome {{ request.session.first_name }} {{ request.session.last_name }}</h1>
             <p>You are already signed in.</p>
-            <a class="btn btn-primary" href="{% url 'users:reset' %}" role="button">Sign out</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'users:logout' %}" role="button">Sign out</a>
             {% else %}
 
             {% endif %}

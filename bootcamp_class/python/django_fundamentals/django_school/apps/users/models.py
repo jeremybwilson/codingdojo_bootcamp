@@ -35,32 +35,64 @@ class UserManager(models.Manager):
 
         if errors:
             return (False, errors)
+        # check for existence of a user
+        try:
+            existing_user = User.objects.get(email=email)
+            errors.append('Email already exists.')
+            return (False, errors)
+        except:
+            # REMEMBER TO HASH THE PASSWORD
+            # pw_hash = bcrypt.hashpw(form_data['password'].encode(), bcrypt.gensalt())
+            pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())   # shortened variable names before passing them here
+            # user = self.create(name=form_data['name'], email=form_data['email'], pw_hash=pw_hash, permission_level="STUDENT")
+            user = self.create(name=name, email=email, pw_hash=pw_hash, permission_level='STUDENT')   # shortened variable names before passing them here
 
-        # REMEMBER TO HASH THE PASSWORD
-        pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
-        user = self.create(name=name, email=email, pw_hash=pw_hash, permission_level='STUDENT')
-        
-        # user = {
-        #     'name': name,
-        #     'email': email,
-        #     'password': password,
-        #     'pw_hash': password,
-        #     'permission_level': 'STUDENT'
-        # }
-        
-        # if not 'users' in request.session:
-        #     request.session['users'] = [user]
-        # else:
-        #     request.session['users'].append(user)
-        #     request.session.modified = True
+        return (True, user.id)
 
-        # if 'user_id' not in request.session:
-        #     user_id = False
-        # else:
-        #     user_id = request.session['users'][user_id]
+    def login_user(self, form_data):
+        errors = []
+        email = form_data['email']
+        password = form_data['password']
 
-        return (True, user)
-        # return redirect('/users/<user_id>/show'
+        try:
+            user = self.get(email=email)
+            # check to see if passwords match
+            if not bcrypt.checkpw(password.encode(), user.pw_hash.encode()):
+                errors.append('Username or password is invalid')
+                return (False, errors)
+            return (True, user.id)
+        except:
+            errors.append('Username or password is invalid')
+            return (False, errors)
+
+    def validate_and_update_user(self, user_id, form_data):
+        errors = []
+        # not converting form data into straight variables
+        if len(form_data['name']) < 2:  # len of name field must be at least 2 chars
+            errors.append('Name must be at least 2 characters')
+        if not EMAIL_REGEX.match(form_data['email']):  # email field must meet complexity/regex reqs
+            errors.append('Must use a valid email address')
+
+        if errors:
+            return (False, errors)
+
+        try:
+            user = self.get(id=user_id)
+            user.name = form_data['name']
+            user.email = form_data['email']
+            user.save()
+            return (True, user)
+        except:
+            errors.append("User doesn't exist")
+            return (False, errors)
+
+    def delete_user_by_id(self, user_id):
+        try:
+            user = self.get(id=user_id)
+            user.delete()
+            return True
+        except:
+            return False
 
 
 class User(models.Model):
@@ -69,11 +101,10 @@ class User(models.Model):
     email = models.CharField(max_length=255)
     pw_hash = models.CharField(max_length=500)
     permission_level = models.CharField(max_length=255)
-    # courses = models.ManyToManyField(Course)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 
     def __str__(self):
-        return self.email
-        
+        output = "<User object: {} {} {}>".format(self.name, self.email, self.permission_level)
+        return output

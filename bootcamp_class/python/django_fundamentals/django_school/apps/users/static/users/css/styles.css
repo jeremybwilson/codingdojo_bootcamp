@@ -1,7 +1,15 @@
 
-h1, h2, h3, h4, h5, p, button {
+h1, h2, h3, h4, h5, p, button, table {
     display:block;
     width: 100%;
+}
+
+form {
+    display: inline-block;
+}
+
+th {
+    text-align: center;
 }
 
 .btn.btn-primary {
@@ -23,10 +31,10 @@ h1, h2, h3, h4, h5, p, button {
     margin-left: auto;
 } */
 
-.red {
+.red, .error {
     color: red;
 }
 
-.green {
+.green, .success {
     color: green;
 }

@@ -1,63 +1,121 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import User
+from ..courses.models import Course  # don't need this import because of the related names in Course class
 import re, bcrypt
 
 # create a regular expression object that we can use run operations on
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 # Create your views here.
-def new(request):
 
+def index(request):
+    if 'logged_in' not in request.session:
+        return redirect('users:new')
+
+    if 'user_id' not in request.session:
+        return redirect('users:new')
+    else:
+        user_id = int(request.session['user_id'])
+        try:
+            user_list = User.objects.all()
+            specific_user = User.objects.get(id=user_id)
+        except:
+            return redirect('users:index')
+        
+    context = {
+        'users': user_list,
+        'specific_user': specific_user
+    }
+    return render(request, 'users/index.html', context)
+
+def new(request):
+    if 'user_id' not in request.session:
+        request.session['user_id'] = False
     if 'logged_in' not in request.session:
         request.session['logged_in'] = False
-
-    print "*" * 80
-    print request.session['logged_in']
     return render(request, 'users/new.html')
 
-def create(request):
-    if 'attempt_count' not in request.session:
-        request.session['attempt_count'] = 0
-    else:
-        request.session['attempt_count'] += 1
+def login(request):
+    if request.method != 'POST':
+        return redirect('users:index')
 
-    if request.method == 'POST':
-            
-        valid, result = User.objects.validate_and_create_user(request.POST)
+    valid, result = User.objects.login_user(request.POST)
 
-        if not valid:
-            for err in result:
-                messages.error(err)
-            return redirect('users:new')
-
+    if not valid:
+        for error in result:
+            messages.error(request, error)
+        return redirect('users:new')
+    else:   # Case : successful login 
         request.session['user_id'] = result
-        print request.session['user_id']
+        request.session['logged_in'] = valid
+        print "*" * 80
+        print "Session user_id:", result
+        print "Login status:", valid
+        return redirect('users:index')
 
-        # if not 'users' in request.session:
-        #     request.session['users'] = [user]
-        # else:
-        #     request.session['users'].append(user)
-        #     request.session.modified = True
-
-        # if 'user_id' not in request.session:
-        #     user_id = False
-        # else:
-        #     user_id = request.session['users'][user_id]
-
-        return redirect('dashboard:index')
+def create(request):
+    if request.method == 'POST':
+        valid, result = User.objects.validate_and_create_user(request.POST)
+        if not valid:
+            for error in result:
+                messages.error(request, error)
+            return redirect('users:new')
+        request.session['user_id'] = result
+        request.session['logged_in'] = valid
+        print "Session User ID:", result
+        print "Login status:", request.session['logged_in']
+        return redirect('users:index')
     else:
         return redirect('users:new')
 
 def show(request, user_id):
-    print user_id, "This is the USER ID"
+    if 'user_id' not in request.session:
+        return redirect('users:new')
+
     user_id = int(user_id)
-    user = request.session['users'][user_id]
-    print user
+    try:
+        user = User.objects.get(id=user_id)
+    except:
+        return redirect('users:index')
 
     context = {
-        'name': user['name'],
-        'email': user['email'],
-        'permission_level': user['permission_level'],
+        'user_id': user.id,
+        'name': user.name,
+        'email': user.email,
+        'permission_level': user.permission_level,
+        'courses_taught': user.courses_taught.all(),
+        'enrolled_courses': user.enrolled_courses.all(),
     }
-
     return render(request, 'users/show.html', context)
+
+def edit(request, user_id):
+    if 'user_id' not in request.session:
+        return redirect('users:new')
+
+    try:
+        user = User.objects.get(id=user_id)
+    except:
+        return redirect('users:index')
+
+    context = {
+        'user': user
+    }
+    return render(request, 'users/edit.html', context)
+
+def update(request, user_id):
+    if request.method == "POST":
+        valid, result = User.objects.validate_and_update_user(user_id, request.POST)
+        if not valid:
+            for error in result:
+                messages.error(request, error)
+            return redirect('users:edit', user_id=user_id)
+        return redirect('users:index')
+
+def logout(request):
+    request.session.clear()
+    return redirect('dashboard:index')
+
+def delete(request, user_id):
+    if request.method == 'POST':
+        User.objects.delete_user_by_id(user_id)
+    return redirect('users:index')

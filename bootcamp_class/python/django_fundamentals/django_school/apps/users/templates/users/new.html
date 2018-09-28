@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Django School</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-    <link rel="stylesheet" 
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-    crossorigin="anonymous" />
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/users/css/styles.css' %}" />
-</head>
-<body>
-    <div class="container">
+{% extends './layout.html' %}
+{% block title %}Register or Create User{% endblock %}
+
+{% block body %}
         <div class="row">
-            <h1>Login or Register</h1>
             {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
@@ -27,21 +12,37 @@
             {% endif %}
         </div>
         <div class="row">
-            <form action="/users/create/" method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" placeholder="Name" class="form-control">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Valid email" class="form-control">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
-                    <label for="confirm_password">Confirm password</label>
-                    <input type="password" name="confirm_password" class="form-control">
-                    <button class="btn btn-primary" type="submit">Create New User</button>
-                </div>
-            </form>
+            <div class="col-6">
+                <h1>Register or Create User</h1>
+                <form action="{% url 'users:create' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Name" class="form-control">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="Valid email" class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control">
+                        <label for="confirm_password">Confirm password</label>
+                        <input type="password" name="confirm_password" class="form-control">
+                        <button class="btn btn-primary" type="submit" value="">Create New User</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                {% if request.session.logged_in == False %}
+                <h1>Login</h1>
+                <form action="{% url 'users:login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="Valid email" class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control">
+                        <button class="btn btn-primary" type="submit" value="Login">Login</button>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
         </div>
-    </div>
-</body>
-</html>
+{% endblock %}

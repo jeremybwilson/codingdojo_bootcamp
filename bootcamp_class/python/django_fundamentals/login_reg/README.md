@@ -1,5 +1,5 @@
 # Coding Dojo Bootcamp Assignment
-## Python, Django / Django / Login/Registration - Required
+## Python, Django / Django / Login Registration - Required
 
 ### Repository Link
 

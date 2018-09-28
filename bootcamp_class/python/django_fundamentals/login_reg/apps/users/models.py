@@ -100,8 +100,8 @@ class UserManager(models.Manager):
         password = form_data['password']
 
         try:
+            # assign user to variable based on POST'ed email address
             user = User.objects.get(email=email)
-            # user = User.objects.get(email=email)
             # check to see if passwords match
             if not bcrypt.checkpw(password.encode(), user.pw_hash.encode()):
                 errors.append('Email or password is invalid')

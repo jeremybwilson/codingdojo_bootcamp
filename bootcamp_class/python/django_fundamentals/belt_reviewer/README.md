@@ -3,5 +3,5 @@
 
 ### Repository Link
 
-> ``` https://github.com/jeremybwilson/belt_reviewer_django.git ```<br>
-> _[Click Here](https://github.com/jeremybwilson/belt_reviewer_django.git)_
+> ``` https://github.com/jeremybwilson/belt_review_django.git ```<br>
+> _[Click Here](https://github.com/jeremybwilson/belt_review_django.git)_

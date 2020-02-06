@@ -20,25 +20,31 @@ $(document).ready(function(){
 
   // set base URL for Pokemon API character info
   const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+  
   // set root portion of media/img URL here
-  const imgBaseUrl = 'http://pokeapi.co/media/img/'
+  // const imgBaseUrl = 'https://pokeapi.co/media/sprites/pokemon/';  // this seems to be deprecated 
+  const imgBaseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
   // embed opening <div> tag for .row container
   // $('#pokemon').append('<div class="row">');
 
   $.get("https://pokeapi.co/api/v2/pokemon/?limit=51", function(response) {
     for(let i = 0; i < response.results.length; i++){
-
+      
+      let url = response.results[i].url.split('/');
+      let pokemonCharID = response.results[i].url.split('/')[6];
+      
       let imgAlt = response.results[i].name;
       let pokemonCharName = response.results[i].name;
       // set variable to pull in specific Pokemon character ID (from URL) here,
       // get subtring value from the API endpoint for results.url
-      // let url = response.results[i].url.split('/');
-      // let pokemonCharID = url[url.length - 2];
-      let url = response.results[i].url.split('/');
-      let pokemonCharID = response.results[i].url.split('/')[6];
+
+      const pokeID = response.results[i];
+      console.log('Here is the charID response', pokeID);
+      
       // create imagePath URL here
       const pokemonCharFullPath = imgBaseUrl + pokemonCharID + '.png';
+      console.log('Here is the Image URI', pokemonCharFullPath);
 
       // let htmlStr = `<div data-id="${pokemonCharID}" data-title="${pokemonCharName}"><img alt="${imgAlt}" id="${pokemonCharID}" src="${pokemonCharFullPath}" /></div>`;
       let htmlStr = `<img alt="${imgAlt}" data-id="${pokemonCharID}" src="${pokemonCharFullPath}" />`;
@@ -56,7 +62,7 @@ $(document).ready(function(){
       // return character info from the JSON response;
       let pokemonCharID   = id;
       let pokemonCharName = response.name;
-      let pokemonImgURL   = imgBaseUrl+id +'.png';
+      let pokemonImgURL   = response.sprites.front_default;
       let pokemonHeight   = response.height;
       let pokemonWeight   = response.weight;
 

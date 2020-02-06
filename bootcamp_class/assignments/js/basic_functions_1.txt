@@ -1,0 +1,152 @@
+// a = 35;          // => Expected output: 35
+// console.log(a);
+// function hello(a) {
+//   a = 50;
+//   console.log(a);
+//   return 20;
+// }
+// console.log(a);  // => Expected output: 35
+// b = hello(a);
+// console.log(b);  // => Expected output: 50, 20
+
+// a = 20;
+// console.log(a);   // => Expected output: 20
+// function hello(a) {
+//   a = 50;
+//   console.log(a);
+//   return a;
+// }
+// a = hello(a);    // => Expected output: 50
+// console.log(a);  // => Expected output: 50
+
+// #1
+// function a() {
+//   return 35;
+// }
+// console.log(a());  // Expected output: 35
+
+// #2
+// function a(){
+//   return 4;
+// }
+// console.log(a() + a()); // Expected output: 8
+
+// #3
+// function a(b){
+//   return b;
+// }
+// console.log(a(2) + a(4)); // Expected output: 6
+
+// #4
+// function a(b){
+//   console.log(b);
+//   return b * 3;
+// }
+// console.log(a(3)); // Expected output: 3, 9
+
+// #5
+// function a(b){
+//   return b * 4;
+//   console.log(b);
+// }
+// console.log(a(10)); // Expected output: 40
+
+// #6
+// function a(b){
+//   if(b < 10){
+//     return 2;
+//   }
+//   else {
+//     return 4;       // This statement runs, not (b < 10)
+//   }
+//   console.log(b);
+// }
+// console.log(a(15)); // Expected output: 4
+
+// #7 
+// function a(b,c) {
+//   return b * c;
+// }
+// console.log(10,3);    // => Expected output: 10, 3
+// console.log(a(3,10)); // => Expected output: 30
+
+// #8
+// function a(b){
+//   for(var i = 0; i < 10; i++){
+//     console.log(i);
+//   }
+//   return i;
+// }
+// console.log(3);  // => Expected output: 3
+// console.log(4);  // => Expected output: 4
+
+// #9
+// function a(){
+//   for(var i = 0; i < 10; i++){
+//     i = i + 2;
+//     console.log(i);
+//   }
+// }
+// a();  // => Expected output: 0,2,5,8,11
+
+// #10
+// function a(b,c){
+//   // debugger;
+//   for(var i = b; i < c; i++){
+//     console.log(i);
+//   }
+//   return b*c;
+// }
+// a(0,10);               // => Expected output: 0,1,2,3,4,5,6,7,8,9
+// console.log(a(0,10));  // => Expected output: 0,1,2,3,4,5,6,7,8,9, 0
+
+// #11
+// function a() {
+//   for(var i = 0; i < 10; i++){
+//     for(var j = 0; j < 10; j++){
+//       console.log(j);
+//     }
+//     console.log(i);
+//   }
+// }
+// Expected output: nothing, function was not called  
+
+// #12
+// function a() {
+//   for(var i = 0; i < 10; i++){
+//     for(var j = 0; j < 10; j++){
+//       console.log(i, j);
+//     }
+//     console.log(j,i);
+//   }
+// }
+// Expected output: nothing, function was not called
+
+// #13
+// var z = 10;
+// function a() {
+//   var z = 15;
+//   console.log(z);
+// }
+// console.log(z);  // Expected output: 10
+
+// #14
+// var z = 10;
+// function a() {
+//   var z = 15;
+//   console.log(z);
+// }
+// a();             // Expected output: 15
+// console.log(z);  // Expected output: 10
+
+// #15
+// var z = 10;
+// function a() {
+//   var z = 15;
+//   console.log(z);
+//   return z;
+// }
+// z = a();
+// console.log(z);  // Expected output: 15, 15
+
+// Successful prediction of 12/15 => mised 4, 9, 10, 

@@ -1,0 +1,142 @@
+// Sigma - Implement function sigma(num) that given a number, returns the sum of all positive integers up to number (inclusive).  
+// Ex: sigma(3) = 6 (or 1+2+3); sigma(5) = 15 (or 1+2+3+4+5).
+// function sigma(num){
+  // loop through the entire sequence, 
+  // formula for arithmetic progression
+  // return the sum
+  // return (num * (num + 1)/2);
+// }
+function sigma(num){
+  let sum = 0;
+  for(let i = 1; i <= num; i++){
+    // with each number, add i + the value of the next number
+    // 1st iterations: i = 1
+    // 2nd iteration: i = 2
+    // BREAKS 3rd iteration: i = 3
+    sum += i;
+  }
+  return sum;
+}
+// Test cases
+// console.log('The output of sigma is: ' + sigma(3));  // Expected result => 6
+// console.log('The output of sigma is: ' + sigma(5));  // Expected result => 15
+// console.log('The output of sigma is: ' + sigma(8));  // Expected result => 36
+
+// Factorial - Write a function factorial(num) that, given a number, returns the product (multiplication) of all positive integers from 1 up to number (inclusive).  
+// For example, factorial(3) = 6 (or 1*2*3); factorial(5) = 120 (or 1*2*3*4*5).
+function factorial(num){
+  // factorial of 0 or 1 is always 1
+  if (num === 0 || num === 1){
+    return 1;
+  }
+  // start the loop while i equal to passed number, 
+  // decrement i with each iteration
+  let product = 1;
+  // for(let i = num - 1; i >= 1; i--){
+  for(let i = 2; i <= num; i++){
+    // store the value of num with each iteration
+    product *= i;
+    /* 
+                    num      var i = num - 1       num *= i         i--       i >= 1?
+    1st iteration:   5           4 = 5 - 1         20 = 5 * 4        3          yes   
+    2nd iteration:  20           3 = 4 - 1         60 = 20 * 3       2          yes
+    3rd iteration:  60           2 = 3 - 1        120 = 60 * 2       1          yes  
+    4th iteration: 120           1 = 2 - 1        120 = 120 * 1      0          no             
+    5th iteration: 120               0                120
+    End of the FOR loop 
+    */
+  }
+  return product;
+}
+// Test cases
+// console.log(factorial(0));  // Expected result => 1
+// console.log(factorial(1));  // Expected result => 1
+// console.log(factorial(3));  // Expected result => 6
+// console.log(factorial(5));  // Expected result => 120
+
+// Fibonacci - Create a function to generate Fibonacci numbers.  In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1.  
+// Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc).
+// Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8).  
+// Do this without using recursion first.  If you don't know what a recursion is yet, don't worry as we'll be introducing this concept in Part 2 of this assignment.
+function fabulousFibonacci(num){
+  // debugger;
+  // set variables a and b
+  // set a to b and b to 1
+  let a = 0;
+  let b = 1;
+  // loop while num >= 0 [1, 1]
+  while(num > 0){
+    // set sum to a+b
+    let sum = a + b; //[1 1, 2]
+    // set a to b
+    a = b; // [1, 2]
+    // set b to sum
+    b = sum; // [1, 2]
+    // decrement num
+    num--;
+  }
+  // return
+  return a;
+}
+
+// Test cases
+// console.log(fabulousFibonacci(0));  // Expected result => 0
+// console.log(fabulousFibonacci(1));  // Expected result => 1
+// console.log(fabulousFibonacci(2));  // Expected result => 1
+// console.log(fabulousFibonacci(3));  // Expected result => 2
+// console.log(fabulousFibonacci(4));  // Expected result => 3
+// console.log(fabulousFibonacci(5));  // Expected result => 5
+// console.log(fabulousFibonacci(6));  // Expected result => 8
+
+// Array: Second-to-Last: Return the second-to-last element of an array. Given [42, true, 4, "Liam", 7], return "Liam".  If array is too short, return null.
+function secondToLastValue(array){
+  let temp = array[array.length - 2];
+  // for(let i = 0; i < array.length; i++){
+  // }
+  // console.log(array.length);
+  return temp;
+}
+// Test cases
+console.log(secondToLastValue([1,2,3,4,5,6,7]));            // Expected result => 6
+console.log(secondToLastValue([42, true, 4, "Liam", 7]));   // Expected result => Liam
+
+// Array: Nth-to-Last: Return the element that is N-from-array's-end.  Given ([5,2,3,6,4,9,7],3), return 4.  If the array is too short, return null.
+function nthToLast(array, n){
+
+}
+// Test cases
+// console.log(nthToLast([1,2,3,4,5,6], 2));
+// console.log(nthToLast([1,2,3,4,5,6], 3));
+// console.log(nthToLast([1,2,3,4,5,6], 4));
+
+
+// Array: Second-Largest: Return the second-largest element of an array. Given [42,1,4,3.14,7], return 7.  If the array is too short, return null.
+function secondToLargest(array){
+  let newArray = [];
+  // loop through the array values
+  for(let i = 0; i < array.length; i++){
+    // resort and rebuild array smallest to largest
+    // find 2nd largest value of new array
+  }
+  // return 2nd largest value of new array
+}
+// Test cases
+// console.log(secondToLargest([1,2,3,4,5,6]));  // Expected result =>
+
+
+// Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  
+// Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
+function doubleTrouble(array){
+  // create a new placeholder array
+  let newArray = [];
+  // loop through the existing array values
+  for(let i = 0; i < array.length; i++){
+    // for each array value, push the current array index value in twice
+    newArray.push(array[i]);
+    newArray.push(array[i]);
+  }
+  // return the new array
+  return newArray;
+}
+// Test cases
+console.log(doubleTrouble([4, "Ulysses", 42, false]));  // Expected result => [4,4, "Ulysses", "Ulysses", 42, 42, false, false]

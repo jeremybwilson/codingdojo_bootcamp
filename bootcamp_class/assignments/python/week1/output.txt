@@ -1,0 +1,157 @@
+ jeremybwilson: ~
+👾 >python -V
+Python 2.7.14
+
+ jeremybwilson: ~
+👾 >pip install Flask
+Collecting Flask
+  Could not fetch URL https://pypi.python.org/simple/flask/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:661) - skipping
+  Could not find a version that satisfies the requirement Flask (from versions: )
+No matching distribution found for Flask
+
+ jeremybwilson: ~
+👾 >pip install Django==1.11.9
+Collecting Django==1.11.9
+  Could not fetch URL https://pypi.python.org/simple/django/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:661) - skipping
+  Could not find a version that satisfies the requirement Django==1.11.9 (from versions: )
+No matching distribution found for Django==1.11.9
+
+ jeremybwilson: ~
+👾 >pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+pip (9.0.1)
+setuptools (28.8.0  
+
+ jeremybwilson: ~
+🎲 >gcc -v
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+ jeremybwilson: ~
+🎲 >brew -v
+Homebrew 1.7.1
+Homebrew/homebrew-core (git revision 0e25f; last commit 2018-07-27)
+
+ jeremybwilson: ~
+🎲 >brew update
+Updated 2 taps (homebrew/cask, homebrew/core).
+==> Updated Formulae
+ansible              ccrypt               gitbucket            ipfs                 libdazzle            mikutter             mysql@5.5            plantuml             tmux-xpanes          yarn
+b2-tools             chrome-cli           gnome-builder        jenkins-job-builder  link-grammar         mongo-cxx-driver     pgcli                quicktype            tup                  youtube-dl
+blockhash            dxpy                 goreleaser           jpeg-turbo           mapcrafter           mysql                phplint              skinny               urh
+
+ jeremybwilson: ~
+🎲 >brew install python@2
+Warning: python@2 2.7.15_1 is already installed, it's just not linked
+You can use `brew link python@2` to link this version.
+
+ jeremybwilson: ~
+🎲 >brew uninstall python
+Uninstalling /usr/local/Cellar/python/3.6.4_3... (3,618 files, 56.3MB)
+
+ jeremybwilson: ~
+🎲 >brew update
+Already up-to-date.
+
+ jeremybwilson: ~
+🎲 >python -V
+Python 2.7.14
+
+ jeremybwilson: ~
+🎲 >brew uninstall python@2
+Error: Refusing to uninstall /usr/local/Cellar/python@2/2.7.15_1
+because it is required by watchman, which is currently installed.
+You can override this and force removal with:
+  brew uninstall --ignore-dependencies python@2
+
+ jeremybwilson: ~
+🎲 >brew install python@2
+Warning: python@2 2.7.15_1 is already installed, it's just not linked
+You can use `brew link python@2` to link this version.
+
+ jeremybwilson: ~
+🎲 >pip install Django==1.11.9
+Collecting Django==1.11.9
+  Could not fetch URL https://pypi.python.org/simple/django/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:661) - skipping
+  Could not find a version that satisfies the requirement Django==1.11.9 (from versions: )
+No matching distribution found for Django==1.11.9
+
+ jeremybwilson: ~
+🎲 >python2 -m pip uninstall pip setuptools
+Uninstalling pip-9.0.1:
+Proceed (y/n)? y
+  Successfully uninstalled pip-9.0.1
+Proceed (y/n)? y
+  Successfully uninstalled setuptools-28.8.0
+
+ jeremybwilson: ~
+🎲 >curl https://bootstrap.pypa.io/get-pip.py | python2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1604k  100 1604k    0     0  5098k      0 --:--:-- --:--:-- --:--:-- 5092k
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/5f/25/e52d3f31441505a5f3af41213346e5b6c221c9e086a166f3703d2ddaf940/pip-18.0-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 9.8MB/s
+Collecting setuptools
+  Downloading https://files.pythonhosted.org/packages/ff/f4/385715ccc461885f3cedf57a41ae3c12b5fec3f35cce4c8706b1a112a133/setuptools-40.0.0-py2.py3-none-any.whl (567kB)
+    100% |████████████████████████████████| 573kB 5.6MB/s
+Collecting wheel
+  Downloading https://files.pythonhosted.org/packages/81/30/e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/wheel-0.31.1-py2.py3-none-any.whl (41kB)
+    100% |████████████████████████████████| 51kB 18.9MB/s
+Installing collected packages: pip, setuptools, wheel
+Successfully installed pip-18.0 setuptools-40.0.0 wheel-0.31.1
+
+ jeremybwilson: ~
+🎲 >pip install Django==1.11.9
+Collecting Django==1.11.9
+  Downloading https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl (6.9MB)
+    100% |████████████████████████████████| 7.0MB 2.9MB/s
+Collecting pytz (from Django==1.11.9)
+  Downloading https://files.pythonhosted.org/packages/30/4e/27c34b62430286c6d59177a0842ed90dc789ce5d1ed740887653b898779a/pytz-2018.5-py2.py3-none-any.whl (510kB)
+    100% |████████████████████████████████| 512kB 16.8MB/s
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.9 pytz-2018.5
+
+ jeremybwilson: ~
+🎲 >pip list
+Package    Version
+---------- -------
+Django     1.11.9
+pip        18.0
+pytz       2018.5
+setuptools 40.0.0
+wheel      0.31.1
+
+ jeremybwilson: ~
+🎲 >pip install Django==1.11.9
+Requirement already satisfied: Django==1.11.9 in /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (1.11.9)
+Requirement already satisfied: pytz in /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (from Django==1.11.9) (2018.5)
+
+ jeremybwilson: ~
+🎲 >pip freeze
+Django==1.11.9
+pytz==2018.5
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip uninstall Django
+Uninstalling Django-1.11.9:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/2.7/bin/django-admin
+    /Library/Frameworks/Python.framework/Versions/2.7/bin/django-admin.py
+    /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Django-1.11.9.dist-info/*
+    /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/django/*
+Proceed (y/n)? y
+  Successfully uninstalled Django-1.11.9
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip show Django
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip search Flask
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+...
+

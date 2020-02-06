@@ -1,5 +1,5 @@
 # Coding Dojo Bootcamp Assignment
-## Python, Django / Django / Templates Assignment
+## Python, Django / Django / Time Display (Optional) Assignment
 
 ### Repository Link
 

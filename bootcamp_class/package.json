@@ -1,0 +1,15 @@
+{
+  "name": "bootcamp_class",
+  "version": "1.0.0",
+  "description": "Bootcamp files local server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 4004 -c-1"
+  },
+  "author": "Jeremy Wilson",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

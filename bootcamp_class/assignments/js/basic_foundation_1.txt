@@ -1,0 +1,168 @@
+// 1. Get 1 to 255 - Write a function that returns an array with all the numbers from 1 to 255.
+function print1To255() {
+  let newArray = [];
+  for(var i = 1; i < 256; i++){
+    newArray.push(i);
+  }
+  return newArray;
+}
+// console.log(print1To255());
+
+// 2. Get even 1000 - Write a function that would get the sum of all the even numbers from 1 to 1000.  You may use a modulus operator for this exercise.
+function getSumAllEvens(){
+  let total = 0;
+  for(var i = 1; i < 1001; i++){
+    if(i % 2 === 0){
+      total = total + i;
+    }
+  }
+  return total;
+}
+// console.log(getSumAllEvens());
+
+// 3. Sum odd 5000 - Write a function that returns the sum of all the odd numbers from 1 to 5000. (e.g. 1+3+5+...+4997+4999).
+function getSumOddTo500(){
+  let total = 0;
+  for(var i = 1; i < 5001; i++){
+    // determine negative values
+    if(i % 2 !== 0){
+      total = total + i;
+    }
+  }
+  return total;
+}
+// console.log(getSumOddTo500());
+
+// 4. Iterate an array - Write a function that returns the sum of all the values within an array. (e.g. [1,2,5] returns 8. [-5,2,5,12] returns 14).
+function getArray(array){
+  let total = 0;
+  for(var i = 0; i < array.length; i++){
+    total = total + array[i];
+  }
+  return total;
+}
+// console.log(getArray([2,4,6,8]));
+
+// 5. Find max - Given an array with multiple values, write a function that returns the maximum number in the array. (e.g. for [-3,3,5,7] max is 7)
+function getMaxValue(array){
+  let max = 0;
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+  }
+  return max;
+}
+// console.log(getMaxValue([2,5,7,10,-2]));
+
+// 6. Find average - Given an array with multiple values, write a function that returns the average of the values in the array. (e.g. for [1,3,5,7,20] average is 7.2)
+function getAverageValue(array){
+  let total = 0;
+  for(var i = 0; i < array.length; i++){
+    total = total + array[i];
+  }
+  let average = total / array.length;
+  return average;
+}
+// console.log(getAverageValue([2,4,6,8]));
+
+// 7. Array odd - Write a function that would return an array of all the odd numbers between 1 to 50. (ex. [1,3,5, .... , 47,49]). Hint: Use 'push' method.
+function getOddValues(){
+  let newArray = [];
+  for(var i = 1; i < 51; i++){
+    if(i % 2 !== 0){
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
+// console.log(getOddValues());
+
+// 8. Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y. 
+// For example if arr = [1, 3, 5, 7] and Y = 3, your function will return 2. (There are two values in the array greater than 3, which are 5, 7).
+function greaterThanY(array, Y){
+  let newArray = [];
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > Y){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+// console.log(greaterThanY([2,4,6,8,10,15,20], 5));
+
+// 9. Squares - Given an array with multiple values, write a function that replaces each value in the array with the product of the original value squared by itself. (e.g. [1,5,10,-2] will become [1,25,100,4])
+function getSquares(array){
+  let newArray = [];
+  for(var i = 0; i < array.length; i++){
+    array[i] = array[i] * array[i];
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+// console.log(getSquares([2,4,6,8,10]));
+
+// 10.  Negatives - Given an array with multiple values, write a function that replaces any negative numbers within the array with the value of 0. 
+// When the program is done the array should contain no negative values. (e.g. [1,5,10,-2] will become [1,5,10,0])
+function replaceNegativeValues(array){
+  let newArray = [];
+  for(var i = 0; i < array.length; i++){
+    if(array[i] < 0){
+      array[i] = 0;
+    }
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+// console.log(replaceNegativeValues([-1, 2, 3, -5, 7, -10]));
+
+// 11. Max/Min/Avg - Given an array with multiple values, write a function that returns a new array that only contains the 
+// maximum, minimum, and average values of the original array. (e.g. [1,5,10,-2] will return [10,-2,3.5])
+function getMaxMinAverage(array){
+  let min = array[0];
+  let max = array[0];
+  let total = 0;
+  // iterate over the array values
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+    if(array[i] < min){
+      min = array[i];
+    }
+    total = total + array[i];
+  }
+  let average = total / array.length;
+  let newArray = [max, min, average]
+  return newArray;
+}
+// console.log(getMaxMinAverage([1,5,10,-2]));
+
+// 12. Swap Values - Write a function that will swap the first and last values of any given array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1]).
+function swapValues(array){
+  let temp = array[0];
+  // shift the array values forward
+  array[0] = array[array.length - 1];
+  // switch the temp with the last array value
+  array[array.length - 1] = temp;
+  // return the array
+  return array;
+}
+console.log(swapValues([2,3,4]));
+console.log(swapValues([1,2,3,4]));
+console.log(swapValues([2,4,6,8,10,15,20]));
+
+// 13. Number to String - Write a function that takes an array of numbers and replaces any negative values within the array with the string 'Dojo'. 
+// For example if array = [-1,-3,2], your function will return ['Dojo','Dojo',2].
+function replaceNegativeValues(array){
+  let newArray = [];
+  for(var i = 0; i < array.length; i++){
+    if(array[i] < 0){
+      array[i] = 'Dojo';
+    }
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+console.log(replaceNegativeValues([-2,4,5,-6,8,9,-10]));
+

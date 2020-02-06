@@ -1,0 +1,86 @@
+ jeremybwilson: ~
+👾 >python -V
+Python 2.7.14
+
+Description:  shows current version of Python
+
+ jeremybwilson: ~
+🎲 >gcc -v
+
+Description:  shows version of gcc setup tools
+
+ jeremybwilson: ~
+🎲 >brew -v
+
+Description:  shows current version of Homebrew
+
+ jeremybwilson: ~
+🎲 >brew update
+
+Description:  updates Homebrew to most recent version
+
+ jeremybwilson: ~
+🎲 >brew uninstall python
+
+Description:  uninstalls system linked version of Python.  In my particular case, Python v3 was uninstalled.
+
+ jeremybwilson: ~
+🎲 >brew update
+
+Description:  Updates homebrew.  Returned the following information: 'Already up-to-date.'
+
+ jeremybwilson: ~
+🎲 >python -V
+Python 2.7.14
+
+Description:  shows current version of Python
+
+ jeremybwilson: ~
+🎲 >pip install Django==1.11.9
+
+Description:  installs Django version 1.11.9
+
+ jeremybwilson: ~
+🎲 >pip freeze
+
+ jeremybwilson: ~
+🎲 >pip list
+
+Answer: The difference between pip list and freeze is that pip list shows all installed packages (including editables), while freeze shows the output of installed packages in requirements format.
+
+Example: (pip list shows the packages: setuptools, pytz, wheel, Django, and pip itself)
+
+🎲 >pip list
+Package    Version
+---------- -------
+Django     1.11.9
+pip        18.0
+pytz       2018.5
+setuptools 40.0.0
+wheel      0.31.1
+
+ jeremybwilson: ~
+🎲 >pip freeze
+Django==1.11.9
+pytz==2018.5
+
+
+ jeremybwilson: ~
+🎲 >pip freeze > requirements.txt
+
+Description: Creates a text file whose output shows installed packages in requirements format.
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip uninstall Django
+
+Description: uninstalls Django
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip show Django
+
+Description: returns nothing back as Django was previously uninstalled.
+
+ jeremybwilson: ~/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python [git:master]
+🎲 >pip search Flask
+
+Description:  shows available Flask modules

@@ -1,0 +1,19 @@
+1. OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+fix: update password to correct password for database root user
+
+2. OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'admin'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+fix: updated username to correct username for database/schema
+
+3. OperationalError: (_mysql_exceptions.OperationalError) (1049, "Unknown database 'usersdemodb'") (Background on this error at: http://sqlalche.me/e/e3q8)
+fix: updated schema/database name to correct/existing database name 
+
+4. OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") (Background on this error at: http://sqlalche.me/e/e3q8)
+fix: update port number to correct (open) port.  eg. 3306
+
+5.  Traceback (most recent call last):
+  File "server.py", line 9, in <module>
+    mysql = MySQLConnector(app, 'userdemodb')
+  File "/Users/jeremybwilson/Documents/Github/code/codingdojo_bootcamp/bootcamp_class/python/flask_mysql/hashing/mysqlconnection.py", line 43, in MySQLConnector
+fix. Update function definition to use appropriate name, __init__, not __init(s)__
+
+

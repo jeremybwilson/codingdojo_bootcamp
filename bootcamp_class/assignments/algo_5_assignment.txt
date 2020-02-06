@@ -1,0 +1,115 @@
+// 1. Return the given array, after setting any negative values to zero.  For example resetNegatives( [1,2,-1, -3]) should return [1,2,0,0].
+
+function returnNoNegatives(array){
+  // create empty array variable
+  let newArray = [];
+  // iterate through the array values
+  for(let i = 0; i < array.length; i++){
+    if(array[i] < 0){
+      array[i] = 0;
+    }
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+// Test cases
+console.log(returnNoNegatives([-1,-2,5,7,8,10,12]));  // Expected result => 
+console.log(returnNoNegatives([2,5,-2,7,-10,12]));    // Expected result => 
+console.log(returnNoNegatives([2,-5,-6,10,12]));      // Expected result => 
+
+// 2. Given an array, move all values forward by one index, dropping the first and leaving a ‘0’ value at the end.  
+// For example moveForward( [1,2,3]) should return [2,3,0].
+
+function moveValsForwardOneIndex(array){
+  // iterate through the array values
+  for(let i = 0; i < array.length; i++){
+    // shift the array index forward by 1
+    array[i] = array[i + 1];
+  }
+  // set the final value of the array to 0
+  array[array.length - 1] = 0;
+  // return new array with zero at the end
+  return array;
+}
+// Test cases
+console.log(moveValsForwardOneIndex([1,2,3,4]));        // Expected result => [2,3,4,0]
+console.log(moveValsForwardOneIndex([-1,3,5,8]));       // Expected result => [3,5,8,0]
+console.log(moveValsForwardOneIndex([10,20,30,40]));    // Expected result => [20,30,40,0]
+
+// 3. Given an array, return an array with values in a reversed order.  For example, returnReversed([1,2,3]) should return [3,2,1].
+
+function reverseArray(array){
+  // for(let i = 0; i < array.length; i++){}
+  const temp = array[0];
+  array[0] = array[2];
+  array[2] = temp;
+  return array;
+}
+// Test cases
+console.log(reverseArray([2,3,4]));   // Expected result => [4,3,2]
+
+function reverseArray2(array){
+  // set new empty array variable
+  let newArray = [];
+  // iterate through the array values
+  for(let i = array.length - 1; i >= 0; i--){
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+// Test cases
+console.log(reverseArray2([2,3,4,5]));           // Expected result => [5,4,3,2]
+console.log(reverseArray2([10,20,30,40,50]));    // Expected result => [50,40,30,20,10]
+
+
+// 4. Create a function that changes a given array to list each original element twice, retaining original order.  
+// Have the function return the new array.  
+// For example repeatTwice( [4,”Ulysses”, 42, false] ) should return [4,4, “Ulysses”, “Ulysses”, 42, 42, false, false].
+
+function repeatEachOriginalValue1(array){
+  // set empty array variable for new array
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    // push (copy) new values into the array
+    newArray.push(array[i]);
+    newArray.push(array[i]);
+  }
+  // return the new array
+  return newArray;
+}
+// Test cases
+console.log(repeatEachOriginalValue1([1,2, -42, "Dojo", false])); // Expected output => [1, 1, 2, 2, -42, -42, "Dojo", "Dojo", false, false]
+console.log(repeatEachOriginalValue1([4,"Ulysses", 42, false])); // Expected output => [4,4, "Ulysses", “Ulysses”, 42, 42, false, false]
+
+function repeatEachOriginalValue2(array, N){
+  // set empty array variable for new array
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    let counter = 0;
+    while(counter < N){
+      // push (copy) new values into the array
+      newArray.push(array[i]);
+      counter++;
+    }
+  }
+  // return the new array
+  return newArray;
+}
+// Test cases
+console.log(repeatEachOriginalValue2([1,2, -42, "Dojo", false], 2)); // Expected output => [1, 1, 2, 2, -42, -42, "Dojo", "Dojo", false, false]
+console.log(repeatEachOriginalValue2([4,"Ulysses", 42, false], 2)); // Expected output => [4,4, "Ulysses", “Ulysses”, 42, 42, false, false]
+
+// ES6 version
+let repeatEachOriginalValueES6 = (array) => {
+  // set empty array variable for new array
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    // push (copy) new values into the array
+    newArray.push(array[i]);
+    newArray.push(array[i]);
+  }
+  // return the new array
+  return newArray;
+}
+// Test cases
+console.log(repeatEachOriginalValueES6([4,"Ulysses", 42, false])); // Expected output => [4,4, "Ulysses", “Ulysses”, 42, 42, false, false]

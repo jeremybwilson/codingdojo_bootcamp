@@ -1,0 +1,25 @@
+// Practice iterating through an array of objects/dictionaries.
+// Imagine that you are given an array of objects.  For example,
+
+var users = [
+  {
+    name: "Michael", age:37
+  }, 
+  {
+    name: "John", age:30
+  }, 
+  {
+    name: "David", age:27
+  }
+];
+
+// 1.  How would you print/log John's age?
+console.log(users[1].age); // Expected output => 30
+
+// 2.  How would you print/log the name of the first object?
+console.log('The name of user[1] is:', users[1].name);
+
+// 3.  How would you print/log the name and age of each user using a for loop?  Your output should look something like this
+for(var people in users){
+  console.log(users[people].name + ', age: ' + users[people].age);
+}

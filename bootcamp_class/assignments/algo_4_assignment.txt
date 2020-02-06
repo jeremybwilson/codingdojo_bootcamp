@@ -1,0 +1,131 @@
+// Given an array and a value Y, count and print the number of array values greater than Y.
+function findAndPrintGreaterThanY(array, Y){
+  let newArray = [];
+  // iterate through the array values
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > Y){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+// Test cases
+console.log(findAndPrintGreaterThanY([2,5,7,8,10,12], 5));        // Expected result => 
+console.log(findAndPrintGreaterThanY([2,5,-2,7,-10,10,12], 5));   // Expected result => 
+console.log(findAndPrintGreaterThanY([2,5,6,10,12], 7));          // Expected result => 
+
+// Given an array, print the max, min and average values for that array.
+function findMaxMinAverage(array){
+  // declare placeholder variables for min, max, sum
+  let min = array[0]; // min
+  let max = array[0]; // max
+  let total = array[0]; // total
+  // iterate through the array values
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+    if(array[i] < min){
+      min = array[i];
+    }
+    // get total for average calculation
+    total += array[i];
+  }
+  let avg = total / array.length;
+  newArray = [max, min, avg];
+  return newArray;
+}
+// Test cases
+console.log(findMaxMinAverage([2,4,6,8,10]));         // Expected result => []
+console.log(findMaxMinAverage([2,5,10,20,30]));       // Expected result => [30,2,13.4]
+console.log(findMaxMinAverage([2,5,-2,7,-10,10,12])); // Expected result => [12,-10,2.33333]
+
+// ES6 version 
+var findMaxMinAverage = (array) => {
+  // declare placeholder variables for min, max, sum
+  let min = array[0]; // min
+  let max = array[0]; // max
+  let total = array[0]; // total
+  // iterate through the array values
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+    if(array[i] < min){
+      min = array[i];
+    }
+    // get total for average calculation
+    total += array[i];
+  }
+  let avg = total / array.length;
+  newArray = [max, min, avg];
+  return newArray;
+}
+// Test cases
+console.log(findMaxMinAverage([2,4,6,8,10]));         // Expected result => [10,2,6]
+console.log(findMaxMinAverage([2,5,10,20,30]));       // Expected result => [30,2,13.4]
+console.log(findMaxMinAverage([2,5,-2,7,-10,10,12])); // Expected result => [12,-10,2.33333]
+
+
+// Given an array of numbers, create a function that returns a new array where negative values were replaced with the string ‘Dojo’.
+// For example, replaceNegatives( [1,2,-3,-5,5]) should return [1,2, "Dojo", "Dojo", 5].
+
+function replaceNegWithString(array){
+  // declare empty placeholder array
+  let newArray = [];
+  // iterate through the array values
+  for(var i = 0; i < array.length; i++){
+    // determine if val is negative and replace with string
+    if(array[i] < 0){
+      array[i] = 'Dojo';
+    }
+  }
+  // return newArray value
+  return newArray;
+}
+// Test cases
+console.log(replaceNegWithString([1,2,-3,-5,5]));         // Expected result => [1, 2, "Dojo", "Dojo", 5]
+console.log(replaceNegWithString([-2,4,6,8,-10]));        // Expected result => ["Dojo", 4, 6, 8, "Dojo"]
+console.log(replaceNegWithString([2,-5,10,-20,30]));      // Expected result => [2, "Dojo", 10, "Dojo", 30]
+console.log(replaceNegWithString([2,5,-2,7,-10,10,12]));  // Expected result => [2, 5, "Dojo", 7, "Dojo", 10, 12]
+
+// ES6 version
+var replaceNegWithString = (array) => {
+  // declare empty placeholder array
+  let newArray = [];
+  // iterate through the array values
+  for(var i = 0; i < array.length; i++){
+    // determine if val is negative and replace with string
+    if(array[i] < 0){
+      array[i] = 'Dojo';
+    }
+  }
+  // return newArray value
+  return newArray;
+}
+// Test cases
+console.log(replaceNegWithString([1,2,-3,-5,5]));         // Expected result => [1, 2, "Dojo", "Dojo", 5]
+console.log(replaceNegWithString([-2,4,6,8,-10]));        // Expected result => ["Dojo", 4, 6, 8, "Dojo"]
+console.log(replaceNegWithString([2,-5,10,-20,30]));      // Expected result => [2, "Dojo", 10, "Dojo", 30]
+console.log(replaceNegWithString([2,5,-2,7,-10,10,12]));  // Expected result => [2, 5, "Dojo", 7, "Dojo", 10, 12]
+
+
+// Given array, and indices start and end, remove vals in that index range, working in-place (hence shortening the array).  
+// For example, removeVals([20,30,40,50,60,70],2,4) should return [20,30,70].
+
+function  removeVals(array, x, y){
+  var newArray = [];
+  for(var i = 0; i < x; i++){
+    newArray.push(array[i]);
+  }
+  for(var i = y; i < array.length; i++){
+    newArray.push(array[i]);
+  }
+  // console.log(newArray);
+  array = newArray;
+  // console.log(array);
+  return array, newArray;
+}
+// Test cases
+console.log(removeVals([1,2,3,4,5,6,7,8],4,6));
+// console.log(removeVals([2,5,-2,7,-10,10,12], 0,1));

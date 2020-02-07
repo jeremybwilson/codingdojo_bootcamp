@@ -15,8 +15,8 @@ $(document).ready(function(){
   const h1 = document.createElement('h1');
   h1.textContent = "Pokemon Assignment";
 
-  $('#container-fluid').prepend(logo);
-  $('#container-fluid').prepend(h1);
+  $('.heading').prepend(logo);
+  $('.heading').prepend(h1);
 
   // set base URL for Pokemon API character info
   const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
@@ -74,7 +74,8 @@ $(document).ready(function(){
       htmlStr += `<li><span class="strong">Height:</span> ${pokemonHeight}</li><li><span class="strong">Weight:</span> ${pokemonWeight} cm</li>
       </ul></div>`;
 
-      $('#pokemon-display').show().attr('style', 'display: inline-block;').html(htmlStr);
+      // $('#pokemon-display').show().attr('style', 'display: inline-block;').html(htmlStr);
+      $('#pokemon-display').show().html(htmlStr);
     }, "json");
   });
 });
